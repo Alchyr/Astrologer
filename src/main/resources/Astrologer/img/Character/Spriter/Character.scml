@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0">
+        <file id="0" name="temp.png" width="200" height="317" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="shadow.png" width="200" height="100" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="entity_000">
+        <animation id="0" name="NewAnimation" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="0" z_index="1"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="temp">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-105" y="312"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="shadow">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="-85" y="42" scale_x="0.781736" scale_y="0.64537"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

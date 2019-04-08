@@ -1,0 +1,16 @@
+{
+  "astrologer:SkyMirror": {
+    "NAME": "Sky's Mirror",
+    "FLAVOR": "The sky you see is limited; look here, instead.",
+    "DESCRIPTIONS": [
+      "The first non-exhausting card played each turn goes to the bottom of the draw pile."
+    ]
+  },
+  "astrologer:SkyMirrorUpg": {
+    "NAME": "Sky's Mirror+",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "The first non-exhausting card played each turn goes to the bottom of the draw pile. The next time it is drawn, gain [E] ."
+    ]
+  }
+}

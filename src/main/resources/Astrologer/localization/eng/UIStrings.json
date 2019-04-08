@@ -1,0 +1,43 @@
+{
+  "astrologer:Stellar": {
+    "TEXT": [
+      "Stellar",
+      "This effect triggers if the #yStellar #yPhase is at or above the specified value."
+    ]
+  },
+  "astrologer:StellarUI": {
+    "TEXT": [
+      "Stellar",
+      "#yStellar #yPhase: #b",
+      " NL Alignment: #yLunar ",
+      " NL Alignment: #ySolar ",
+      " NL Currently capped at #b"
+    ]
+  },
+  "astrologer:Lovers": {
+    "TEXT": [
+      "Exchange the Costs."
+    ]
+  },
+  "astrologer:HangedMan": {
+    "TEXT": [
+      "Duplicate."
+    ]
+  },
+  "astrologer:ToDeck": {
+    "TEXT": [
+      "Put on the Bottom of Your Draw Pile.",
+      "Put on the Top of Your Draw Pile."
+    ]
+  },
+  "astrologer:Prestidigitation": {
+    "TEXT": [
+      "Put on the Bottom of Your Draw Pile."
+    ]
+  },
+  "astrologer:MaxHP": {
+    "TEXT": [
+      "Max HP +"
+    ]
+  }
+}

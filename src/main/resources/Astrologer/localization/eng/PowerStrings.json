@@ -1,0 +1,69 @@
+{
+  "astrologer:Starlit": {
+    "NAME": "Starlit",
+    "DESCRIPTIONS": [
+      "At the start of your turn, lose HP equal to the current #yStellar #yPhase, then reduce #yStarlit by #b1.",
+      "At the start of its turn, loses HP equal to the current #yStellar #yPhase, then reduce #yStarlit by #b1."
+    ]
+  },
+  "astrologer:Starfield": {
+    "NAME": "Starfield",
+    "DESCRIPTIONS": [
+      "ALL cards count as #yStars."
+    ]
+  },
+  "astrologer:FrozenStar": {
+    "NAME": "Frozen Star",
+    "DESCRIPTIONS": [
+      "The next time you play a #yStar, gain ",
+      " #yBlock."
+    ]
+  },
+  "astrologer:CosmicExpanse": {
+    "NAME": "Cosmic Expanse",
+    "DESCRIPTIONS": [
+      "The maximum #yStellar #yPhase is increased by #b",
+      "."
+    ]
+  },
+  "astrologer:LoversA": {
+    "NAME": "The Lovers",
+    "DESCRIPTIONS": [
+      "The next time you play ",
+      ", it is played twice."
+    ]
+  },
+  "astrologer:LoversB": {
+    "NAME": "The Lovers",
+    "DESCRIPTIONS": [
+      "The next time you play ",
+      ", it is played twice."
+    ]
+  },
+  "astrologer:Prestidigitation": {
+    "NAME": "Prestidigitation",
+    "DESCRIPTIONS": [
+      "At the start of your turn, draw #b",
+      " card and put #b",
+      " cards and put #b",
+      " card at the bottom of your draw pile.",
+      " cards at the bottom of your draw pile."
+    ]
+  },
+  "astrologer:Fate": {
+    "NAME": "Fate",
+    "DESCRIPTIONS": [
+      "The next #bStellar card you play this turn will be active.",
+      "The next #b",
+      " #bStellar cards you play this turn will be active."
+    ]
+  },
+  "astrologer:Trine": {
+    "NAME": "Trine",
+    "DESCRIPTIONS": [
+      "The next card you play this turn will be played twice.",
+      "The next #b",
+      " cards you play this turn will be played twice."
+    ]
+  }
+}
