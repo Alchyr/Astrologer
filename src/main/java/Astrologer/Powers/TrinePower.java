@@ -1,7 +1,6 @@
 package Astrologer.Powers;
 
 import Astrologer.Abstracts.BasePower;
-import Astrologer.Interfaces.AllStarsPower;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
-public class TrinePower extends BasePower implements AllStarsPower {
+public class TrinePower extends BasePower {
     public static final String NAME = "Trine";
     public static final PowerType TYPE = PowerType.BUFF;
     public static final boolean TURN_BASED = true;
@@ -62,8 +61,6 @@ public class TrinePower extends BasePower implements AllStarsPower {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
         }
     }
-
-    //view isStar check in PhaseCheck Util class
 
     public void updateDescription() {
         if (this.amount == 1)

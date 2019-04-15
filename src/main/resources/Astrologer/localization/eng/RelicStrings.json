@@ -3,14 +3,41 @@
     "NAME": "Sky's Mirror",
     "FLAVOR": "The sky you see is limited; look here, instead.",
     "DESCRIPTIONS": [
-      "The first non-exhausting card played each turn goes to the bottom of the draw pile."
+      "Put the first discarded card played each turn onto the bottom of the draw pile."
     ]
   },
   "astrologer:SkyMirrorUpg": {
-    "NAME": "Sky's Mirror+",
+    "NAME": "Universal Mirror",
     "FLAVOR": "",
     "DESCRIPTIONS": [
-      "The first non-exhausting card played each turn goes to the bottom of the draw pile. The next time it is drawn, gain [E] ."
+      "Put non-exhausting cards played onto the bottom of the draw pile."
+    ]
+  },
+  "astrologer:SomethingSpaceyOrStarry": {
+    "NAME": "SomethingSpaceyOrStarry",
+    "FLAVOR": "Spaaaaaaaaace.",
+    "DESCRIPTIONS": [
+      "At the start of combat, increase the #yStellar #yPhase by 4."
+    ]
+  },
+  "astrologer:Zodiac": {
+    "NAME": "Zodiac",
+    "FLAVOR": "The definition of your life's substance.",
+    "DESCRIPTIONS": [
+      "Aquarius",
+      "Pisces",
+      "Aries",
+      "Taurus",
+      "Gemini",
+      "Cancer",
+      "Leo",
+      "#ySolar effects are always active.",
+      "Virgo",
+      "Libra",
+      "Scorpio",
+      "Sagittarius",
+      "Capricorn",
+      "#yLunar effects are always active."
     ]
   }
 }

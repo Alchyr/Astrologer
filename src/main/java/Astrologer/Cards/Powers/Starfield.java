@@ -3,6 +3,7 @@ package Astrologer.Cards.Powers;
 import Astrologer.Abstracts.BaseCard;
 import Astrologer.Powers.StarfieldPower;
 import Astrologer.Util.CardInfo;
+import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -28,6 +29,8 @@ public class Starfield extends BaseCard {
         super(cardInfo, false);
 
         setCostUpgrade(UPG_COST);
+
+        this.tags.add(BaseModCardTags.FORM);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

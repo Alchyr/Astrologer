@@ -29,7 +29,7 @@ public class TowerAction extends AbstractGameAction {
         {
             DamageInfo damageInfo = new DamageInfo(source, amount, damageType);
 
-            damageInfo.applyPowers(damageInfo.owner, this.target);
+            damageInfo.applyPowers(damageInfo.owner, target);
 
             AbstractDungeon.actionManager.addToTop(new DamageAction(target, damageInfo, AttackEffect.NONE));
             if (MathUtils.randomBoolean())

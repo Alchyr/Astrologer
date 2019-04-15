@@ -16,7 +16,7 @@ import static Astrologer.AstrologerMod.makeID;
 public class TheSun extends StellarCard {
     private final static CardInfo cardInfo = new CardInfo(
             "TheSun",
-            3,
+            2,
             CardType.ATTACK,
             CardTarget.ALL_ENEMY,
             CardRarity.RARE

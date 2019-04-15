@@ -88,16 +88,4 @@ public abstract class StellarCard extends BaseCard {
         }
         return forceActive;
     }
-    protected boolean stellarActiveFool()
-    {
-        if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player != null)
-        {
-            for (AbstractPower p : AbstractDungeon.player.powers)
-            {
-                if (p instanceof ActivateStellarPower)
-                    return true;
-            }
-        }
-        return forceActive;
-    }
 }

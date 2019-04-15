@@ -17,6 +17,11 @@
       " NL (Gain !B! Block.)"
     ]
   },
+  "astrologer:Alignment": {
+    "NAME": "Alignment",
+    "DESCRIPTION": "Add X copies of the bottom card of your draw pile to your hand. They cost X less this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add X + !M! copies of the bottom card of your draw pile to your hand. They cost X + !M! less this turn. NL Exhaust."
+  },
   "astrologer:Perihelion": {
     "NAME": "Perihelion",
     "DESCRIPTION": "Deal !D! damage. NL astrologer:Solar: Deal !M! times as much damage instead."
@@ -24,6 +29,14 @@
   "astrologer:Premeditation": {
     "NAME": "Premeditation",
     "DESCRIPTION": "Draw the bottom card of your draw pile, then play and Exhaust it."
+  },
+  "astrologer:Shine": {
+    "NAME": "Shine",
+    "DESCRIPTION": "Play a card in your hand twice and Exhaust it. NL Exhaust."
+  },
+  "astrologer:CrystalBall": {
+    "NAME": "Crystal Ball",
+    "DESCRIPTION": "Choose an enemy. At the start of its turn, if its intent is the same as its current intent, it loses !M! HP. NL Exhaust."
   },
   "astrologer:Wish": {
     "NAME": "Wish",
@@ -35,24 +48,48 @@
   },
   "astrologer:Moonlight": {
     "NAME": "Moonlight",
-    "DESCRIPTION": "Gain !B! Block. NL astrologer:Lunar: Apply !M! Weak."
+    "DESCRIPTION": "Gain !B! Block. NL astrologer:Lunar: Draw a card.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL astrologer:Lunar: Draw !M! cards."
   },
   "astrologer:Eclipse": {
     "NAME": "Eclipse",
-    "DESCRIPTION": "Deal !D! damage twice. NL astrologer:Lunar: Hits !M! additional time.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. NL astrologer:Lunar: Hits !M! additional times."
+    "DESCRIPTION": "Deal !D! damage twice. NL astrologer:Lunar: Apply !M! Weak."
   },
   "astrologer:Radiance": {
     "NAME": "Radiance",
     "DESCRIPTION": "Deal !D! damage. NL astrologer:Solar: Apply !M! Vulnerable."
   },
+  "astrologer:Still": {
+    "NAME": "Still",
+    "DESCRIPTION": "Gain !B! Block. NL The astrologer:Stellar_Phase cannot change for 2 turns."
+  },
+  "astrologer:SolarFlare": {
+    "NAME": "Solar Flare",
+    "DESCRIPTION": "Apply !M! astrologer:Starlit and trigger it once."
+  },
   "astrologer:NorthStar": {
     "NAME": "Guiding Star",
     "DESCRIPTION": "astrologer:Star. NL Apply !M! astrologer:Starlit."
   },
+  "astrologer:ReadTheStars": {
+    "NAME": "Read The Stars",
+    "DESCRIPTION": "Gain !B! Block for each astrologer:Star in your hand."
+  },
   "astrologer:GlassStar": {
     "NAME": "Glass Star",
-    "DESCRIPTION": "astrologer:Star. NL Exhaust the next card you play and gain Block equal to !M! times its cost."
+    "DESCRIPTION": "astrologer:Star. NL Exhaust the next card you play and gain Block equal to !B! times its cost."
+  },
+  "astrologer:Observe": {
+    "NAME": "Observe",
+    "DESCRIPTION": "Gain Block equal to the number of cards in your draw pile.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to the number of cards in your draw pile + !M!.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Gains !B! Block.)"
+    ]
+  },
+  "astrologer:StarOfRegret": {
+    "NAME": "Star Of Regret",
+    "DESCRIPTION": "astrologer:Star. NL Deal !D! damage. NL When this card is Exhausted, deal twice as much damage to ALL enemies."
   },
   "astrologer:StarOfChange": {
     "NAME": "Star Of Change",
@@ -75,10 +112,6 @@
     "NAME": "Fading Star",
     "DESCRIPTION": "astrologer:Star. NL Gain !B! Block. NL Exhaust."
   },
-  "astrologer:GiantStar": {
-    "NAME": "Giant Star",
-    "DESCRIPTION": "astrologer:Star. NL Exhaust. NL When this card is Exhausted, add !M! random astrologer:Meteor cards to your hand. NL astrologer:Supermassive 1: Increase the number of cards added by 1."
-  },
   "astrologer:NeutronStar": {
     "NAME": "Neutron Star",
     "DESCRIPTION": "astrologer:Star. NL Apply X astrologer:Starlit. NL Deal !D! damage for each stack of astrologer:Starlit the enemy has.",
@@ -88,12 +121,20 @@
   },
   "astrologer:ShootingStar": {
     "NAME": "Shooting Star",
-    "DESCRIPTION": "astrologer:Star. NL astrologer:Meteor. NL Draw a card.",
-    "UPGRADE_DESCRIPTION": "astrologer:Star. NL astrologer:Meteor. NL Draw a card. NL Exhaust."
+    "DESCRIPTION": "astrologer:Star. NL Draw a card. NL When this card is Exhausted, add a copy of it to your draw pile.",
+    "UPGRADE_DESCRIPTION": "astrologer:Star. NL Draw a card. NL Exhaust. NL When this card is Exhausted, add a copy of it to your draw pile."
+  },
+  "astrologer:SpaceDust": {
+    "NAME": "Nebula",
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL When this card is Exhausted, add a copy of it to your draw pile."
+  },
+  "astrologer:Cataclysm": {
+    "NAME": "Cataclysm",
+    "DESCRIPTION": "This card can only be played if it costs 0. NL Whenever you draw this card, reduce its cost by 1 for the combat. NL Deal !D! damage to ALL enemies. NL Exhaust."
   },
   "astrologer:Fireball": {
     "NAME": "Fireball",
-    "DESCRIPTION": "astrologer:Star. NL astrologer:Meteor. NL Deal !D! damage. NL Apply !M! astrologer:Starlit."
+    "DESCRIPTION": "astrologer:Star. NL Deal !D! damage. NL Apply !M! astrologer:Starlit."
   },
   "astrologer:StarOfCourage": {
     "NAME": "Star of Courage",
@@ -116,6 +157,10 @@
     "NAME": "Divination",
     "DESCRIPTION": "Put a card from your hand onto the bottom of your draw pile. NL Draw !M! cards.",
     "UPGRADE_DESCRIPTION": "Put any number of cards from your hand onto the bottom of your draw pile. NL Draw !M! cards."
+  },
+  "astrologer:RejectReality": {
+    "NAME": "Reject Reality",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL Shuffle !M! Dazed into your draw pile."
   },
   "astrologer:Conjunction": {
     "NAME": "Conjunction",
@@ -148,15 +193,25 @@
   },
   "astrologer:BlackHole": {
     "NAME": "Black Hole",
-    "DESCRIPTION": "Deal !D! damage. NL astrologer:Supermassive 2: Increase this card's damage by !M! this combat."
+    "DESCRIPTION": "Purge all cards in your Exhaust pile. NL Deal !D! damage for each Purged card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Purge all cards in your Exhaust pile. NL Deal !D! damage for each Purged card. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Purge all cards in your Exhaust pile. NL Deal !D! damage for each Purged card. NL Exhaust. NL (Deals !D! damage.)",
+      "Retain. NL Purge all cards in your Exhaust pile. NL Deal !D! damage for each Purged card. NL Exhaust. NL (Deals !D! damage.)"
+    ]
   },
   "astrologer:MeteorShower": {
     "NAME": "Meteor Shower",
-    "DESCRIPTION": "astrologer:Meteor. NL Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Exhaust."
   },
   "astrologer:CometStrike": {
     "NAME": "Comet Strike",
-    "DESCRIPTION": "astrologer:Meteor. NL Deal !D! damage. Draw !M! card."
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! cards. NL Exhaust a random card in your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Draw !M! cards. NL Exhaust a card in your hand."
+  },
+  "astrologer:HeatDeath": {
+    "NAME": "Heat Death",
+    "DESCRIPTION": "Exhaust ALL your astrologer:Stars. NL Deal !D! damage to a random enemy for each card Exhausted. NL Exhaust."
   },
   "astrologer:Fate": {
     "NAME": "Fate",
@@ -165,7 +220,7 @@
   },
   "astrologer:TheFool": {
     "NAME": "The Fool",
-    "DESCRIPTION": "Deal !D! damage. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: 50% chance to deal !D! damage."
+    "DESCRIPTION": "Innate. NL Gain !B! Block. NL Deal !D! damage. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Exhaust."
   },
   "astrologer:TheMagician": {
     "NAME": "The Magician",
@@ -214,7 +269,7 @@
   },
   "astrologer:WheelofFortune": {
     "NAME": "Wheel of Fortune",
-    "DESCRIPTION": "Ethereal. NL Lose 15 Gold. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play !M! random [#ccf3ff]Stellar[] cards. Their [#ccf3ff]Stellar[] effects are triggered."
+    "DESCRIPTION": "Lose 15 Gold. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play !M! random [#ccf3ff]Stellar[] cards. Their [#ccf3ff]Stellar[] effects are triggered."
   },
   "astrologer:Justice": {
     "NAME": "Justice",
@@ -268,11 +323,28 @@
   },
   "astrologer:TheWorld": {
     "NAME": "The World",
-    "DESCRIPTION": "Ethereal. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Set the HP of ALL creatures to 50% of your Max HP. NL End your turn. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Set the HP of ALL creatures to 1. NL Exhaust."
   },
   "astrologer:Starfield": {
-    "NAME": "Starfield",
+    "NAME": "Astral Form",
     "DESCRIPTION": "ALL your cards are astrologer:Stars."
+  },
+  "astrologer:Prismatic": {
+    "NAME": "Prismatic",
+    "DESCRIPTION": "The first time you play a astrologer:Star each turn, apply !M! astrologer:Starlit to a random enemy."
+  },
+  "astrologer:Premonition": {
+    "NAME": "Premonition",
+    "DESCRIPTION": "Whenever you draw an Ethereal card, draw a card."
+  },
+  "astrologer:Nova": {
+    "NAME": "Nova",
+    "DESCRIPTION": "Trigger astrologer:Starlit !M! time at the end of your turn.",
+    "UPGRADE_DESCRIPTION": "Trigger astrologer:Starlit !M! times at the end of your turn."
+  },
+  "astrologer:Glimpse": {
+    "NAME": "Glimpse",
+    "DESCRIPTION": "Whenever you draw an Ethereal card, gain !M! Block."
   },
   "astrologer:CosmicExpanse": {
     "NAME": "Cosmic Expanse",

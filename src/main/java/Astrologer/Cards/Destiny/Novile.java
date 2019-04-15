@@ -20,7 +20,7 @@ public class Novile extends BaseCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int ENERGY = 1;
+    private final static int ENERGY = 2;
     private final static int UPG_ENERGY = 1;
 
     public Novile()

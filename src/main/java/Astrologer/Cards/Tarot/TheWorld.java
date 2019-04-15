@@ -8,17 +8,20 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.scene.LightFlareLEffect;
+import com.megacrit.cardcrawl.vfx.scene.LightFlareMEffect;
 
 import static Astrologer.AstrologerMod.makeID;
 
 public class TheWorld extends StellarCard {
     private final static CardInfo cardInfo = new CardInfo(
             "TheWorld",
-            2,
+            3,
             CardType.SKILL,
             CardTarget.ALL,
             CardRarity.RARE
@@ -26,7 +29,7 @@ public class TheWorld extends StellarCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int UPG_COST = 1;
+    private final static int UPG_COST = 2;
 
     private final static int STELLAR = 21;
 
@@ -56,16 +59,18 @@ public class TheWorld extends StellarCard {
             {
                 AbstractDungeon.actionManager.addToBottom(new SFXAction("CEILING_DUST_3"));
             }
-            int targetValue = MathUtils.floor(p.maxHealth / 2.0f);
+            int targetValue = 1;
 
             AbstractDungeon.actionManager.addToBottom(new SetHPAction(p, targetValue));
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new LightFlareMEffect(p.hb.cX, p.hb.cY)));
             for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters)
             {
                 if (!mo.isDeadOrEscaped())
                     AbstractDungeon.actionManager.addToBottom(new SetHPAction(mo, targetValue));
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new LightFlareMEffect(mo.hb.cX, mo.hb.cY)));
             }
 
-            AbstractDungeon.actionManager.addToBottom(new EndTurnNowAction());
+            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.3f));
         }
     }
 }

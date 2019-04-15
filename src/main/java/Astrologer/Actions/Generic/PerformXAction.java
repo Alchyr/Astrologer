@@ -2,6 +2,7 @@ package Astrologer.Actions.Generic;
 
 import Astrologer.Abstracts.AbstractXAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.green.Malaise;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.ChemicalX;
@@ -15,9 +16,9 @@ public class PerformXAction extends AbstractGameAction {
 
     private AbstractPlayer p;
 
-    public PerformXAction(AbstractXAction XAction, AbstractPlayer p, int baseValue, boolean freeToPlayOnce)
+    public PerformXAction(AbstractXAction XAction, AbstractPlayer p, int energyOnUse, boolean freeToPlayOnce)
     {
-        this.baseValue = baseValue;
+        this.baseValue = energyOnUse;
         this.freeToPlayOnce = freeToPlayOnce;
         this.XAction = XAction;
         this.p = p;

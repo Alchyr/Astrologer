@@ -40,7 +40,6 @@ public class Starlit extends BasePower implements HealthBarRenderPower {
         if (this.amount <= 0) {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
         } else if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            this.flashWithoutSound();
             AbstractDungeon.actionManager.addToBottom(new PowerFlashAction(this, false));
             AbstractDungeon.actionManager.addToBottom(new SFXAction(Sparkle.getKey(), 0.05F));
             AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.owner, StellarPhaseValue.stellarPhase.get(AbstractDungeon.player)));
@@ -51,13 +50,12 @@ public class Starlit extends BasePower implements HealthBarRenderPower {
     @Override
     public void onSpecificTrigger() {
         if (this.amount <= 0) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
+            AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
         } else if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            this.flashWithoutSound();
-            AbstractDungeon.actionManager.addToBottom(new PowerFlashAction(this, false));
-            AbstractDungeon.actionManager.addToBottom(new SFXAction(Sparkle.getKey(), 0.05F));
-            AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.owner, StellarPhaseValue.stellarPhase.get(AbstractDungeon.player)));
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, ID, 1));
+            AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, ID, 1));
+            AbstractDungeon.actionManager.addToTop(new LoseHPAction(this.owner, this.owner, StellarPhaseValue.stellarPhase.get(AbstractDungeon.player)));
+            AbstractDungeon.actionManager.addToTop(new SFXAction(Sparkle.getKey(), 0.05F));
+            AbstractDungeon.actionManager.addToTop(new PowerFlashAction(this, false));
         }
     }
 

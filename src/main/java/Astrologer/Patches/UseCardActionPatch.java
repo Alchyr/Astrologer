@@ -27,6 +27,9 @@ public class UseCardActionPatch {
 
             AbstractDungeon.player.hand.moveToBottomOfDeck(targetCard);
 
+            AbstractDungeon.player.hand.applyPowers();
+            AbstractDungeon.player.hand.glowCheck();
+
             duration[0] -= Gdx.graphics.getDeltaTime();
             if (duration[0] < 0.0f)
                 __instance.isDone = true;

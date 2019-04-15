@@ -21,7 +21,7 @@ public class Justice extends StellarCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int BLOCK = 11;
+    private final static int BLOCK = 9;
     private final static int UPG_BLOCK = 2;
 
     private final static int STELLAR = 11;

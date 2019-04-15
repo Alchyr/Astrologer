@@ -7,6 +7,7 @@ import Astrologer.Util.PhaseCheck;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -21,24 +22,24 @@ public class Moonlight extends BaseCard {
             "Moonlight",
             1,
             CardType.SKILL,
-            CardTarget.ENEMY,
+            CardTarget.NONE,
             CardRarity.COMMON
     );
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int BLOCK = 7;
-    private final static int UPG_BLOCK = 2;
+    private final static int BLOCK = 9;
+    private final static int UPG_BLOCK = 1;
 
-    private final static int WEAK = 1;
-    private final static int UPG_WEAK = 1;
+    private final static int DRAW = 1;
+    private final static int UPG_DRAW = 1;
 
     public Moonlight()
     {
-        super(cardInfo, false);
+        super(cardInfo, true);
 
         setBlock(BLOCK, UPG_BLOCK);
-        setMagic(WEAK, UPG_WEAK);
+        setMagic(DRAW, UPG_DRAW);
 
         tags.add(CustomTags.LUNAR);
     }
@@ -47,6 +48,6 @@ public class Moonlight extends BaseCard {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 
         if (PhaseCheck.lunarActive())
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
     }
 }

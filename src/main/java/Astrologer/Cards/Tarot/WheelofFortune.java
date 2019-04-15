@@ -18,7 +18,7 @@ import static Astrologer.AstrologerMod.makeID;
 public class WheelofFortune extends StellarCard {
     private final static CardInfo cardInfo = new CardInfo(
             "WheelofFortune",
-            0,
+            1,
             CardType.SKILL,
             CardTarget.NONE,
             CardRarity.RARE
@@ -38,8 +38,6 @@ public class WheelofFortune extends StellarCard {
         super(cardInfo, false, STELLAR);
 
         setMagic(PLAY, UPG_PLAY);
-
-        this.isEthereal = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

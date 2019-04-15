@@ -34,8 +34,4 @@ public class PhaseCheck {
         }
         return c.hasTag(CustomTags.STAR);
     }
-    public static boolean isMeteor(AbstractCard c)
-    {
-        return c.hasTag(CustomTags.METEOR);
-    }
 }

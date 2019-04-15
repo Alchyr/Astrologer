@@ -1,5 +1,6 @@
 package Astrologer;
 
+import Astrologer.Abstracts.StellarCard;
 import Astrologer.Actions.Astrologer.AdvancePhaseAction;
 import Astrologer.Character.Astrologer;
 import Astrologer.Enums.CardColorEnum;
@@ -82,11 +83,11 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
 
 
     //Card Lists
-    public static ArrayList<AbstractCard> MeteorCards = null;
     public static ArrayList<AbstractCard> StellarCards = null;
 
     //Tracking
     public static int starsPlayedThisCombat;
+    public static int stellarPlayedThisCombat;
     public static int starsExhaustedThisCombat;
 
     //Stellar UI
@@ -300,14 +301,14 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
             AbstractDungeon.actionManager.addToBottom(new AdvancePhaseAction());
             starsPlayedThisCombat++;
         }
+        if (abstractCard instanceof StellarCard)
+        {
+            stellarPlayedThisCombat++;
+        }
     }
 
     @Override
     public void receivePostExhaust(AbstractCard abstractCard) {
-        if (PhaseCheck.isMeteor(abstractCard))
-        {
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(abstractCard.makeStatEquivalentCopy(), 1));
-        }
         if (PhaseCheck.isStar(abstractCard))
         {
             AbstractDungeon.actionManager.addToBottom(new AdvancePhaseAction());
@@ -339,22 +340,6 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
         }
     }
 
-    public static AbstractCard getRandomMeteor()
-    {
-        if (MeteorCards == null)
-        {
-            MeteorCards = new ArrayList<>();
-
-            for (AbstractCard c : CardLibrary.getAllCards())
-            {
-                if (c.hasTag(CustomTags.METEOR) && !c.hasTag(AbstractCard.CardTags.HEALING)) {
-                    MeteorCards.add(c);
-                }
-            }
-        }
-
-        return MeteorCards.get(AbstractDungeon.cardRandomRng.random(MeteorCards.size() - 1));
-    }
     public static AbstractCard getRandomStellarCard()
     {
         if (StellarCards == null)
@@ -380,6 +365,7 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
         stellarUI.reset(1);
         cardsPlayedThisCombatCount = 0;
         starsPlayedThisCombat = 0;
+        stellarPlayedThisCombat = 0;
         starsExhaustedThisCombat = 0;
 
         if (AbstractDungeon.player.chosenClass == ASTROLOGER)
@@ -392,6 +378,7 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
     public void receivePostBattle(AbstractRoom abstractRoom) {
         cardsPlayedThisCombatCount = 0;
         starsPlayedThisCombat = 0;
+        stellarPlayedThisCombat = 0;
         starsExhaustedThisCombat = 0;
         drawStellarUI = false;
     }

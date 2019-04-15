@@ -12,6 +12,4 @@ public class CustomTags {
     public static AbstractCard.CardTags STELLAR;
     @SpireEnum
     public static AbstractCard.CardTags STAR;
-    @SpireEnum
-    public static AbstractCard.CardTags METEOR;
 }

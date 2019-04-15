@@ -7,16 +7,92 @@
     ]
   },
   "astrologer:Starfield": {
-    "NAME": "Starfield",
+    "NAME": "Astral Form",
     "DESCRIPTIONS": [
-      "ALL cards count as #yStars."
+      "ALL cards are #yStars."
     ]
   },
   "astrologer:FrozenStar": {
     "NAME": "Frozen Star",
     "DESCRIPTIONS": [
-      "The next time you play a #yStar, gain ",
+      "The next time you play a #yStar, gain #b",
       " #yBlock."
+    ]
+  },
+  "astrologer:CrystalBall": {
+    "NAME": "Crystal Ball",
+    "DESCRIPTIONS": [
+      "At the start of its turn, if it ",
+      " lose #b",
+      " HP.",
+      "intends to #yAttack,",
+      "intends to #yAttack and use a #yBuff,",
+      "intends to #yAttack and inflict a #yNegative #yEffect on you,",
+      "intends to #yAttack and #yBlock,",
+      "intends to use a #yBuff,",
+      "intends to inflict a #yNegative #yEffect on you,",
+      "intends to inflict a powerful #yNegative #yEffect on you,",
+      "intends to #yDebug, what are you fighting...",
+      "intends to #yBlock,",
+      "intends to #yBlock and inflict a #yNegative #yEffect on you,",
+      "intends to #yBlock and use a #yBuff,",
+      "intends to #yEscape,",
+      "intends to use mysterious #yMagic,",
+      "intends to do nothing at all,",
+      "is asleep,",
+      "is #yStunned,",
+      "intends to do something unknown,"
+    ]
+  },
+  "astrologer:GlassStar": {
+    "NAME": "Glass Star",
+    "DESCRIPTIONS": [
+      "#yExhaust the next card you play and gain #yBlock equal to #b",
+      " times its cost."
+    ]
+  },
+  "astrologer:Still": {
+    "NAME": "Still",
+    "DESCRIPTIONS": [
+      "The #yStellar #yPhase cannot change for #b",
+      " turn.",
+      " turns."
+    ]
+  },
+  "astrologer:Premonition": {
+    "NAME": "Premonition",
+    "DESCRIPTIONS": [
+      "Whenever you draw an #yEthereal card, draw #b",
+      " card.",
+      " cards."
+    ]
+  },
+  "astrologer:Confirmation": {
+    "NAME": "Confirmation",
+    "DESCRIPTIONS": [
+      "Whenever you put a card onto the bottom of your draw pile, it costs 0 until played."
+    ]
+  },
+  "astrologer:Glimpse": {
+    "NAME": "Glimpse",
+    "DESCRIPTIONS": [
+      "Whenever you draw an #yEthereal card, gain #b",
+      " #yBlock."
+    ]
+  },
+  "astrologer:Nova": {
+    "NAME": "Nova",
+    "DESCRIPTIONS": [
+      "#yStarlit is triggered #b",
+      " time at the end of your turn.",
+      " times at the end of your turn."
+    ]
+  },
+  "astrologer:Prismatic": {
+    "NAME": "Prismatic",
+    "DESCRIPTIONS": [
+      "The first time you play a #yStar each turn, apply #b",
+      " #yStarlit to a random enemy."
     ]
   },
   "astrologer:CosmicExpanse": {

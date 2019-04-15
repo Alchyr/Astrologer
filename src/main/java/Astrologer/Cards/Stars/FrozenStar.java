@@ -22,7 +22,7 @@ public class FrozenStar extends StarCard {
     public final static String ID = makeID(cardInfo.cardName);
 
     private final static int BLOCK = 9;
-    private final static int UPG_BLOCK = 4;
+    private final static int UPG_BLOCK = 3;
 
     public FrozenStar()
     {

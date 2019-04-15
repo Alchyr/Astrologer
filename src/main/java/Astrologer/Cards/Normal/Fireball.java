@@ -1,4 +1,4 @@
-package Astrologer.Cards.Meteors;
+package Astrologer.Cards.Normal;
 
 import Astrologer.Abstracts.StarCard;
 import Astrologer.Enums.CustomTags;
@@ -23,7 +23,7 @@ public class Fireball extends StarCard {
             "Fireball",
             2,
             CardType.ATTACK,
-            CardTarget.NONE,
+            CardTarget.ENEMY,
             CardRarity.UNCOMMON
     );
 
@@ -37,16 +37,17 @@ public class Fireball extends StarCard {
 
     public Fireball()
     {
-        super(cardInfo, true);
-        this.tags.add(CustomTags.METEOR);
+        super(cardInfo,false);
 
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(DEBUFF, UPG_DEBUFF);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new FireballEffect(p.hb.cX, p.hb.cY + MathUtils.random(200, 250) * Settings.scale, m.hb.cX, m.hb.cY), 0.5f));
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+        if (m != null)
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new FireballEffect(p.hb.cX, p.hb.cY + MathUtils.random(200, 250) * Settings.scale, m.hb.cX, m.hb.cY), 0.5f));
+
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new Starlit(m, this.magicNumber), this.magicNumber));
     }
 }

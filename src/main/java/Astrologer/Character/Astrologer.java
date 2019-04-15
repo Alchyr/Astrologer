@@ -3,6 +3,7 @@ package Astrologer.Character;
 import Astrologer.Cards.Basic.Defend;
 import Astrologer.Cards.Basic.Strike;
 import Astrologer.Cards.Stars.NorthStar;
+import Astrologer.Cards.Tarot.TheFool;
 import Astrologer.Enums.AttackEffectEnum;
 import Astrologer.Enums.CardColorEnum;
 import Astrologer.Relics.SkyMirror;
@@ -91,6 +92,7 @@ public class Astrologer extends CustomPlayer {
         startDeck.add(Defend.ID);
         startDeck.add(Defend.ID);
         startDeck.add(NorthStar.ID);
+        startDeck.add(TheFool.ID);
 
         return startDeck;
     }
