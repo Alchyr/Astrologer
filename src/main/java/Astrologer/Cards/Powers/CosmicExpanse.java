@@ -21,16 +21,14 @@ public class CosmicExpanse extends BaseCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    public final static int UPG_COST = 0;
-
-    public final static int BUFF = 7;
+    public final static int BUFF = 4;
+    public final static int UPG_BUFF = 3;
 
     public CosmicExpanse()
     {
         super(cardInfo, false);
 
-        setCostUpgrade(UPG_COST);
-        setMagic(BUFF);
+        setMagic(BUFF, UPG_BUFF);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

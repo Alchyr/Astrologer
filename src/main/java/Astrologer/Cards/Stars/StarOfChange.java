@@ -16,7 +16,7 @@ public class StarOfChange extends StarCard {
             "StarOfChange",
             1,
             CardType.SKILL,
-            CardTarget.ENEMY,
+            CardTarget.NONE,
             CardRarity.UNCOMMON
     );
 
@@ -25,6 +25,8 @@ public class StarOfChange extends StarCard {
     public StarOfChange()
     {
         super(cardInfo, true);
+
+        this.isEthereal = true;
     }
 
     @Override

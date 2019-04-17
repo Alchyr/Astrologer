@@ -21,7 +21,7 @@ public class CrystalBall extends BaseCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int DAMAGE = 7;
+    private final static int DAMAGE = 9;
     private final static int UPG_DAMAGE = 4;
 
     public CrystalBall()

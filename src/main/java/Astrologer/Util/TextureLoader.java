@@ -1,10 +1,13 @@
 package Astrologer.Util;
 
 import Astrologer.AstrologerMod;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import static Astrologer.AstrologerMod.assetPath;
@@ -43,6 +46,18 @@ public class TextureLoader {
             }
         }
         return textures.get(textureString);
+    }
+
+    public static String getAnimatedCardTextures(final String cardName, final AbstractCard.CardType cardType) throws FileNotFoundException
+    {
+        String fileName = getUncheckedTextureString("Animated/" + cardName, cardType);
+
+        if(!testTexture(fileName))
+        {
+            throw new FileNotFoundException(fileName + " was not found.");
+        }
+
+        return fileName;
     }
 
     public static String getCardTextureString(final String cardName, final AbstractCard.CardType cardType)
@@ -86,6 +101,28 @@ public class TextureLoader {
             }
         }
         //no exception, file exists
+        return textureString;
+    }
+
+    public static String getUncheckedTextureString(final String cardName, final AbstractCard.CardType cardType)
+    {
+        String textureString;
+
+        switch (cardType) {
+            case ATTACK:
+                textureString = assetPath("img/Cards/Attacks/" + cardName + ".png");
+                break;
+            case SKILL:
+                textureString = assetPath("img/Cards/Skills/" + cardName + ".png");
+                break;
+            case POWER:
+                textureString = assetPath("img/Cards/Powers/" + cardName + ".png");
+                break;
+            default:
+                textureString = assetPath("img/Cards/UnknownCard.png");
+                break;
+        }
+
         return textureString;
     }
 
@@ -151,5 +188,10 @@ public class TextureLoader {
     public static String HiDefPowerPath(String powerName)
     {
         return "img/Powers/HiDef/" + powerName + ".png";
+    }
+
+    public static boolean testTexture(String filePath)
+    {
+        return Gdx.files.internal(filePath).exists();
     }
 }

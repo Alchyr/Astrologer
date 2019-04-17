@@ -45,7 +45,7 @@ public class UseCardActionPatch {
         public int[] Locate(CtBehavior ctMethodToPatch) throws Exception
         {
             Matcher finalMatcher = new Matcher.MethodCallMatcher(CardGroup.class, "moveToDiscardPile");
-            return LineFinder.findAllInOrder(ctMethodToPatch, finalMatcher);
+            return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
         }
     }
 }

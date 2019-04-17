@@ -1,6 +1,8 @@
 package Astrologer.Abstracts;
 
+import Astrologer.AstrologerMod;
 import Astrologer.Enums.CardColorEnum;
+import Astrologer.Patches.AnimatedCardsPatch;
 import Astrologer.Util.CardInfo;
 import Astrologer.Util.TextureLoader;
 import basemod.abstracts.CustomCard;
@@ -10,6 +12,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 
 import static Astrologer.AstrologerMod.makeID;
+import static Astrologer.Util.TextureLoader.getAnimatedCardTextures;
 
 public abstract class BaseCard extends CustomCard {
     public static final CardColor COLOR = CardColorEnum.ASTROLOGER;
@@ -70,6 +73,18 @@ public abstract class BaseCard extends CustomCard {
         this.magicUpgrade = 0;
 
         InitializeCard();
+    }
+
+    public void loadFrames(String cardName, float frameRate)
+    {
+        try
+        {
+            AnimatedCardsPatch.load(this, frameRate, getAnimatedCardTextures(cardName, type));
+        }
+        catch (Exception e)
+        {
+            AstrologerMod.logger.error("Failed to load animated card image for " + cardName + ".");
+        }
     }
 
     //Methods meant for constructor use
@@ -210,5 +225,10 @@ public abstract class BaseCard extends CustomCard {
         FontHelper.cardDescFont_N.getData().setScale(1.0f);
         this.initializeTitle();
         this.initializeDescription();
+    }
+
+    @Override
+    public void update() {
+        super.update();
     }
 }

@@ -16,7 +16,7 @@ import static Astrologer.AstrologerMod.makeID;
 public class TheMagician extends StellarCard {
     private final static CardInfo cardInfo = new CardInfo(
             "TheMagician",
-            1,
+            2,
             CardType.ATTACK,
             CardTarget.ENEMY,
             CardRarity.UNCOMMON
@@ -28,7 +28,7 @@ public class TheMagician extends StellarCard {
 
     public TheMagician()
     {
-        super(cardInfo, true, STELLAR);
+        super(cardInfo, false, STELLAR);
 
         setDamage(CardsPlayedThisCombatPatch.cardsPlayedThisCombatCount);
     }
@@ -39,14 +39,7 @@ public class TheMagician extends StellarCard {
 
         super.applyPowers();
 
-        if (upgraded)
-        {
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + cardStrings.EXTENDED_DESCRIPTION[2];
-        }
-        else
-        {
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0] + cardStrings.EXTENDED_DESCRIPTION[1];
-        }
+        this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 
@@ -56,14 +49,10 @@ public class TheMagician extends StellarCard {
                 AbstractGameAction.AttackEffect.FIRE));
         if (stellarActive())
         {
-            AbstractDungeon.actionManager.addToBottom(new MagicianAction(this.upgraded));
+            AbstractDungeon.actionManager.addToBottom(new MagicianAction());
         }
 
-        if (!this.upgraded) {
-            this.rawDescription = cardStrings.DESCRIPTION;
-        } else {
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-        }
+        this.rawDescription = cardStrings.DESCRIPTION;
 
         this.initializeDescription();
     }

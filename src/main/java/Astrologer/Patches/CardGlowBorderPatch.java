@@ -24,21 +24,16 @@ public class CardGlowBorderPatch {
     public static void PostFix(CardGlowBorder __instance, AbstractCard c)
     {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            boolean changeColor = false;
             if (c.hasTag(CustomTags.SOLAR) && PhaseCheck.solarActive()) {
-                changeColor = true;
+                ReflectionHacks.setPrivate(__instance, AbstractGameEffect.class, "color", new Color(0.93f, 0.85f, 0.0f, 1.0f));
             }
             if (c.hasTag(CustomTags.LUNAR) && PhaseCheck.lunarActive()) {
-                changeColor = true;
+                ReflectionHacks.setPrivate(__instance, AbstractGameEffect.class, "color", new Color(0.9f, 0.9f, 0.9f, 1.0f));
             }
             if (c.hasTag(CustomTags.STELLAR) && c instanceof StellarCard) {
                 if (((StellarCard) c).stellarActive()) {
-                    changeColor = true;
+                    ReflectionHacks.setPrivate(__instance, AbstractGameEffect.class, "color", new Color(0.55f, 0.1f, 1.0f, 1.0f));
                 }
-            }
-
-            if (changeColor) {
-                ReflectionHacks.setPrivate(__instance, AbstractGameEffect.class, "color", Color.valueOf("edd900ff"));
             }
         }
     }

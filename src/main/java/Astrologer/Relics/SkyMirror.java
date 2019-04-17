@@ -3,9 +3,6 @@ package Astrologer.Relics;
 import Astrologer.Abstracts.BaseRelic;
 import Astrologer.AstrologerMod;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.relics.Necronomicon;
-import com.megacrit.cardcrawl.relics.PenNib;
-import com.megacrit.cardcrawl.relics.VelvetChoker;
 
 public class SkyMirror extends BaseRelic {
     public static final String NAME = "SkyMirror";
@@ -15,8 +12,7 @@ public class SkyMirror extends BaseRelic {
 
     public SkyMirror()
     {
-        super(ID, NAME,
-        RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, NAME, RelicTier.STARTER, LandingSound.MAGICAL);
     }
 
     @Override

@@ -4,6 +4,8 @@ import Astrologer.Abstracts.BaseCard;
 import Astrologer.Abstracts.SupermassiveCard;
 import Astrologer.Actions.Generic.PurgeExhaustPileAction;
 import Astrologer.Util.CardInfo;
+import Astrologer.Util.TextureLoader;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -23,19 +25,28 @@ public class BlackHole extends BaseCard {
             2,
             CardType.ATTACK,
             CardTarget.ENEMY,
-            CardRarity.RARE
+            CardRarity.UNCOMMON
     );
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int DAMAGE = 4;
-    private final static int UPG_DAMAGE = 1;
+    private final static int DAMAGE = 5;
+    private final static int UPG_DAMAGE = 2;
 
     public BlackHole()
     {
         super(cardInfo,true);
 
         setDamage(DAMAGE, UPG_DAMAGE);
+
+        if (MathUtils.randomBoolean(0.01f))
+        {
+            img = TextureLoader.getAndLoadCardTextureString("BlackHoleChan", cardInfo.cardType);
+            this.textureImg = img;
+            loadCardImage(textureImg);
+        }
+
+        setExhaust(true);
     }
 
     @Override

@@ -10,47 +10,21 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import java.util.HashMap;
 
 public class MagicianAction extends AbstractGameAction {
-    private boolean upgraded;
-
-    public MagicianAction(boolean upgraded)
+    public MagicianAction()
     {
-        this.upgraded = upgraded;
         this.actionType = ActionType.SPECIAL;
     }
 
     @Override
     public void update() {
-        HashMap<AbstractCard, CardGroup> unplayedCardMap = new HashMap<>();
-        CardGroup unplayedCards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        if (upgraded)
+        if (AbstractDungeon.player.drawPile.isEmpty())
         {
-            for (AbstractCard c : AbstractDungeon.player.discardPile.group)
-            {
-                if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.contains(c))
-                {
-                    unplayedCardMap.put(c, AbstractDungeon.player.discardPile);
-                    unplayedCards.addToRandomSpot(c);
-                }
-            }
-        }
-        for (AbstractCard c : AbstractDungeon.player.drawPile.group)
-        {
-            if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.contains(c))
-            {
-                unplayedCardMap.put(c, AbstractDungeon.player.drawPile);
-                unplayedCards.addToRandomSpot(c);
-            }
+            this.isDone = true;
+            return;
         }
 
-        if (!unplayedCardMap.isEmpty())
-        {
-            AbstractCard toPlay = unplayedCards.getBottomCard();
-            if (toPlay != null)
-            {
-                CardGroup sourceGroup = unplayedCardMap.get(toPlay);
-                AbstractDungeon.actionManager.addToTop(new PlayCardAction(toPlay, sourceGroup, false));
-            }
-        }
+        AbstractCard toPlay = AbstractDungeon.player.drawPile.getRandomCard(AbstractDungeon.cardRandomRng);
+        AbstractDungeon.actionManager.addToTop(new PlayCardAction(toPlay, AbstractDungeon.player.drawPile, false));
 
         this.isDone = true;
     }

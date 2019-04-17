@@ -17,14 +17,14 @@ public class HeatDeath extends BaseCard {
     private final static CardInfo cardInfo = new CardInfo(
             "HeatDeath",
             2,
-            CardType.SKILL,
-            CardTarget.NONE,
+            CardType.ATTACK,
+            CardTarget.ALL_ENEMY,
             CardRarity.RARE
     );
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int DAMAGE = 5;
+    private final static int DAMAGE = 6;
     private final static int UPG_DAMAGE = 2;
 
     public HeatDeath()
@@ -34,6 +34,8 @@ public class HeatDeath extends BaseCard {
         setDamage(DAMAGE, UPG_DAMAGE);
 
         setExhaust(true);
+
+        loadFrames(cardInfo.cardName, 0.04f);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

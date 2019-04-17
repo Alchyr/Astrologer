@@ -15,7 +15,7 @@ public class Novile extends BaseCard {
             1,
             CardType.SKILL,
             CardTarget.NONE,
-            CardRarity.RARE
+            CardRarity.UNCOMMON
     );
 
     public final static String ID = makeID(cardInfo.cardName);

@@ -16,16 +16,22 @@ public class TheHangedMan extends StellarCard {
             1,
             CardType.SKILL,
             CardTarget.NONE,
-            CardRarity.RARE
+            CardRarity.UNCOMMON
     );
 
     public final static String ID = makeID(cardInfo.cardName);
 
     private final static int STELLAR = 12;
 
+    private final static int UPG_COST = 0;
+
     public TheHangedMan()
     {
-        super(cardInfo,true, STELLAR);
+        super(cardInfo,false, STELLAR);
+
+        loadFrames(cardInfo.cardName, 0.25f);
+
+        setCostUpgrade(UPG_COST);
     }
 
     @Override
@@ -37,10 +43,6 @@ public class TheHangedMan extends StellarCard {
     @Override
     public void upgrade() {
         super.upgrade();
-        if (!AlwaysRetainField.alwaysRetain.get(this))
-        {
-            AlwaysRetainField.alwaysRetain.set(this, true);
-        }
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

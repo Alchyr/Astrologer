@@ -21,7 +21,7 @@ public class MeteorShower extends BaseCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int DAMAGE = 7;
+    private final static int DAMAGE = 6;
     private final static int UPG_DAMAGE = 3;
 
     public MeteorShower()

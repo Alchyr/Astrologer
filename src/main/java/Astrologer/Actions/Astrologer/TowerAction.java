@@ -42,5 +42,7 @@ public class TowerAction extends AbstractGameAction {
                 AbstractDungeon.actionManager.addToTop(new SFXAction("ORB_LIGHTNING_EVOKE"));
             }
         }
+
+        this.isDone = true;
     }
 }

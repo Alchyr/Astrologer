@@ -26,7 +26,7 @@ public class WheelofFortune extends StellarCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int COST = 15;
+    private final static int COST = 10;
 
     private final static int PLAY = 2;
     private final static int UPG_PLAY = 1;

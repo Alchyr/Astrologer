@@ -16,20 +16,6 @@
     "DESCRIPTION": "The #yStellar #yPhase starts at #b1, and increases whenever a #yStar is played or #yExhausted."
   },
   {
-    "PROPER_NAME": "Meteor",
-    "NAMES": [
-      "meteor"
-    ],
-    "DESCRIPTION": "When this card is #yExhausted, add a copy of it to your discard pile."
-  },
-  {
-    "PROPER_NAME": "Supermassive",
-    "NAMES": [
-      "supermassive"
-    ],
-    "DESCRIPTION": "At the end of your turn, #yExhaust this many random cards in your hand and perform this effect once for each card #yExhausted."
-  },
-  {
     "PROPER_NAME": "Alignment",
     "NAMES": [
       "solar",

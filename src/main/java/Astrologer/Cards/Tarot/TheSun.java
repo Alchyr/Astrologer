@@ -36,6 +36,7 @@ public class TheSun extends StellarCard {
     {
         super(cardInfo, false, STELLAR);
         tags.add(CustomTags.SOLAR);
+        tags.add(CustomTags.STAR);
 
         setExhaust(true);
 

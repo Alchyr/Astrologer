@@ -42,13 +42,6 @@ public class PrismaticPower extends BasePower {
     }
 
     public void updateDescription() {
-        if (this.amount == 1)
-        {
-            this.description = descriptions[0] + this.amount + descriptions[1];
-        }
-        else
-        {
-            this.description = descriptions[0] + this.amount + descriptions[2];
-        }
+        this.description = descriptions[0] + this.amount + descriptions[1];
     }
 }

@@ -70,7 +70,8 @@
   "astrologer:Confirmation": {
     "NAME": "Confirmation",
     "DESCRIPTIONS": [
-      "Whenever you put a card onto the bottom of your draw pile, it costs 0 until played."
+      "Whenever you draw the same card multiple times in a single turn, deal #b",
+      " damage to ALL enemies."
     ]
   },
   "astrologer:Glimpse": {

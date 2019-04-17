@@ -27,7 +27,7 @@ public class Quincunx extends BaseCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int DEBUFF = 3;
+    private final static int DEBUFF = 4;
     private final static int UPG_DEBUFF = 2;
 
     public Quincunx()

@@ -16,14 +16,14 @@ public class Strength extends StellarCard {
             0,
             CardType.SKILL,
             CardTarget.NONE,
-            CardRarity.RARE
+            CardRarity.UNCOMMON
     );
 
     public final static String ID = makeID(cardInfo.cardName);
 
     private final static int STELLAR = 8;
 
-    private final static int BUFF = 2;
+    private final static int BUFF = 1;
     private final static int UPG_BUFF = 1;
 
     public Strength()
@@ -31,18 +31,18 @@ public class Strength extends StellarCard {
         super(cardInfo, false, STELLAR);
 
         setMagic(BUFF, UPG_BUFF);
+        setExhaust(true);
     }
 
     @Override
     public void applyPowers() {
         super.applyPowers();
-        this.exhaust = stellarActive();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int strength = this.magicNumber;
         if (stellarActive())
         {
-            int strength = 0;
             for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters)
             {
                 if (!mo.isDeadOrEscaped())
@@ -50,7 +50,7 @@ public class Strength extends StellarCard {
                     strength += this.magicNumber;
                 }
             }
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, strength), strength));
         }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, strength), strength));
     }
 }

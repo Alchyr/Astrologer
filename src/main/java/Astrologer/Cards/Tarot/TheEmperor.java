@@ -24,7 +24,7 @@ public class TheEmperor extends StellarCard {
 
     private final static int STELLAR = 4;
 
-    private final static int DEBUFF = 3;
+    private final static int DEBUFF = 4;
     private final static int UPG_DEBUFF = 2;
 
     public TheEmperor()

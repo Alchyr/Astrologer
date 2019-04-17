@@ -126,11 +126,11 @@
   },
   "astrologer:SpaceDust": {
     "NAME": "Nebula",
-    "DESCRIPTION": "Retain. NL Deal !D! damage. NL When this card is Exhausted, add a copy of it to your draw pile."
+    "DESCRIPTION": "Retain. NL Gain !B! Block. NL When this card is Exhausted, add a copy of it to your draw pile."
   },
   "astrologer:Cataclysm": {
     "NAME": "Cataclysm",
-    "DESCRIPTION": "This card can only be played if it costs 0. NL Whenever you draw this card, reduce its cost by 1 for the combat. NL Deal !D! damage to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "When this card is drawn, reduce its cost by 1 for the combat. NL Deal !D! damage to ALL enemies. NL Exhaust."
   },
   "astrologer:Fireball": {
     "NAME": "Fireball",
@@ -184,10 +184,10 @@
   },
   "astrologer:Novile": {
     "NAME": "Novile",
-    "DESCRIPTION": "Ethereal. NL When this card is drawn, gain [E] .",
+    "DESCRIPTION": "Ethereal. NL When this card is drawn, gain [E].",
     "EXTENDED_DESCRIPTION": [
-      "Ethereal. NL When this card is drawn, gain ",
-      "[E] ",
+      "Ethereal. NL When this card is drawn, gain",
+      " [E]",
       "."
     ]
   },
@@ -196,8 +196,8 @@
     "DESCRIPTION": "Purge all cards in your Exhaust pile. NL Deal !D! damage for each Purged card. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain. NL Purge all cards in your Exhaust pile. NL Deal !D! damage for each Purged card. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "Purge all cards in your Exhaust pile. NL Deal !D! damage for each Purged card. NL Exhaust. NL (Deals !D! damage.)",
-      "Retain. NL Purge all cards in your Exhaust pile. NL Deal !D! damage for each Purged card. NL Exhaust. NL (Deals !D! damage.)"
+      "Purge all cards in your Exhaust pile. NL Deal !D! damage for each Purged card. NL Exhaust. NL (Deals !M! damage.)",
+      "Retain. NL Purge all cards in your Exhaust pile. NL Deal !D! damage for each Purged card. NL Exhaust. NL (Deals !M! damage.)"
     ]
   },
   "astrologer:MeteorShower": {
@@ -224,17 +224,14 @@
   },
   "astrologer:TheMagician": {
     "NAME": "The Magician",
-    "DESCRIPTION": "Deal damage equal to the number of cards played this combat. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play a random card from your draw pile that you have not played this combat.",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to the number of cards played this combat. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play a random card from your draw pile or discard pile that you have not played this combat.",
+    "DESCRIPTION": "Deal damage equal to the number of cards played this combat. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play a random card from your draw pile.",
     "EXTENDED_DESCRIPTION": [
-      "Deal damage equal to the number of cards played this combat. NL (Deals !D! damage.)",
-      " NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play a random card from your draw pile that you have not played this combat.",
-      " NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play a random card from your draw pile or discard pile that you have not played this combat."
+      "Deal damage equal to the number of cards played this combat. NL (Deals !D! damage.) NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play a random card from your draw pile."
     ]
   },
   "astrologer:TheHighPriestess": {
     "NAME": "The High Priestess",
-    "DESCRIPTION": "Reduce the cost of the top card of your draw pile by !M! for the rest of combat. NL Exhaust. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Reduce the cost of the previous card played by !M! for the rest of combat."
+    "DESCRIPTION": "Reduce the cost of the top card of your draw pile by !M! for the rest of combat. NL Exhaust. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Also reduce the cost of the last card played."
   },
   "astrologer:TheEmpress": {
     "NAME": "The Empress",
@@ -250,7 +247,7 @@
   },
   "astrologer:TheLovers": {
     "NAME": "The Lovers",
-    "DESCRIPTION": "Choose two cards in your hand. Exchange their costs for the rest of combat. NL Exhaust. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: The chosen cards will be played twice the next time you play them."
+    "DESCRIPTION": "Exchange the costs of two cards in your hand for the rest of combat. NL Exhaust. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: The chosen cards will be played twice the next time you play them."
   },
   "astrologer:TheChariot": {
     "NAME": "The Chariot",
@@ -258,7 +255,7 @@
   },
   "astrologer:Strength": {
     "NAME": "Strength",
-    "DESCRIPTION": "[#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Gain !M! Strength for each enemy in combat. Exhaust."
+    "DESCRIPTION": "Gain !M! Strength. NL Exhaust. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Gain !M! Strength for each enemy in combat."
   },
   "astrologer:TheHermit": {
     "NAME": "The Hermit",
@@ -269,7 +266,7 @@
   },
   "astrologer:WheelofFortune": {
     "NAME": "Wheel of Fortune",
-    "DESCRIPTION": "Lose 15 Gold. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play !M! random [#ccf3ff]Stellar[] cards. Their [#ccf3ff]Stellar[] effects are triggered."
+    "DESCRIPTION": "Lose 10 Gold. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play !M! random [#ccf3ff]Stellar[] cards. Their [#ccf3ff]Stellar[] effects are triggered."
   },
   "astrologer:Justice": {
     "NAME": "Justice",
@@ -277,8 +274,7 @@
   },
   "astrologer:TheHangedMan": {
     "NAME": "The Hanged Man",
-    "DESCRIPTION": "[#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Choose a card in your hand. Exhaust ALL cards in your draw pile. Add a copy of the chosen card to your draw pile for each card Exhausted. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Choose a card in your hand. Exhaust ALL cards in your draw pile. Add a copy of the chosen card to your draw pile for each card Exhausted. NL Exhaust."
+    "DESCRIPTION": "[#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Choose a card in your hand. Exhaust your draw pile. Add a copy of the chosen card to your draw pile for each card Exhausted. NL Exhaust."
   },
   "astrologer:Death": {
     "NAME": "Death",
@@ -323,7 +319,7 @@
   },
   "astrologer:TheWorld": {
     "NAME": "The World",
-    "DESCRIPTION": "Ethereal. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Set the HP of ALL creatures to 1. NL Exhaust."
+    "DESCRIPTION": "[#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Reset your deck to the beginning of combat, except for this card. NL Purge."
   },
   "astrologer:Starfield": {
     "NAME": "Astral Form",
@@ -341,6 +337,10 @@
     "NAME": "Nova",
     "DESCRIPTION": "Trigger astrologer:Starlit !M! time at the end of your turn.",
     "UPGRADE_DESCRIPTION": "Trigger astrologer:Starlit !M! times at the end of your turn."
+  },
+  "astrologer:Confirmation": {
+    "NAME": "Confirmation",
+    "DESCRIPTION": "Whenever you draw the same card multiple times in a single turn, deal !M! damage to ALL enemies."
   },
   "astrologer:Glimpse": {
     "NAME": "Glimpse",

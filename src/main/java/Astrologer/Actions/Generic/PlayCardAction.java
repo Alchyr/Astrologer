@@ -53,7 +53,7 @@ public class PlayCardAction extends AbstractGameAction {
         }
 
         card.freeToPlayOnce = true;
-        card.exhaustOnUseOnce = this.exhaustCards;
+        card.exhaustOnUseOnce = this.exhaustCards && !(card.type == AbstractCard.CardType.POWER);
 
         AbstractMonster cardTarget = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
 
@@ -69,7 +69,7 @@ public class PlayCardAction extends AbstractGameAction {
 
                 AbstractDungeon.effectList.add(new ExhaustCardEffect(card));
             } else {
-                if (target != null) {
+                if (cardTarget != null) {
                     card.calculateCardDamage(cardTarget);
                 }
                 AbstractDungeon.player.limbo.addToBottom(card);
@@ -91,6 +91,10 @@ public class PlayCardAction extends AbstractGameAction {
             }
         } else {
             card.applyPowers();
+            if (cardTarget != null)
+            {
+                card.calculateCardDamage(cardTarget);
+            }
             if (sourceGroup.type != CardGroup.CardGroupType.HAND)
             {
                 sourceGroup.removeCard(card);

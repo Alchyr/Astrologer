@@ -22,7 +22,7 @@ public class RejectReality extends BaseCard {
             "RejectReality",
             3,
             CardType.ATTACK,
-            CardTarget.NONE,
+            CardTarget.ENEMY,
             CardRarity.RARE
     );
 

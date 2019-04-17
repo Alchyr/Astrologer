@@ -24,7 +24,7 @@ public class TheMoon extends StellarCard {
             2,
             CardType.SKILL,
             CardTarget.NONE,
-            CardRarity.RARE
+            CardRarity.UNCOMMON
     );
 
     public final static String ID = makeID(cardInfo.cardName);
@@ -33,7 +33,7 @@ public class TheMoon extends StellarCard {
 
     private final static int UPG_COST = 1;
 
-    private final static int DEBUFF = 3;
+    private final static int DEBUFF = 5;
 
     public TheMoon()
     {

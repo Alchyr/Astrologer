@@ -24,8 +24,8 @@ public class CometStrike extends BaseCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int DAMAGE = 8;
-    private final static int UPG_DAMAGE = 3;
+    private final static int DAMAGE = 9;
+    private final static int UPG_DAMAGE = 1;
 
     private final static int DRAW = 2;
 

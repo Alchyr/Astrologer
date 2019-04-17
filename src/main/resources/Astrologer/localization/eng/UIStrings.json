@@ -16,23 +16,28 @@
   },
   "astrologer:Lovers": {
     "TEXT": [
-      "Exchange the Costs."
+      "Exchange the Costs"
     ]
   },
   "astrologer:HangedMan": {
     "TEXT": [
-      "Duplicate."
+      "Duplicate"
+    ]
+  },
+  "astrologer:PlayAction": {
+    "TEXT": [
+      "Play"
     ]
   },
   "astrologer:ToDeck": {
     "TEXT": [
-      "Put on the Bottom of Your Draw Pile.",
-      "Put on the Top of Your Draw Pile."
+      "Put on the Bottom of Your Draw Pile",
+      "Put on the Top of Your Draw Pile"
     ]
   },
   "astrologer:Prestidigitation": {
     "TEXT": [
-      "Put on the Bottom of Your Draw Pile."
+      "Put on the Bottom of Your Draw Pile"
     ]
   },
   "astrologer:MaxHP": {
