@@ -75,11 +75,11 @@ public abstract class BaseCard extends CustomCard {
         InitializeCard();
     }
 
-    public void loadFrames(String cardName, float frameRate)
+    public void loadFrames(String cardName, int frameCount, float frameRate)
     {
         try
         {
-            AnimatedCardsPatch.load(this, frameRate, getAnimatedCardTextures(cardName, type));
+            AnimatedCardsPatch.load(this, frameCount, frameRate, getAnimatedCardTextures(cardName, type));
         }
         catch (Exception e)
         {

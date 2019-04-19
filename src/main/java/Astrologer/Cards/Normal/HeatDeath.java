@@ -24,7 +24,7 @@ public class HeatDeath extends BaseCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int DAMAGE = 6;
+    private final static int DAMAGE = 7;
     private final static int UPG_DAMAGE = 2;
 
     public HeatDeath()
@@ -35,7 +35,7 @@ public class HeatDeath extends BaseCard {
 
         setExhaust(true);
 
-        loadFrames(cardInfo.cardName, 0.04f);
+        loadFrames(cardInfo.cardName,25,0.04f);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

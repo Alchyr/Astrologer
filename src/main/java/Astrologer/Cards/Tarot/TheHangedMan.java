@@ -29,7 +29,7 @@ public class TheHangedMan extends StellarCard {
     {
         super(cardInfo,false, STELLAR);
 
-        loadFrames(cardInfo.cardName, 0.25f);
+        loadFrames(cardInfo.cardName,16,0.20f);
 
         setCostUpgrade(UPG_COST);
     }

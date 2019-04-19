@@ -13,11 +13,11 @@
       "Put non-exhausting cards played onto the bottom of the draw pile."
     ]
   },
-  "astrologer:SomethingSpaceyOrStarry": {
-    "NAME": "SomethingSpaceyOrStarry",
-    "FLAVOR": "Spaaaaaaaaace.",
+  "astrologer:Telescope": {
+    "NAME": "Telescope",
+    "FLAVOR": "The lens is cracked, but it's still valuable for the memories.",
     "DESCRIPTIONS": [
-      "At the start of combat, increase the #yStellar #yPhase by 4."
+      "At the start of combat, increase the #yStellar #yPhase by #b4."
     ]
   },
   "astrologer:Zodiac": {

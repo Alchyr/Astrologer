@@ -35,7 +35,7 @@ public class SpaceDust extends BaseCard {
 
         setBlock(BLOCK, UPG_BLOCK);
 
-        AlwaysRetainField.alwaysRetain.set(this, true);
+        this.isEthereal = true;
     }
 
     @Override

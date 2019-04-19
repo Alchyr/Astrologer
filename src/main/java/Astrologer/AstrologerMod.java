@@ -8,6 +8,7 @@ import Astrologer.Enums.CustomTags;
 import Astrologer.Interfaces.OnExhaustCardCard;
 import Astrologer.Patches.StellarPhaseValue;
 import Astrologer.Relics.SkyMirror;
+import Astrologer.Relics.Telescope;
 import Astrologer.UI.StellarUI;
 import Astrologer.Util.*;
 import Astrologer.Variables.StellarVariable;
@@ -160,6 +161,7 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
     @Override
     public void receiveEditRelics() {
         BaseMod.addRelicToCustomPool(new SkyMirror(), CardColorEnum.ASTROLOGER);
+        BaseMod.addRelicToCustomPool(new Telescope(), CardColorEnum.ASTROLOGER);
     }
 
     @Override

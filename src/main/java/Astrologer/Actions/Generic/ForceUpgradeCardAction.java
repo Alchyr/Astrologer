@@ -100,13 +100,10 @@ public class ForceUpgradeCardAction extends AbstractGameAction {
     }
 
     private void returnCards() {
-        Iterator var1 = this.cannotUpgrade.iterator();
-
-        while(var1.hasNext()) {
-            AbstractCard c = (AbstractCard)var1.next();
+        for (AbstractCard c : this.cannotUpgrade)
+        {
             this.p.hand.addToTop(c);
         }
-
         for (AbstractCard c : toReUpgrade)
         {
             c.upgraded = true;

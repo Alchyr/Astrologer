@@ -8,6 +8,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class LoversAction extends AbstractGameAction {
     private static final float DURATION = 0.1f;
 
@@ -16,6 +20,8 @@ public class LoversAction extends AbstractGameAction {
 
     private boolean selecting;
     private boolean stellar;
+
+    private ArrayList<AbstractCard> cannotSwap = new ArrayList<>();
 
     public LoversAction(boolean stellar)
     {
@@ -31,23 +37,43 @@ public class LoversAction extends AbstractGameAction {
         AbstractCard a = null;
         AbstractCard b = null;
 
-        if (!selecting)
-        {
-            if (AbstractDungeon.player.hand.size() > 2) //Open window to choose two cards
-            {
-                selecting = true;
-                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 2, false, false);
+        //exclude anything with cost < 0
+
+        if (!selecting) {
+            for (AbstractCard c : AbstractDungeon.player.hand.group) {
+                if (c.cost < 0 || c.costForTurn < 0) {
+                    this.cannotSwap.add(c);
+                }
             }
-            else if (AbstractDungeon.player.hand.size() == 2)
-            {
-                //Auto-select
-                a = AbstractDungeon.player.hand.group.get(0);
-                b = AbstractDungeon.player.hand.group.get(1);
+            if (AbstractDungeon.player.hand.group.size() - this.cannotSwap.size() <= 1) {
                 this.isDone = true;
+                return;
             }
-            else //not enough cards
+            else if (AbstractDungeon.player.hand.group.size() - this.cannotSwap.size() == 2)
             {
-                this.isDone = true;
+                ArrayList<AbstractCard> canSwap = new ArrayList<>(AbstractDungeon.player.hand.group);
+                canSwap.removeAll(cannotSwap);
+
+                if (canSwap.size() == 2)
+                {
+                    a = canSwap.get(0);
+                    b = canSwap.get(1);
+                }
+            }
+            else
+            {
+                AbstractDungeon.player.hand.group.removeAll(this.cannotSwap);
+                if (AbstractDungeon.player.hand.size() >= 2)
+                {
+                    selecting = true;
+                    AbstractDungeon.handCardSelectScreen.open(TEXT[0], 2, false, false);
+                    return;
+                }
+                else
+                {
+                    this.returnCards();
+                    this.isDone = true;
+                }
             }
         }
         else
@@ -65,6 +91,7 @@ public class LoversAction extends AbstractGameAction {
                     AbstractDungeon.player.hand.addToTop(c);
                 }
                 AbstractDungeon.handCardSelectScreen.selectedCards.group.clear();
+                this.returnCards();
             }
             this.isDone = true;
         }
@@ -75,6 +102,7 @@ public class LoversAction extends AbstractGameAction {
             boolean costModifiedA = a.isCostModified;
             boolean turnCostModifiedA = a.isCostModifiedForTurn;
             boolean freeToPlayOnceA = a.freeToPlayOnce;
+
             int costA = a.cost;
             int costForTurnA = a.costForTurn;
 
@@ -99,5 +127,14 @@ public class LoversAction extends AbstractGameAction {
                 AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoversPower(AbstractDungeon.player, true, a), 1));
             }
         }
+    }
+
+    private void returnCards() {
+        for (AbstractCard c : this.cannotSwap)
+        {
+            AbstractDungeon.player.hand.addToTop(c);
+        }
+
+        AbstractDungeon.player.hand.refreshHandLayout();
     }
 }

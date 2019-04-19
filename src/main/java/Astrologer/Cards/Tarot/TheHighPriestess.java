@@ -1,15 +1,24 @@
 package Astrologer.Cards.Tarot;
 
 import Astrologer.Abstracts.StellarCard;
+import Astrologer.Actions.Generic.ReduceCostByAmountAction;
+import Astrologer.Actions.Generic.ReduceRandomCostAction;
 import Astrologer.Util.CardInfo;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.colorless.Madness;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.cardManip.CardFlashVfx;
+
+import java.util.ArrayList;
 
 import static Astrologer.AstrologerMod.makeID;
 
@@ -37,22 +46,21 @@ public class TheHighPriestess extends StellarCard {
         setCostUpgrade(UPG_COST);
         setMagic(REDUCTION);
 
+        loadFrames(cardInfo.cardName, 30, 0.13f);
+
         this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //add sfx
-        if (!p.drawPile.group.isEmpty())
-        {
-            //add sparkle effect on deck
-            p.drawPile.getTopCard().modifyCostForCombat(-this.magicNumber);
-        }
+        AbstractDungeon.actionManager.addToBottom(new ReduceRandomCostAction(this.magicNumber));
         if (stellarActive())
         {
             //card.use is called after card is added to actionmanager.cardsPlayedThisCombat, so get size-2 instead of size-1
             if (AbstractDungeon.actionManager.cardsPlayedThisCombat.size() >= 2)
             {
-                AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 2).modifyCostForCombat(-this.magicNumber);
+                AbstractCard c = AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 2);
+                if (c.cost >= 0 || c.costForTurn >= 0)
+                    AbstractDungeon.actionManager.addToBottom(new ReduceCostByAmountAction(c.uuid, this.magicNumber));
             }
         }
     }

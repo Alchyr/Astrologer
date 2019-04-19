@@ -40,7 +40,7 @@ public class TheFool extends StellarCard {
         setDamage(DAMAGE, UPG_DAMAGE);
         setBlock(BLOCK, UPG_BLOCK);
 
-        loadFrames(cardInfo.cardName, 0.05f);
+        loadFrames(cardInfo.cardName,28,0.07f);
 
         this.isInnate = true;
     }

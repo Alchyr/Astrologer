@@ -28,9 +28,19 @@ public class TheMagician extends StellarCard {
 
     public TheMagician()
     {
-        super(cardInfo, false, STELLAR);
+        super(cardInfo, true, STELLAR);
 
         setDamage(CardsPlayedThisCombatPatch.cardsPlayedThisCombatCount);
+
+        loadFrames(cardInfo.cardName, 37, 0.15f);
+
+        this.isEthereal = true;
+    }
+
+    @Override
+    public void upgrade() {
+        super.upgrade();
+        this.isEthereal = false;
     }
 
     @Override
@@ -39,7 +49,7 @@ public class TheMagician extends StellarCard {
 
         super.applyPowers();
 
-        this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
+        this.rawDescription = upgraded ? cardStrings.EXTENDED_DESCRIPTION[1] : cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 
@@ -52,7 +62,7 @@ public class TheMagician extends StellarCard {
             AbstractDungeon.actionManager.addToBottom(new MagicianAction());
         }
 
-        this.rawDescription = cardStrings.DESCRIPTION;
+        this.rawDescription = upgraded ? cardStrings.UPGRADE_DESCRIPTION : cardStrings.DESCRIPTION;
 
         this.initializeDescription();
     }

@@ -39,7 +39,7 @@ public class FatePower extends BasePower implements ActivateStellarPower {
         }
         else
         {
-            this.description = descriptions[1] + descriptions[2];
+            this.description = descriptions[1] + this.amount + descriptions[2];
         }
     }
 }

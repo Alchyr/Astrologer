@@ -22,8 +22,8 @@ public class Glimpse extends BaseCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int BUFF = 2;
-    private final static int UPG_BUFF = 1;
+    private final static int BUFF = 3;
+    private final static int UPG_BUFF = 2;
 
     public Glimpse()
     {

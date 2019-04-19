@@ -12,6 +12,14 @@
       "ALL cards are #yStars."
     ]
   },
+  "astrologer:DarkMatter": {
+    "NAME": "Dark Matter",
+    "DESCRIPTIONS": [
+      "The first time a card is Exhausted each turn that is not a Status or Curse, add a copy of it to your Draw Pile.",
+      "The first #b",
+      " times a card is Exhausted each turn that is not a Status or Curse, add a copy of it to your Draw Pile."
+    ]
+  },
   "astrologer:FrozenStar": {
     "NAME": "Frozen Star",
     "DESCRIPTIONS": [
@@ -123,8 +131,8 @@
       "At the start of your turn, draw #b",
       " card and put #b",
       " cards and put #b",
-      " card at the bottom of your draw pile.",
-      " cards at the bottom of your draw pile."
+      " card at the bottom of your Draw Pile.",
+      " cards at the bottom of your Draw Pile."
     ]
   },
   "astrologer:Fate": {

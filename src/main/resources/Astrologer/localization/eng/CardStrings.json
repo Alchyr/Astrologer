@@ -40,7 +40,8 @@
   },
   "astrologer:Wish": {
     "NAME": "Wish",
-    "DESCRIPTION": "Costs 1 less [E] for each astrologer:Star card Exhausted this combat. NL Gain !B! Block. NL Draw !M! cards."
+    "DESCRIPTION": "Costs 1 less [E] for each astrologer:Star card Exhausted this combat. NL Gain !B! Block. NL Draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Costs 1 less [E] for each astrologer:Star card Exhausted this combat. NL Gain !B! Block. NL Draw !M! cards."
   },
   "astrologer:NewMoon": {
     "NAME": "New Moon",
@@ -126,7 +127,7 @@
   },
   "astrologer:SpaceDust": {
     "NAME": "Nebula",
-    "DESCRIPTION": "Retain. NL Gain !B! Block. NL When this card is Exhausted, add a copy of it to your draw pile."
+    "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL When this card is Exhausted, add a copy of it to your draw pile."
   },
   "astrologer:Cataclysm": {
     "NAME": "Cataclysm",
@@ -142,7 +143,7 @@
   },
   "astrologer:StarOfMisfortune": {
     "NAME": "Star of Misfortune",
-    "DESCRIPTION": "astrologer:Star. NL Apply !M! Weak. Apply !M! Vulnerable."
+    "DESCRIPTION": "astrologer:Star. NL Apply !M! Weak. NL Apply !M! Vulnerable."
   },
   "astrologer:Prestidigitation": {
     "NAME": "Prestidigitation",
@@ -224,14 +225,16 @@
   },
   "astrologer:TheMagician": {
     "NAME": "The Magician",
-    "DESCRIPTION": "Deal damage equal to the number of cards played this combat. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play a random card from your draw pile.",
+    "DESCRIPTION": "Ethereal. NL Deal damage equal to the number of cards played this combat. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play a random card from your draw pile.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to the number of cards played this combat. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play a random card from your draw pile.",
     "EXTENDED_DESCRIPTION": [
+      "Ethereal. NL Deal damage equal to the number of cards played this combat. NL (Deals !D! damage.) NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play a random card from your draw pile.",
       "Deal damage equal to the number of cards played this combat. NL (Deals !D! damage.) NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play a random card from your draw pile."
     ]
   },
   "astrologer:TheHighPriestess": {
     "NAME": "The High Priestess",
-    "DESCRIPTION": "Reduce the cost of the top card of your draw pile by !M! for the rest of combat. NL Exhaust. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Also reduce the cost of the last card played."
+    "DESCRIPTION": "Reduce the cost of a random card in your hand by !M! for the rest of combat. NL Exhaust. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Also reduce the cost of the last card played."
   },
   "astrologer:TheEmpress": {
     "NAME": "The Empress",
@@ -296,10 +299,8 @@
   "astrologer:TheStar": {
     "NAME": "The Star",
     "DESCRIPTION": "astrologer:Star. NL Deal damage equal to the current astrologer:Stellar_Phase to ALL enemies. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Deals twice as much damage.",
-    "UPGRADE_DESCRIPTION": "astrologer:Star. NL Deal damage equal to twice the current astrologer:Stellar_Phase to ALL enemies. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Deals twice as much damage.",
     "EXTENDED_DESCRIPTION": [
-      "astrologer:Star. NL Deal damage equal to the current astrologer:Stellar_Phase to ALL enemies. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Deals twice as much damage. NL (Deals !D! damage.)",
-      "astrologer:Star. NL Deal damage equal to twice the current astrologer:Stellar_Phase to ALL enemies. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Deals twice as much damage. NL (Deals !D! damage.)"
+      "astrologer:Star. NL Deal damage equal to the current astrologer:Stellar_Phase to ALL enemies. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Deals twice as much damage. NL (Deals !D! damage.)"
     ]
   },
   "astrologer:TheMoon": {
@@ -332,6 +333,11 @@
   "astrologer:Premonition": {
     "NAME": "Premonition",
     "DESCRIPTION": "Whenever you draw an Ethereal card, draw a card."
+  },
+  "astrologer:DarkMatter": {
+    "NAME": "Dark Matter",
+    "DESCRIPTION": "The first time a card is Exhausted each turn that is not a Status or Curse, add a copy of it to your Draw Pile.",
+    "UPGRADE_DESCRIPTION": "Innate. NL The first time a card is Exhausted each turn that is not a Status or Curse, add a copy of it to your Draw Pile."
   },
   "astrologer:Nova": {
     "NAME": "Nova",

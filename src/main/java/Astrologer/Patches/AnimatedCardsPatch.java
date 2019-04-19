@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class AnimatedCardsPatch {
-    public static void load(AbstractCard c, float frameRate, String frames)
+    public static void load(AbstractCard c, int frameCount, float frameRate, String frames)
     {
         if (!AnimationInfo.cardFrames.containsKey(c.cardID))
         {
@@ -47,12 +47,27 @@ public class AnimatedCardsPatch {
 
             //load atlas regions and frame counts
             Texture cardFramesTexture = CustomCard.imgMap.get(frames);
-            int frameCount = cardFramesTexture.getWidth() / 250;
+            int columnCount = cardFramesTexture.getWidth() / 250;
+            int rowCount = cardFramesTexture.getHeight() / 190;
             TextureAtlas.AtlasRegion[] frameRegions = new TextureAtlas.AtlasRegion[frameCount];
 
-            for (int i = 0; i < frameRegions.length; ++i)
+            int currentFrame = 0;
+            for (int y = 0; y < rowCount; ++y)
             {
-                frameRegions[i] = new TextureAtlas.AtlasRegion(cardFramesTexture, i * 250, 0, 250, 190);
+                for (int x = 0; x < columnCount; ++x)
+                {
+                    frameRegions[currentFrame] = new TextureAtlas.AtlasRegion(cardFramesTexture, x * 250, y * 190, 250, 190);
+                    currentFrame++;
+
+                    if (currentFrame >= frameCount)
+                    {
+                        break;
+                    }
+                }
+                if (currentFrame >= frameCount)
+                {
+                    break;
+                }
             }
 
             AnimationInfo.cardFrames.put(c.cardID, frameRegions);
@@ -66,12 +81,27 @@ public class AnimatedCardsPatch {
                 }
 
                 cardFramesTexture = CustomCard.imgMap.get(portraitFrames);
-                frameCount = cardFramesTexture.getWidth() / 500;
-
+                columnCount = cardFramesTexture.getWidth() / 500;
+                rowCount = cardFramesTexture.getHeight() / 380;
                 TextureAtlas.AtlasRegion[] portraitFrameRegions = new TextureAtlas.AtlasRegion[frameCount];
-                for (int i = 0; i < portraitFrameRegions.length; ++i)
+
+                currentFrame = 0;
+                for (int y = 0; y < rowCount; ++y)
                 {
-                    portraitFrameRegions[i] = new TextureAtlas.AtlasRegion(cardFramesTexture, i * 500, 0, 500, 380);
+                    for (int x = 0; x < columnCount; ++x)
+                    {
+                        portraitFrameRegions[currentFrame] = new TextureAtlas.AtlasRegion(cardFramesTexture, x * 500, y * 380, 500, 380);
+                        currentFrame++;
+
+                        if (currentFrame >= frameCount)
+                        {
+                            break;
+                        }
+                    }
+                    if (currentFrame >= frameCount)
+                    {
+                        break;
+                    }
                 }
 
                 AnimationInfo.cardPortraitFrames.put(c.cardID, portraitFrameRegions);

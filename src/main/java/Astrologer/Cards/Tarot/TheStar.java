@@ -25,9 +25,11 @@ public class TheStar extends StellarCard {
 
     private final static int STELLAR = 17;
 
+    private final static int UPG_COST = 1;
+
     public TheStar()
     {
-        super(cardInfo, true, STELLAR);
+        super(cardInfo, false, STELLAR);
         tags.add(CustomTags.STAR);
 
         if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player != null) {
@@ -38,37 +40,27 @@ public class TheStar extends StellarCard {
             setDamage(0);
         }
 
-        this.isMultiDamage = true;
-    }
+        setCostUpgrade(UPG_COST);
 
-    @Override
-    public void upgrade() {
-        super.upgrade();
-        if (AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player != null) {
-            setDamage(StellarPhaseValue.stellarPhase.get(AbstractDungeon.player) * 2);
-        }
-        else
-        {
-            setDamage(0);
-        }
+        this.isMultiDamage = true;
     }
 
     public void applyPowers()
     {
-        this.baseDamage = StellarPhaseValue.stellarPhase.get(AbstractDungeon.player) * (this.upgraded ? 2 : 1);
+        this.baseDamage = StellarPhaseValue.stellarPhase.get(AbstractDungeon.player);
         if (stellarActive())
             baseDamage *= 2;
 
         super.applyPowers();
 
-        this.rawDescription = upgraded ? cardStrings.EXTENDED_DESCRIPTION[1] : cardStrings.EXTENDED_DESCRIPTION[0];
+        this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
         this.initializeDescription();
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         super.calculateCardDamage(mo);
-        this.rawDescription = upgraded ? cardStrings.EXTENDED_DESCRIPTION[1] : cardStrings.EXTENDED_DESCRIPTION[0];
+        this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
         this.initializeDescription();
     }
 

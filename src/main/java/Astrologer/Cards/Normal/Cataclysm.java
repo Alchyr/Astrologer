@@ -47,6 +47,11 @@ public class Cataclysm extends BaseCard {
     public void triggerWhenDrawn()
     {
         updateCost(-1);
+        if (this.canUse(AbstractDungeon.player, null)) {
+            beginGlowing();
+        } else {
+            stopGlowing();
+        }
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

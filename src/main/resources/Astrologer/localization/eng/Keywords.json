@@ -5,7 +5,7 @@
       "star",
       "stars"
     ],
-    "DESCRIPTION": "When this card is played or #yExhausted, advance the #yStellar #yPhase and change the #yStellar #yAlignment."
+    "DESCRIPTION": "When this card is played or #yExhausted, increment the #yStellar #yPhase and change the #yStellar #yAlignment."
   },
   {
     "PROPER_NAME": "Stellar Phase",
