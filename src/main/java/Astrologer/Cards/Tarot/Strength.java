@@ -32,6 +32,8 @@ public class Strength extends StellarCard {
 
         setMagic(BUFF, UPG_BUFF);
         setExhaust(true);
+
+        loadFrames(cardInfo.cardName, 42, 0.13f);
     }
 
     @Override

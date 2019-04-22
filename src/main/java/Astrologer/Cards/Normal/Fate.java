@@ -29,6 +29,8 @@ public class Fate extends BaseCard {
 
         setExhaust(true);
         setCostUpgrade(UPG_COST);
+
+        loadFrames(cardInfo.cardName, 42, 0.07f);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

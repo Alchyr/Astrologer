@@ -36,7 +36,7 @@
   },
   "astrologer:CrystalBall": {
     "NAME": "Crystal Ball",
-    "DESCRIPTION": "Choose an enemy. At the start of its turn, if its intent is the same as its current intent, it loses !M! HP. NL Exhaust."
+    "DESCRIPTION": "Choose an enemy. At the start of each of its turns, if its intent is the same as its current intent, it loses !M! HP. NL Exhaust."
   },
   "astrologer:Wish": {
     "NAME": "Wish",
@@ -262,9 +262,9 @@
   },
   "astrologer:TheHermit": {
     "NAME": "The Hermit",
-    "DESCRIPTION": "Gain !B! Block for each card played this turn. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Put the bottom card of your draw pile into your hand. It costs 1 less this turn.",
+    "DESCRIPTION": "Gain !B! Block for each card played this turn. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Draw a card from the bottom card of your draw pile. It costs 1 less this turn.",
     "EXTENDED_DESCRIPTION": [
-      "Gain !B! Block for each card played this turn. NL (Gain !M! Block.) NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Put the bottom card of your draw pile into your hand. It costs 1 less this turn."
+      "Gain !B! Block for each card played this turn. NL (Gain !M! Block.) NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Draw a card from the bottom card of your draw pile. It costs 1 less this turn."
     ]
   },
   "astrologer:WheelofFortune": {
@@ -312,7 +312,7 @@
   },
   "astrologer:TheSun": {
     "NAME": "The Sun",
-    "DESCRIPTION": "astrologer:Star. NL astrologer:Solar: Deal !D! damage to ALL enemies. NL Exhaust. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: ALL enemies lose !M! HP."
+    "DESCRIPTION": "astrologer:Star. NL astrologer:Solar: Deal !D! damage to ALL enemies. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: ALL enemies lose !M! HP."
   },
   "astrologer:Judgement": {
     "NAME": "Judgement",
@@ -320,7 +320,7 @@
   },
   "astrologer:TheWorld": {
     "NAME": "The World",
-    "DESCRIPTION": "[#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Reset your deck to the beginning of combat, except for this card. NL Purge."
+    "DESCRIPTION": "Draw !M! cards. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Before drawing, reset your deck to the beginning of combat, except for this card. NL Purge."
   },
   "astrologer:Starfield": {
     "NAME": "Astral Form",
@@ -336,8 +336,8 @@
   },
   "astrologer:DarkMatter": {
     "NAME": "Dark Matter",
-    "DESCRIPTION": "The first time a card is Exhausted each turn that is not a Status or Curse, add a copy of it to your Draw Pile.",
-    "UPGRADE_DESCRIPTION": "Innate. NL The first time a card is Exhausted each turn that is not a Status or Curse, add a copy of it to your Draw Pile."
+    "DESCRIPTION": "The first time a card is Exhausted each turn that is not a Status or Curse, add a copy of it to your draw pile.",
+    "UPGRADE_DESCRIPTION": "Innate. NL The first time a card is Exhausted each turn that is not a Status or Curse, add a copy of it to your draw pile."
   },
   "astrologer:Nova": {
     "NAME": "Nova",

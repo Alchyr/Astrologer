@@ -27,7 +27,6 @@ public class ResetDeckAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, AbstractDungeon.player.gameHandSize)); //last;
         AbstractDungeon.actionManager.addToTop(new InitializeDeckAction(noReset));
         AbstractDungeon.actionManager.addToTop(new VFXAction(new LightFlareLEffect(AbstractDungeon.overlayMenu.combatDeckPanel.current_x, AbstractDungeon.overlayMenu.combatDeckPanel.current_y)));
         for (int i = 0; i < 30; i++)

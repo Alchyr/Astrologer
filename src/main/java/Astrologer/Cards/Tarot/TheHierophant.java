@@ -37,6 +37,8 @@ public class TheHierophant extends StellarCard {
 
         setBlock(BLOCK);
         setMagic(BUFF, UPG_BUFF);
+
+        loadFrames(cardInfo.cardName, 7, 0.12f);
     }
 
     @Override

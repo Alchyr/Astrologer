@@ -41,6 +41,8 @@ public class Judgement extends StellarCard {
 
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(REDUCTION);
+
+        loadFrames(cardInfo.cardName, 27, 0.12f);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

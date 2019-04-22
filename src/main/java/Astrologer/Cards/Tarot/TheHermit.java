@@ -1,9 +1,15 @@
 package Astrologer.Cards.Tarot;
 
 import Astrologer.Abstracts.StellarCard;
+import Astrologer.Actions.Generic.BottomToTopAction;
+import Astrologer.Actions.Generic.DrawAndSaveCardsAction;
+import Astrologer.Actions.Generic.ReduceDrawnCardCostsAction;
 import Astrologer.Util.CardInfo;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ShuffleAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -32,6 +38,8 @@ public class TheHermit extends StellarCard {
 
         setBlock(BLOCK, UPG_BLOCK);
         setMagic(0);
+
+        loadFrames(cardInfo.cardName, 5, 0.1f);
     }
 
     @Override
@@ -62,10 +70,23 @@ public class TheHermit extends StellarCard {
         {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.magicNumber));
         }
-        if (stellarActive() && !AbstractDungeon.player.drawPile.isEmpty())
+        if (stellarActive())
         {
-            p.drawPile.getBottomCard().modifyCostForTurn(-1);
-            AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(p.hand, p.drawPile, (c)->c.equals(p.drawPile.getBottomCard()),1));
+            if (AbstractDungeon.player.drawPile.isEmpty() && !AbstractDungeon.player.discardPile.isEmpty())
+            {
+                AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
+                AbstractDungeon.actionManager.addToBottom(new BottomToTopAction(p.drawPile));
+                DrawAndSaveCardsAction drawAction = new DrawAndSaveCardsAction(p,1);
+                AbstractDungeon.actionManager.addToBottom(drawAction);
+                AbstractDungeon.actionManager.addToBottom(new ReduceDrawnCardCostsAction(drawAction, 1));
+            }
+            else if (!AbstractDungeon.player.drawPile.isEmpty())
+            {
+                AbstractDungeon.actionManager.addToBottom(new BottomToTopAction(p.drawPile));
+                DrawAndSaveCardsAction drawAction = new DrawAndSaveCardsAction(p,1);
+                AbstractDungeon.actionManager.addToBottom(drawAction);
+                AbstractDungeon.actionManager.addToBottom(new ReduceDrawnCardCostsAction(drawAction, 1));
+            }
         }
 
         this.rawDescription = cardStrings.DESCRIPTION;

@@ -24,13 +24,12 @@ public class Divination extends BaseCard {
     public final static String ID = makeID(cardInfo.cardName);
 
     private final static int DRAW = 3;
-    private final static int UPG_DRAW = 1;
 
     public Divination()
     {
         super(cardInfo, true);
 
-        setMagic(DRAW, UPG_DRAW);
+        setMagic(DRAW);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

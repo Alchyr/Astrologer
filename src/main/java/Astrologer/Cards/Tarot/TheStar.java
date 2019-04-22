@@ -43,6 +43,8 @@ public class TheStar extends StellarCard {
         setCostUpgrade(UPG_COST);
 
         this.isMultiDamage = true;
+
+        loadFrames(cardInfo.cardName, 6, 0.12f);
     }
 
     public void applyPowers()

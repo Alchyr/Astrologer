@@ -9,6 +9,8 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 import javassist.CtBehavior;
@@ -25,8 +27,6 @@ public class AnimatedCardsPatch {
             AnimationInfo.frameRate.put(c.cardID, frameRate);
 
             //check for portrait animation
-            boolean hasPortraitAnimation = true;
-            String portraitFrames = "";
 
             if (!CustomCard.imgMap.containsKey(frames))
             {
@@ -35,14 +35,11 @@ public class AnimatedCardsPatch {
 
             int endingIndex = frames.lastIndexOf(".");
 
-            String portrait = frames.substring(0, endingIndex) + "_p" + frames.substring(endingIndex);
+            String portrait = frames.substring(0, endingIndex) + "_p" + frames.substring(endingIndex); //test for portrait animation
             if (TextureLoader.testTexture(portrait))
             {
-                portraitFrames = portrait;
-            }
-            else
-            {
-                hasPortraitAnimation = false;
+                AnimationInfo.portraitFramesPath.put(c.cardID, portrait);
+                AnimationInfo.cardPortraitFrames.put(c.cardID, null);
             }
 
             //load atlas regions and frame counts
@@ -71,48 +68,11 @@ public class AnimatedCardsPatch {
             }
 
             AnimationInfo.cardFrames.put(c.cardID, frameRegions);
-
-            //load portrait info
-            if (hasPortraitAnimation)
-            {
-                if (!CustomCard.imgMap.containsKey(portraitFrames))
-                {
-                    CustomCard.imgMap.put(portraitFrames, ImageMaster.loadImage(portraitFrames));
-                }
-
-                cardFramesTexture = CustomCard.imgMap.get(portraitFrames);
-                columnCount = cardFramesTexture.getWidth() / 500;
-                rowCount = cardFramesTexture.getHeight() / 380;
-                TextureAtlas.AtlasRegion[] portraitFrameRegions = new TextureAtlas.AtlasRegion[frameCount];
-
-                currentFrame = 0;
-                for (int y = 0; y < rowCount; ++y)
-                {
-                    for (int x = 0; x < columnCount; ++x)
-                    {
-                        portraitFrameRegions[currentFrame] = new TextureAtlas.AtlasRegion(cardFramesTexture, x * 500, y * 380, 500, 380);
-                        currentFrame++;
-
-                        if (currentFrame >= frameCount)
-                        {
-                            break;
-                        }
-                    }
-                    if (currentFrame >= frameCount)
-                    {
-                        break;
-                    }
-                }
-
-                AnimationInfo.cardPortraitFrames.put(c.cardID, portraitFrameRegions);
-            }
         }
 
 
         if (AnimationInfo.cardFrames.containsKey(c.cardID))
         {
-            if (AnimationInfo.cardPortraitFrames.containsKey(c.cardID))
-                AnimationInfo.hasPortraitAnimation.set(c, true);
             AnimationInfo.isAnimated.set(c, true);
             AnimationInfo.frameTime.set(c, frameRate);
             AnimationInfo.currentFrame.set(c, 0);
@@ -127,10 +87,11 @@ public class AnimatedCardsPatch {
     {
         public static HashMap<String, TextureAtlas.AtlasRegion[]> cardFrames = new HashMap<>();
         public static HashMap<String, TextureAtlas.AtlasRegion[]> cardPortraitFrames = new HashMap<>();
+        public static ArrayList<String> loadedPortraits = new ArrayList<>();
+        public static HashMap<String, String> portraitFramesPath = new HashMap<>();
         public static HashMap<String, Float> frameRate = new HashMap<>();
 
         public static SpireField<Boolean> isAnimated = new SpireField<>(()->false);
-        public static SpireField<Boolean> hasPortraitAnimation = new SpireField<>(()->false);
 
         public static SpireField<Float> frameTime = new SpireField<>(()->0.0f);
         public static SpireField<Integer> currentFrame = new SpireField<>(()->0);
@@ -186,6 +147,11 @@ public class AnimatedCardsPatch {
         {
             if (AnimationInfo.isAnimated.get(card))
             {
+                if (AnimationInfo.cardPortraitFrames.get(card.cardID) == null)
+                {
+                    clearPortraitFrames();
+                    loadPortraitFrames(card);
+                }
                 sb.draw(AnimationInfo.cardPortraitFrames.get(card.cardID)[AnimationInfo.currentFrame.get(card)], (float)Settings.WIDTH / 2.0F - 250.0F, (float)Settings.HEIGHT / 2.0F - 190.0F + 136.0F * Settings.scale, 250.0f, 190.0f, 500.0f, 380.0f, Settings.scale, Settings.scale, 0.0f);
 
                 return SpireReturn.Return(null);
@@ -322,5 +288,53 @@ public class AnimatedCardsPatch {
                 return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
             }
         }
+    }
+
+
+    private static void loadPortraitFrames(AbstractCard c)
+    {
+        //load portrait info
+        if (AnimationInfo.portraitFramesPath.containsKey(c.cardID))
+        {
+            Texture cardFramesTexture = ImageMaster.loadImage(AnimationInfo.portraitFramesPath.get(c.cardID));
+            int columnCount = cardFramesTexture.getWidth() / 500;
+            int rowCount = cardFramesTexture.getHeight() / 380;
+            int frameCount = AnimationInfo.cardFrames.get(c.cardID).length;
+            TextureAtlas.AtlasRegion[] portraitFrameRegions = new TextureAtlas.AtlasRegion[frameCount];
+
+            int currentFrame = 0;
+            for (int y = 0; y < rowCount; ++y)
+            {
+                for (int x = 0; x < columnCount; ++x)
+                {
+                    portraitFrameRegions[currentFrame] = new TextureAtlas.AtlasRegion(cardFramesTexture, x * 500, y * 380, 500, 380);
+                    currentFrame++;
+
+                    if (currentFrame >= frameCount)
+                    {
+                        break;
+                    }
+                }
+                if (currentFrame >= frameCount)
+                {
+                    break;
+                }
+            }
+
+            AnimationInfo.cardPortraitFrames.put(c.cardID, portraitFrameRegions);
+            AnimationInfo.loadedPortraits.add(c.cardID);
+        }
+    }
+    private static void clearPortraitFrames()
+    {
+        for (String id : AnimationInfo.loadedPortraits)
+        {
+            if (AnimationInfo.cardPortraitFrames.get(id) != null && AnimationInfo.cardPortraitFrames.get(id).length > 0)
+            {
+                AnimationInfo.cardPortraitFrames.get(id)[0].getTexture().dispose();
+            }
+            AnimationInfo.cardPortraitFrames.put(id, null);
+        }
+        AnimationInfo.loadedPortraits.clear();
     }
 }

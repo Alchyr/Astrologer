@@ -13,10 +13,10 @@ import static Astrologer.AstrologerMod.makeID;
 public class Temperance extends StellarCard {
     private final static CardInfo cardInfo = new CardInfo(
             "Temperance",
-            1,
+            0,
             CardType.SKILL,
             CardTarget.NONE,
-            CardRarity.RARE
+            CardRarity.UNCOMMON
     );
 
     public final static String ID = makeID(cardInfo.cardName);
@@ -35,6 +35,8 @@ public class Temperance extends StellarCard {
         setExhaust(true);
 
         tags.add(CardTags.HEALING);
+
+        loadFrames(cardInfo.cardName, 37, 0.12f);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

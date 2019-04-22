@@ -30,6 +30,8 @@ public class ShootingStar extends StarCard {
         super(cardInfo, true);
 
         setExhaust(false, true);
+
+        loadFrames(cardInfo.cardName, 30, 0.07f);
     }
 
     @Override

@@ -31,6 +31,8 @@ public class Justice extends StellarCard {
         super(cardInfo,false, STELLAR);
 
         setBlock(BLOCK, UPG_BLOCK);
+
+        loadFrames(cardInfo.cardName, 11, 0.14f);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

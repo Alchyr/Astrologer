@@ -7,6 +7,7 @@ import Astrologer.Actions.Generic.SetHPAction;
 import Astrologer.Util.CardInfo;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -24,7 +25,7 @@ import static Astrologer.AstrologerMod.makeID;
 public class TheWorld extends StellarCard {
     private final static CardInfo cardInfo = new CardInfo(
             "TheWorld",
-            2,
+            1,
             CardType.SKILL,
             CardTarget.ALL,
             CardRarity.RARE
@@ -32,15 +33,16 @@ public class TheWorld extends StellarCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int UPG_COST = 1;
-
     private final static int STELLAR = 21;
+
+    private final static int DRAW = 3;
+    private final static int UPG_DRAW = 1;
 
     public TheWorld()
     {
         super(cardInfo, false, STELLAR);
 
-        setCostUpgrade(UPG_COST);
+        setMagic(DRAW, UPG_DRAW);
     }
 
     @Override
@@ -73,5 +75,7 @@ public class TheWorld extends StellarCard {
             AbstractDungeon.actionManager.addToBottom(new VFXAction(new BottomFogEffect(false)));
             AbstractDungeon.actionManager.addToBottom(new ResetDeckAction(this));
         }
+
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
     }
 }

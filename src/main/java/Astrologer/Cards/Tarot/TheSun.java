@@ -38,12 +38,13 @@ public class TheSun extends StellarCard {
         tags.add(CustomTags.SOLAR);
         tags.add(CustomTags.STAR);
 
-        setExhaust(true);
-
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(HP_LOSS, UPG_HP_LOSS);
 
         this.isMultiDamage = true;
+
+        loadFrames(cardInfo.cardName, 44, 0.12f);
+
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -25,13 +25,13 @@ public class BlackHole extends BaseCard {
             2,
             CardType.ATTACK,
             CardTarget.ENEMY,
-            CardRarity.UNCOMMON
+            CardRarity.RARE
     );
 
     public final static String ID = makeID(cardInfo.cardName);
 
     private final static int DAMAGE = 6;
-    private final static int UPG_DAMAGE = 2;
+    private final static int UPG_DAMAGE = 1;
 
     public BlackHole()
     {
@@ -58,7 +58,7 @@ public class BlackHole extends BaseCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        this.baseMagicNumber = this.baseDamage * AbstractDungeon.player.exhaustPile.size();
+        this.baseMagicNumber = Math.max(this.baseDamage, this.baseDamage * AbstractDungeon.player.exhaustPile.size());
         this.magicNumber = this.damage * AbstractDungeon.player.exhaustPile.size();
         this.isMagicNumberModified = this.isDamageModified;
 

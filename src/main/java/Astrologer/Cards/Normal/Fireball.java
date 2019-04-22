@@ -30,7 +30,7 @@ public class Fireball extends StarCard {
     public final static String ID = makeID(cardInfo.cardName);
 
     private final static int DAMAGE = 16;
-    private final static int UPG_DAMAGE = 3;
+    private final static int UPG_DAMAGE = 4;
 
     private final static int DEBUFF = 1;
     private final static int UPG_DEBUFF = 1;

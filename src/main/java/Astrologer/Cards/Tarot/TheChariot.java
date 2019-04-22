@@ -15,7 +15,7 @@ public class TheChariot extends StellarCard {
     private final static CardInfo cardInfo = new CardInfo(
             "TheChariot",
             2,
-            CardType.SKILL,
+            CardType.POWER,
             CardTarget.NONE,
             CardRarity.RARE
     );

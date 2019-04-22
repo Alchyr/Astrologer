@@ -13,7 +13,7 @@ import static Astrologer.AstrologerMod.makeID;
 public class CosmicExpanse extends BaseCard {
     private final static CardInfo cardInfo = new CardInfo(
             "CosmicExpanse",
-            1,
+            0,
             CardType.POWER,
             CardTarget.NONE,
             CardRarity.UNCOMMON

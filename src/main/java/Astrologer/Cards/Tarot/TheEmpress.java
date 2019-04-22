@@ -36,6 +36,8 @@ public class TheEmpress extends StellarCard {
         super(cardInfo, false, STELLAR);
 
         setCostUpgrade(UPG_COST);
+
+        loadFrames(cardInfo.cardName, 3, 0.15f);
     }
 
     @Override

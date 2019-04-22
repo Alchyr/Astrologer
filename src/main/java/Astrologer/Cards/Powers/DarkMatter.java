@@ -13,7 +13,7 @@ import static Astrologer.AstrologerMod.makeID;
 public class DarkMatter extends BaseCard {
     private final static CardInfo cardInfo = new CardInfo(
             "DarkMatter",
-            2,
+            1,
             CardType.POWER,
             CardTarget.NONE,
             CardRarity.RARE

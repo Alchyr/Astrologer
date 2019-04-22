@@ -33,6 +33,8 @@ public class TheTower extends StellarCard {
 
         setDamage(DAMAGE);
         setMagic(BONUS_HITS, UPG_BONUS_HITS);
+
+        loadFrames(cardInfo.cardName, 7, 0.13f);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
