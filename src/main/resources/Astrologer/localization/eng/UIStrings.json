@@ -19,6 +19,11 @@
       "Exchange the Costs"
     ]
   },
+  "astrologer:HighPriestess": {
+    "TEXT": [
+      "Double the Damage"
+    ]
+  },
   "astrologer:HangedMan": {
     "TEXT": [
       "Duplicate"

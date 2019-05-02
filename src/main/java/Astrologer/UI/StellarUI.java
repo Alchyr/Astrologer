@@ -3,7 +3,6 @@ package Astrologer.UI;
 import Astrologer.Interfaces.ActivateStellarPower;
 import Astrologer.Patches.StellarPhaseValue;
 import Astrologer.Util.DrawInfo;
-import Astrologer.Util.StarPosition;
 import Astrologer.Util.StellarUIStarPosition;
 import Astrologer.Util.TextureLoader;
 import com.badlogic.gdx.Gdx;
@@ -44,7 +43,7 @@ public class StellarUI {
     private static final float SKY_Y = Settings.HEIGHT - (SKY_HEIGHT + 20) * Settings.scale;
 
     private static final float TEXT_X = Settings.WIDTH / 2.0f;
-    private static final float TEXT_Y = Settings.HEIGHT - 300.0F * Settings.scale;
+    private static final float TEXT_Y = Settings.HEIGHT - 225.0F * Settings.scale;
 
     private static final float STAR_RIGHT_X = Settings.WIDTH + 100 * Settings.scale;
     private static final float STAR_LEFT_X = -100 * Settings.scale;
@@ -58,8 +57,8 @@ public class StellarUI {
 
     private static final int CELESTIAL_BODY_SIZE = 400;
     private static final float CELESTIAL_BODY_OFFSET = CELESTIAL_BODY_SIZE / 2.0f;
-    private static final float CELESTIAL_BODY_X = (Settings.WIDTH / 2.0f) - CELESTIAL_BODY_OFFSET * Settings.scale;
-    private static final float CELESTIAL_BODY_Y = Settings.HEIGHT - (CELESTIAL_BODY_OFFSET + 40.0f) * Settings.scale;
+    private static final float CELESTIAL_BODY_X = (Settings.WIDTH / 2.0f) - CELESTIAL_BODY_OFFSET;
+    private static final float CELESTIAL_BODY_Y = Settings.HEIGHT - (CELESTIAL_BODY_OFFSET + 80.0f);
 
     private static Texture skyTexture = TextureLoader.getTexture(SkyTexturePath);
     private static Texture glowTexture = TextureLoader.getTexture(GlowTexturePath);
@@ -159,6 +158,10 @@ public class StellarUI {
 
         updateTooltip();
     }
+    public void hide()
+    {
+        renderColor.a = 0.0f;
+    }
 
     public void updateTooltip()
     {
@@ -249,7 +252,7 @@ public class StellarUI {
             sb.setColor(sunColor);
             sb.draw(sunTexture, CELESTIAL_BODY_X, CELESTIAL_BODY_Y, CELESTIAL_BODY_OFFSET, CELESTIAL_BODY_OFFSET, CELESTIAL_BODY_SIZE, CELESTIAL_BODY_SIZE, Settings.scale, Settings.scale, celestialBodyAngle, 0, 0, CELESTIAL_BODY_SIZE, CELESTIAL_BODY_SIZE, false, false);
 
-            FontHelper.renderFontCentered(sb, FontHelper.topPanelInfoFont, Integer.toString(StellarPhaseValue.stellarPhase.get(AbstractDungeon.player)), TEXT_X, TEXT_Y, renderColor);
+            FontHelper.renderFontCentered(sb, FontHelper.topPanelAmountFont, Integer.toString(StellarPhaseValue.stellarPhase.get(AbstractDungeon.player)), TEXT_X, TEXT_Y, renderColor);
         }
     }
 }

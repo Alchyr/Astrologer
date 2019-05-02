@@ -24,15 +24,14 @@ public class TheChariot extends StellarCard {
 
     private final static int STELLAR = 7;
 
-    private final static int TEMP_HP = 12;
-    private final static int UPG_TEMP_HP = 6;
+    private final static int TEMP_HP = 10;
+    private final static int UPG_TEMP_HP = 4;
 
     public TheChariot()
     {
         super(cardInfo, false, STELLAR);
 
         setMagic(TEMP_HP, UPG_TEMP_HP);
-        this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

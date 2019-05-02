@@ -26,17 +26,16 @@ public class Wish extends BaseCard implements OnExhaustCardCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int BLOCK = 9;
-    private final static int UPG_BLOCK = 3;
+    private final static int BLOCK = 10;
+    private final static int UPG_BLOCK = 5;
     private final static int DRAW = 1;
-    private final static int UPG_DRAW = 1;
 
     public Wish()
     {
-        super(cardInfo, true);
+        super(cardInfo, false);
 
         setBlock(BLOCK, UPG_BLOCK);
-        setMagic(DRAW, UPG_DRAW);
+        setMagic(DRAW);
 
         if (CardCrawlGame.dungeon != null) {
             this.configureCostsOnNewCard();

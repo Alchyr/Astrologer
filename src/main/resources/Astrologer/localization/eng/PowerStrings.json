@@ -97,6 +97,13 @@
       " times at the end of your turn."
     ]
   },
+  "astrologer:Hanged": {
+    "NAME": "Hanged",
+    "DESCRIPTIONS": [
+      "Whenever you draw a card this turn, loses #b",
+      " HP."
+    ]
+  },
   "astrologer:Prismatic": {
     "NAME": "Prismatic",
     "DESCRIPTIONS": [

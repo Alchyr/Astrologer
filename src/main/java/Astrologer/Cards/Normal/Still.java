@@ -26,7 +26,7 @@ public class Still extends BaseCard {
     public final static String ID = makeID(cardInfo.cardName);
 
     private final static int BLOCK = 10;
-    private final static int UPG_BLOCK = 3;
+    private final static int UPG_BLOCK = 2;
 
     public Still()
     {

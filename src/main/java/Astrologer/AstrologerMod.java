@@ -23,6 +23,7 @@ import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
@@ -53,7 +54,7 @@ import static Astrologer.Patches.CardsPlayedThisCombatPatch.cardsPlayedThisComba
 public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber,
         EditCharactersSubscriber, EditKeywordsSubscriber, PostInitializeSubscriber, AddAudioSubscriber,
         OnCardUseSubscriber, OnStartBattleSubscriber, PostBattleSubscriber, PostExhaustSubscriber,
-        PreRoomRenderSubscriber
+        PreRoomRenderSubscriber, PreStartGameSubscriber
 {
     public static final Logger logger = LogManager.getLogger("Astrologer");
 
@@ -357,6 +358,17 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
         }
 
         return StellarCards.get(AbstractDungeon.cardRandomRng.random(StellarCards.size() - 1));
+    }
+
+    @Override
+    public void receivePreStartGame() {
+        stellarUI.updateStellarPhase(1);
+        cardsPlayedThisCombatCount = 0;
+        starsPlayedThisCombat = 0;
+        stellarPlayedThisCombat = 0;
+        starsExhaustedThisCombat = 0;
+        stellarUI.hide();
+        drawStellarUI = false;
     }
 
     @Override

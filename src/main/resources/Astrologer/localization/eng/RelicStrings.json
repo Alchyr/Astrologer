@@ -3,12 +3,12 @@
     "NAME": "Sky's Mirror",
     "FLAVOR": "The sky you see is limited; look here, instead.",
     "DESCRIPTIONS": [
-      "Put the first discarded card played each turn onto the bottom of the draw pile."
+      "Put the first card played each turn onto the bottom of the draw pile."
     ]
   },
   "astrologer:SkyMirrorUpg": {
     "NAME": "Universal Mirror",
-    "FLAVOR": "",
+    "FLAVOR": "It reflects everything; ",
     "DESCRIPTIONS": [
       "Put non-exhausting cards played onto the bottom of the draw pile."
     ]

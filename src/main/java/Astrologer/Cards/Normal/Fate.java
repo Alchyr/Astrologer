@@ -13,7 +13,7 @@ import static Astrologer.AstrologerMod.makeID;
 public class Fate extends BaseCard {
     private final static CardInfo cardInfo = new CardInfo(
             "Fate",
-            1,
+            0,
             CardType.SKILL,
             CardTarget.NONE,
             CardRarity.RARE
@@ -21,14 +21,11 @@ public class Fate extends BaseCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int UPG_COST = 0;
-
     public Fate()
     {
-        super(cardInfo, false);
+        super(cardInfo, true);
 
-        setExhaust(true);
-        setCostUpgrade(UPG_COST);
+        setExhaust(true, false);
 
         loadFrames(cardInfo.cardName, 42, 0.07f);
     }

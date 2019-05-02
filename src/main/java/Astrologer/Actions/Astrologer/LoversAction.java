@@ -59,6 +59,11 @@ public class LoversAction extends AbstractGameAction {
                     a = canSwap.get(0);
                     b = canSwap.get(1);
                 }
+                else
+                {
+                    this.isDone = true;
+                    return;
+                }
             }
             else
             {
@@ -73,6 +78,7 @@ public class LoversAction extends AbstractGameAction {
                 {
                     this.returnCards();
                     this.isDone = true;
+                    return;
                 }
             }
         }

@@ -4,13 +4,14 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.GetAllInBattleInstances;
 
 import java.util.ArrayList;
 
 public class InitializeDeckAction extends AbstractGameAction {
-    private ArrayList<AbstractCard> noReset;
+    private AbstractCard noReset;
 
-    public InitializeDeckAction(ArrayList<AbstractCard> noReset)
+    public InitializeDeckAction(AbstractCard noReset)
     {
         this.actionType = ActionType.SPECIAL;
         this.duration = 0.4f;
@@ -21,10 +22,16 @@ public class InitializeDeckAction extends AbstractGameAction {
     public void update() {
         CardGroup finalDeck = new CardGroup(AbstractDungeon.player.masterDeck, CardGroup.CardGroupType.UNSPECIFIED);
 
-        for (AbstractCard c : noReset)
+        ArrayList<AbstractCard> toRemove = new ArrayList<>();
+        for (AbstractCard c : finalDeck.group)
         {
-            finalDeck.removeCard(c);
+            if (c.uuid.equals(noReset.uuid))
+            {
+                toRemove.add(c);
+            }
         }
+
+        finalDeck.group.removeAll(toRemove);
 
         AbstractDungeon.player.drawPile.initializeDeck(finalDeck);
 

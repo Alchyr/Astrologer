@@ -17,11 +17,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ResetDeckAction extends AbstractGameAction {
-    public static ArrayList<AbstractCard> noReset = new ArrayList<>();
+    public AbstractCard noReset;
 
     public ResetDeckAction(AbstractCard source)
     {
-        noReset.add(source);
+        noReset = source;
         this.actionType = ActionType.SPECIAL;
     }
 

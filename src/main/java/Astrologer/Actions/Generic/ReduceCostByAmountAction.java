@@ -3,7 +3,9 @@ package Astrologer.Actions.Generic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.GetAllInBattleInstances;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.UUID;
 

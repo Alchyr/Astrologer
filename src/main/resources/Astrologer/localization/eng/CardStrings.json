@@ -123,7 +123,7 @@
   "astrologer:ShootingStar": {
     "NAME": "Shooting Star",
     "DESCRIPTION": "astrologer:Star. NL Draw a card. NL When this card is Exhausted, add a copy of it to your draw pile.",
-    "UPGRADE_DESCRIPTION": "astrologer:Star. NL Draw a card. NL Exhaust. NL When this card is Exhausted, add a copy of it to your draw pile."
+    "UPGRADE_DESCRIPTION": "astrologer:Star. NL Ethereal. NL Draw a card. NL When this card is Exhausted, add a copy of it to your draw pile."
   },
   "astrologer:SpaceDust": {
     "NAME": "Nebula",
@@ -234,7 +234,8 @@
   },
   "astrologer:TheHighPriestess": {
     "NAME": "The High Priestess",
-    "DESCRIPTION": "Reduce the cost of a random card in your hand by !M! for the rest of combat. NL Exhaust. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Also reduce the cost of the last card played."
+    "DESCRIPTION": "[#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Double the base damage of a card in your hand for the combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Double the base damage of a card in your hand for the combat. NL Exhaust."
   },
   "astrologer:TheEmpress": {
     "NAME": "The Empress",
@@ -254,7 +255,7 @@
   },
   "astrologer:TheChariot": {
     "NAME": "The Chariot",
-    "DESCRIPTION": "Gain !M! Temporary_HP. NL Exhaust. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Gain 1 Intangible."
+    "DESCRIPTION": "Gain !M! Temporary_HP. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Gain 1 Intangible."
   },
   "astrologer:Strength": {
     "NAME": "Strength",
@@ -277,7 +278,7 @@
   },
   "astrologer:TheHangedMan": {
     "NAME": "The Hanged Man",
-    "DESCRIPTION": "[#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Choose a card in your hand. Exhaust your draw pile. Add a copy of the chosen card to your draw pile for each card Exhausted. NL Exhaust."
+    "DESCRIPTION": "Whenever you draw a card this turn, the enemy loses !M! HP. [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Affects ALL enemies."
   },
   "astrologer:Death": {
     "NAME": "Death",

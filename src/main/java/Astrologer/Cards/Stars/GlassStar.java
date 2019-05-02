@@ -22,7 +22,7 @@ public class GlassStar extends StarCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int BLOCK = 6;
+    private final static int BLOCK = 5;
     private final static int UPG_BLOCK = 2;
 
     public GlassStar()

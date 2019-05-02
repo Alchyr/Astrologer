@@ -3,6 +3,7 @@ package Astrologer.Util;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.core.Settings;
 
 public class StellarUIStarPosition {
     public float yOffset;
@@ -18,7 +19,7 @@ public class StellarUIStarPosition {
 
     public StellarUIStarPosition()
     {
-        this.yOffset = MathUtils.random(-180.0f, 0.0f);
+        this.yOffset = MathUtils.random(-180.0f * Settings.scale, 0.0f);
         this.progress = MathUtils.random(-1.0f, 1.0f);
         this.progressRate = MathUtils.random(0.033f, 0.1f);
         this.rotationSpeed = MathUtils.random(15.0f, 45.0f) * (MathUtils.randomBoolean() ? 1.0f : -1.0f);

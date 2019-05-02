@@ -28,9 +28,9 @@ public class RejectReality extends BaseCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int DAMAGE = 13;
+    private final static int DAMAGE = 18;
     private final static int UPG_DAMAGE = 2;
-    private final static int BLOCK = 26;
+    private final static int BLOCK = 24;
     private final static int UPG_BLOCK = 4;
     private final static int DAZED = 3;
     private final static int UPG_DAZED = -1;

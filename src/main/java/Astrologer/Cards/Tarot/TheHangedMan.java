@@ -2,8 +2,10 @@ package Astrologer.Cards.Tarot;
 
 import Astrologer.Abstracts.StellarCard;
 import Astrologer.Actions.Astrologer.HangedManAction;
+import Astrologer.Powers.HangedPower;
 import Astrologer.Util.CardInfo;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -15,7 +17,7 @@ public class TheHangedMan extends StellarCard {
             "TheHangedMan",
             1,
             CardType.SKILL,
-            CardTarget.NONE,
+            CardTarget.ENEMY,
             CardRarity.UNCOMMON
     );
 
@@ -23,7 +25,8 @@ public class TheHangedMan extends StellarCard {
 
     private final static int STELLAR = 12;
 
-    private final static int UPG_COST = 0;
+    private final static int DEBUFF = 3;
+    private final static int UPG_DEBUFF = 2;
 
     public TheHangedMan()
     {
@@ -31,22 +34,32 @@ public class TheHangedMan extends StellarCard {
 
         loadFrames(cardInfo.cardName,16,0.20f);
 
-        setCostUpgrade(UPG_COST);
+        setMagic(DEBUFF, UPG_DEBUFF);
     }
 
     @Override
     public void applyPowers() {
         super.applyPowers();
-        this.exhaust = stellarActive();
-    }
-
-    @Override
-    public void upgrade() {
-        super.upgrade();
+        if (stellarActive())
+            this.target = CardTarget.ALL_ENEMY;
+        else
+            this.target = CardTarget.ENEMY;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (stellarActive())
-            AbstractDungeon.actionManager.addToBottom(new HangedManAction());
+        {
+            for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters)
+            {
+                if (!mo.isDeadOrEscaped())
+                {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new HangedPower(mo, p, this.magicNumber), this.magicNumber));
+                }
+            }
+        }
+        else if (m != null)
+        {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new HangedPower(m, p, this.magicNumber), this.magicNumber));
+        }
     }
 }

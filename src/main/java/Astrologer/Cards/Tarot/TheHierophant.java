@@ -28,7 +28,7 @@ public class TheHierophant extends StellarCard {
 
     private final static int BLOCK = 4;
 
-    private final static int BUFF = 2;
+    private final static int BUFF = 1;
     private final static int UPG_BUFF = 1;
 
     public TheHierophant()

@@ -33,7 +33,7 @@ public class TheMoon extends StellarCard {
 
     private final static int UPG_COST = 1;
 
-    private final static int DEBUFF = 5;
+    private final static int DEBUFF = 4;
 
     public TheMoon()
     {

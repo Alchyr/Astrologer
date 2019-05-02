@@ -16,7 +16,10 @@ public class RetellingAction extends AbstractGameAction {
     {
         amount += AbstractDungeon.player.hand.size();
 
-        AbstractDungeon.actionManager.addToTop(new MoveCardsAction(AbstractDungeon.player.hand, AbstractDungeon.player.discardPile, amount));
+        if (amount > 0)
+        {
+            AbstractDungeon.actionManager.addToTop(new MoveCardsAction(AbstractDungeon.player.hand, AbstractDungeon.player.discardPile, amount));
+        }
 
         AbstractDungeon.actionManager.addToTop(new ShuffleHandInDrawAction());
 
