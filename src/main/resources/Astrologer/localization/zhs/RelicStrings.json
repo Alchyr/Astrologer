@@ -1,0 +1,43 @@
+{
+  "astrologer:SkyMirror": {
+    "NAME": "天文镜",
+    "FLAVOR": "你能看到的天空是有限的; 相反, 看这里.",
+    "DESCRIPTIONS": [
+      "将每回合打出的第一张牌放到抽牌堆的底部."
+    ]
+  },
+  "astrologer:SkyMirrorUpg": {
+    "NAME": "万能镜",
+    "FLAVOR": "它反映一切; ",
+    "DESCRIPTIONS": [
+      "将打出的非消耗牌放到抽牌堆的底部."
+    ]
+  },
+  "astrologer:Telescope": {
+    "NAME": "望远镜",
+    "FLAVOR": "镜头有裂痕, 但它仍然有纪念意义.",
+    "DESCRIPTIONS": [
+      "每场战斗开始时, astrologer:星相 增加 #b4 层."
+    ]
+  },
+  "astrologer:Zodiac": {
+    "NAME": "十二宫",
+    "FLAVOR": "你的生命本质的定义 .",
+    "DESCRIPTIONS": [
+      "宝瓶座",
+      "双鱼座",
+      "白羊座",
+      "金牛座",
+      "双子座",
+      "巨蟹座",
+      "狮子座",
+      " astrologer:太阳 的效应总是活跃的.",
+      "处女座",
+      "天秤座",
+      "天蝎座",
+      "射手座",
+      "摩羯座",
+      " astrologer:月亮 的效应总是活跃的."
+    ]
+  }
+}

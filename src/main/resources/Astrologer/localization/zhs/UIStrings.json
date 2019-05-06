@@ -1,0 +1,53 @@
+{
+  "astrologer:Stellar": {
+    "TEXT": [
+      "恒星",
+      "如果 #y星相 等于或高于规定值, 触发此效应."
+    ]
+  },
+  "astrologer:StellarUI": {
+    "TEXT": [
+      "恒星",
+      " #y星相 : #b",
+      " NL 排序: #y月球 ",
+      " NL 排序: #y太阳 ",
+      " NL 目前上限为 #b"
+    ]
+  },
+  "astrologer:Lovers": {
+    "TEXT": [
+      "更换耗能"
+    ]
+  },
+  "astrologer:HighPriestess": {
+    "TEXT": [
+      "双倍伤害"
+    ]
+  },
+  "astrologer:HangedMan": {
+    "TEXT": [
+      "复制"
+    ]
+  },
+  "astrologer:PlayAction": {
+    "TEXT": [
+      "触发"
+    ]
+  },
+  "astrologer:ToDeck": {
+    "TEXT": [
+      "放到抽牌堆的底部",
+      "放到抽牌堆的顶部"
+    ]
+  },
+  "astrologer:Prestidigitation": {
+    "TEXT": [
+      "放到抽牌堆的底部"
+    ]
+  },
+  "astrologer:MaxHP": {
+    "TEXT": [
+      "最大生命值 +"
+    ]
+  }
+}

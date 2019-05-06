@@ -36,9 +36,9 @@ public class PerformXAction extends AbstractGameAction {
             this.p.getRelic(ChemicalX.ID).flash();
         }
 
-        if (effect > 0)
+        XAction.initialize(effect);
+        if (XAction.amount > 0)
         {
-            XAction.initialize(effect);
             AbstractDungeon.actionManager.addToTop(XAction);
         }
 

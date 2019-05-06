@@ -17,9 +17,13 @@ public class AlignmentAction extends AbstractXAction {
         this.bonusAmt = bonusAmt;
     }
 
-    public void update() {
-        amount += bonusAmt;
+    @Override
+    public void initialize(int totalAmount) {
+        super.initialize(totalAmount);
+        this.amount += bonusAmt;
+    }
 
+    public void update() {
         if (amount > 0 && !AbstractDungeon.player.drawPile.isEmpty()) {
             AbstractCard copy = AbstractDungeon.player.drawPile.getBottomCard().makeStatEquivalentCopy();
 

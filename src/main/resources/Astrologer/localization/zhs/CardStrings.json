@@ -1,0 +1,360 @@
+{
+  "astrologer:Strike": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害.",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害. NL astrologer:太阳 : 造成 !D! 点额外伤害."
+  },
+  "astrologer:Defend": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 .",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 . NL astrologer:月亮 : 获得 !B! 点额外 格挡 ."
+  },
+  "astrologer:Stardust": {
+    "NAME": "星尘",
+    "DESCRIPTION": "获得等于 astrologer:星相 点 格挡 . 抽 1 张牌.",
+    "UPGRADE_DESCRIPTION": "获得等于 astrologer:星相 点 格挡 . 抽 !M! 张牌.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (获得 !B! 点 格挡 .)"
+    ]
+  },
+  "astrologer:Alignment": {
+    "NAME": "对准",
+    "DESCRIPTION": "从抽牌堆的底部抽 X 张牌到手中. 抽到的牌在本回合耗能减少 X . NL 消耗 .",
+    "UPGRADE_DESCRIPTION": "从抽牌堆的底部抽 X + !M! 张牌到手中. 抽到的牌在本回合耗能减少 X + !M! . NL 消耗 ."
+  },
+  "astrologer:Perihelion": {
+    "NAME": "近日点",
+    "DESCRIPTION": "造成 !D! 点伤害. NL astrologer:太阳 : 造成 !M! 倍伤害."
+  },
+  "astrologer:Premeditation": {
+    "NAME": "预策",
+    "DESCRIPTION": "打出抽牌堆底部的牌, 将其 消耗 ."
+  },
+  "astrologer:Shine": {
+    "NAME": "闪耀",
+    "DESCRIPTION": "打出并 消耗 一张手牌. NL 消耗 ."
+  },
+  "astrologer:CrystalBall": {
+    "NAME": "水晶球",
+    "DESCRIPTION": "选择敌人. 每回合开始, 如果意图与现在相同, 它失去 !M! 生命值. NL 消耗 ."
+  },
+  "astrologer:Wish": {
+    "NAME": "希望",
+    "DESCRIPTION": "所有 星球 牌在本场战斗中减少 1 [E] . NL 获得 !B! 点 格挡 . NL 抽 !M! 张牌.",
+    "UPGRADE_DESCRIPTION": "所有 星球 牌在本场战斗中减少 1 [E] . NL 获得 !B! 点 格挡 . NL 抽 !M! 张牌."
+  },
+  "astrologer:NewMoon": {
+    "NAME": "新月",
+    "DESCRIPTION": "抽 !M! 张牌. NL astrologer:月亮 : 增加所有抽到牌 !M! 点伤害和 格挡 ."
+  },
+  "astrologer:Moonlight": {
+    "NAME": "月光",
+    "DESCRIPTION": "获得 !B! 点 格挡 . NL astrologer:月亮 : 抽 1 张牌.",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 . NL astrologer:月亮 : 抽 !M! 张牌."
+  },
+  "astrologer:Eclipse": {
+    "NAME": "日食",
+    "DESCRIPTION": "造成 !D! 点伤害两次. NL astrologer:月亮 : 给予 !M! 层 虚弱."
+  },
+  "astrologer:Radiance": {
+    "NAME": "光辉",
+    "DESCRIPTION": "造成 !D! 点伤害. NL astrologer:太阳 : 给予 !M! 层 易伤 ."
+  },
+  "astrologer:Still": {
+    "NAME": "静止",
+    "DESCRIPTION": "获得 !B! 点 格挡 . NL astrologer:星相 2 回合不降低."
+  },
+  "astrologer:SolarFlare": {
+    "NAME": "耀斑",
+    "DESCRIPTION": "给予 !M! 层 astrologer:星芒 并触发它."
+  },
+  "astrologer:NorthStar": {
+    "NAME": "启明星",
+    "DESCRIPTION": "NL astrologer:星球 . NL 给予 !M! 层 astrologer:星芒 ."
+  },
+  "astrologer:ReadTheStars": {
+    "NAME": "阅读星",
+    "DESCRIPTION": "从手中每一张 astrologer:星球 获得 !B! 点 格挡 ."
+  },
+  "astrologer:GlassStar": {
+    "NAME": "玻璃之星",
+    "DESCRIPTION": " astrologer:星球 . NL 消耗 你打出的下一张牌并获得其 !B! 倍耗能的 格挡 ."
+  },
+  "astrologer:Observe": {
+    "NAME": "观测",
+    "DESCRIPTION": "获得与你当前抽牌堆中牌数相等的 格挡 值.",
+    "UPGRADE_DESCRIPTION": "获得与你当前弃牌堆中牌数 + !M! 的 格挡 值 + !M!.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (获得 !B! 格挡 .)"
+    ]
+  },
+  "astrologer:StarOfRegret": {
+    "NAME": "遗憾之星",
+    "DESCRIPTION": " astrologer:星球 . NL 造成 !D! 点伤害. NL 当这张牌被 消耗 时, 对所有敌人造成 双倍伤害 ."
+  },
+  "astrologer:StarOfChange": {
+    "NAME": "变革之星",
+    "DESCRIPTION": " astrologer:星球 . NL 虚无 . NL 当这张牌被抽出时, 消耗 一张手牌并增加一张随机牌. 这张牌在本回合耗能变为0.",
+    "UPGRADE_DESCRIPTION": " astrologer:星球 . NL 虚无 . NL 当这张牌被抽出时, 消耗 一张手牌并增加一张随机牌. 这张牌在本回合耗能变为0."
+  },
+  "astrologer:FrozenStar": {
+    "NAME": "冰冻之星",
+    "DESCRIPTION": " astrologer:星球 . NL 你打出的下一张 astrologer:星球 牌, 获得 !B! 点 格挡 ."
+  },
+  "astrologer:LonelyStar": {
+    "NAME": "孤星",
+    "DESCRIPTION": " astrologer:星球 . NL 虚无 . NL 当这张牌被抽出时, 抽 !M! 张牌."
+  },
+  "astrologer:ShiningStar": {
+    "NAME": "闪亮之星",
+    "DESCRIPTION": " astrologer:星球 . NL 虚无 . NL 当这张牌被抽出时, 给予随机敌人 !M! 层 astrologer:星芒 ."
+  },
+  "astrologer:FadingStar": {
+    "NAME": "衰落之星",
+    "DESCRIPTION": " astrologer:星球 . NL 获得 !B! 点 格挡 . NL 消耗 ."
+  },
+  "astrologer:NeutronStar": {
+    "NAME": "中子星",
+    "DESCRIPTION": " astrologer:星球 . NL 给予 X 层 astrologer:星芒 . NL 敌人身上每有 1 层 astrologer:星芒 造成 !D! 伤害.",
+    "EXTENDED_DESCRIPTION": [
+      "(造成 !M! 伤害.) NL 星球 . NL Apply X 层 astrologer:星芒 . NL 敌人身上每有 1 层 astrologer:星芒 造成 !D! 伤害."
+    ]
+  },
+  "astrologer:ShootingStar": {
+    "NAME": "贼星",
+    "DESCRIPTION": " astrologer:星球 . NL 抽 1 张牌. NL 当这张牌被 消耗 时, 在抽牌堆放入一张此牌的复制品.",
+    "UPGRADE_DESCRIPTION": " astrologer:星球 . NL 虚无 . NL 抽 1 张牌. NL 当这张牌被 消耗 时, 在抽牌堆放入一张此牌的复制品."
+  },
+  "astrologer:SpaceDust": {
+    "NAME": "星云",
+    "DESCRIPTION": " 虚无 . NL 获得 !B! 点 格挡 . NL 当这张牌被 消耗 时, 在抽牌堆放入一张此牌的复制品."
+  },
+  "astrologer:Cataclysm": {
+    "NAME": "剧变",
+    "DESCRIPTION": "当这张牌被抽出时, 这张牌的耗能就减少1. NL 对所有敌人造成 !D! 点伤害. NL 消耗 ."
+  },
+  "astrologer:Fireball": {
+    "NAME": "火球",
+    "DESCRIPTION": " astrologer:星球 . NL 造成 !D! 点伤害. NL 给予 !M! 层 astrologer:星芒 ."
+  },
+  "astrologer:StarOfCourage": {
+    "NAME": "勇气之星",
+    "DESCRIPTION": " astrologer:星球 . NL 消耗 手牌中所有非攻击牌. 每张被 消耗 的牌获得 !M! 点 力量 ."
+  },
+  "astrologer:StarOfMisfortune": {
+    "NAME": "厄运之星",
+    "DESCRIPTION": " astrologer:星球 . NL 给予 !M! 层 虚弱. NL 给予 !M! 层 易伤."
+  },
+  "astrologer:Prestidigitation": {
+    "NAME": "戏法",
+    "DESCRIPTION": "在你的回合开始时, 抽 !M! 张牌, 将 !M! 张牌放到你的抽牌堆底部."
+  },
+  "astrologer:Retelling": {
+    "NAME": "复述",
+    "DESCRIPTION": "把手牌放回抽牌堆, 从弃牌堆抽取相同数量的牌. NL 消耗 .",
+    "UPGRADE_DESCRIPTION": "把手牌放回抽牌堆, 从弃牌堆抽取 !M! 张牌. NL 消耗 ."
+  },
+  "astrologer:Divination": {
+    "NAME": "占卦",
+    "DESCRIPTION": "将一张手牌放入抽牌堆底部. NL 抽 !M! 张牌.",
+    "UPGRADE_DESCRIPTION": "将任意手牌放入抽牌堆底部. NL 抽 !M! 张牌."
+  },
+  "astrologer:RejectReality": {
+    "NAME": "拒绝现实",
+    "DESCRIPTION": "获得 !B! 点 格挡 . NL 造成 !D! 点伤害. NL 将 !M! 张 晕眩 放入你的抽牌堆中."
+  },
+  "astrologer:Conjunction": {
+    "NAME": "合相",
+    "DESCRIPTION": " 虚无 . NL 当这张牌被抽出时, 获得 !B! 点 格挡 ."
+  },
+  "astrologer:Opposition": {
+    "NAME": "对相",
+    "DESCRIPTION": " 虚无 . NL 当这张牌被抽出时, 随机对敌人造成 !D! 点伤害."
+  },
+  "astrologer:Trine": {
+    "NAME": "三分相",
+    "DESCRIPTION": " 虚无 . NL 当这张牌被抽出时, 在这个回合, 你打出的下一张牌会打出两次."
+  },
+  "astrologer:Sextile": {
+    "NAME": "六分相",
+    "DESCRIPTION": " 虚无 . NL 当这张牌被抽出时, 把一张牌的复印品放入你的抽牌堆顶部."
+  },
+  "astrologer:Quincunx": {
+    "NAME": "五分相",
+    "DESCRIPTION": " 虚无 . NL 当这张牌被抽出时, 随机一名敌人失去 !M! 点 力量  1回合."
+  },
+  "astrologer:Novile": {
+    "NAME": "九分相",
+    "DESCRIPTION": " 虚无 . NL 当这张牌被抽出时, 获得 [E].",
+    "EXTENDED_DESCRIPTION": [
+      " 虚无 . NL 当这张牌被抽出时, 获得",
+      " [E]",
+      "."
+    ]
+  },
+  "astrologer:BlackHole": {
+    "NAME": "黑洞",
+    "DESCRIPTION": " 抹除 弃牌堆所有牌. NL 每张被 抹除 的牌造成 !D! 点伤害. NL 消耗 .",
+    "UPGRADE_DESCRIPTION": "保留. NL  抹除 弃牌堆所有牌. NL 每张被 抹除 的牌造成 !D! 点伤害. NL 消耗 .",
+    "EXTENDED_DESCRIPTION": [
+      " 抹除 弃牌堆所有牌. NL 每张被 抹除 的牌造成 !D! 点伤害. NL 消耗 . NL (造成 !M! 点伤害.)",
+      "保留. NL 抹除 弃牌堆所有牌. NL 每张被 抹除 的牌造成 !D! 点伤害. NL 消耗 . NL (造成 !M! 点伤害.)"
+    ]
+  },
+  "astrologer:MeteorShower": {
+    "NAME": "流星雨",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害. NL 消耗 ."
+  },
+  "astrologer:CometStrike": {
+    "NAME": "彗星撞击",
+    "DESCRIPTION": "造成 !D! 点伤害. NL 抽 !M! 张牌. NL 消耗 一张随机手牌.",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害. NL 抽 !M! 张牌. NL 消耗 一张手牌."
+  },
+  "astrologer:HeatDeath": {
+    "NAME": "热寂",
+    "DESCRIPTION": " 消耗 所有 astrologer:星球 牌. NL 每张被 消耗 的牌造成 !D! 点伤害. NL 消耗 ."
+  },
+  "astrologer:Fate": {
+    "NAME": "命运",
+    "DESCRIPTION": "在这个回合, 你打出的下一张 [#329eef]恒星[] 牌被 激发 . NL 消耗 .",
+    "UPGRADE_DESCRIPTION": "在这个回合, 你打出的下一张 [#329eef]恒星[] 牌被 激发 ."
+  },
+  "astrologer:TheFool": {
+    "NAME": "傻瓜",
+    "DESCRIPTION": " 固有 . NL 获得 !B! 点 格挡 . NL 造成 !D! 点伤害. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 消耗 ."
+  },
+  "astrologer:TheMagician": {
+    "NAME": "魔术师",
+    "DESCRIPTION": " 虚无 . NL 造成本场战斗出牌数量点伤害. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 随机打出你抽牌堆中的一张牌.",
+    "UPGRADE_DESCRIPTION": "造成本场战斗出牌数量点伤害. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 随机打出你抽牌堆中的一张牌.",
+    "EXTENDED_DESCRIPTION": [
+      " 虚无 . NL 造成本场战斗出牌数量点伤害. NL (造成 !D! 点伤害.) NL [#329eef]恒星[] !STELLAR_VARIABLE! : 随机打出你抽牌堆中的一张牌.",
+      "造成本场战斗出牌数量点伤害. NL (造成 !D! 点伤害.) NL [#329eef]恒星[] !STELLAR_VARIABLE! : 随机打出你抽牌堆中的一张牌."
+    ]
+  },
+  "astrologer:TheHighPriestess": {
+    "NAME": "女祭司",
+    "DESCRIPTION": "[#329eef]恒星[] !STELLAR_VARIABLE! : 战斗时一张手牌基础伤害翻倍. NL 消耗 .",
+    "UPGRADE_DESCRIPTION": " 保留 . NL [#329eef]恒星[] !STELLAR_VARIABLE! : 战斗时一张手牌基础伤害翻倍. NL 消耗 ."
+  },
+  "astrologer:TheEmpress": {
+    "NAME": "皇后",
+    "DESCRIPTION": "[#329eef]恒星[] !STELLAR_VARIABLE! : 所有敌人失去等于自己攻击数值的伤害."
+  },
+  "astrologer:TheEmperor": {
+    "NAME": "皇帝",
+    "DESCRIPTION": "敌人失去 !M! 点 力量 一回合. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 敌人失去三倍 力量 . NL 消耗 ."
+  },
+  "astrologer:TheHierophant": {
+    "NAME": "圣者",
+    "DESCRIPTION": "获得 !B! 点 格挡 . NL 获得 !M! 点 敏捷 . 你的回合结束时, 失去 !M! 点 敏捷 . NL [#329eef]恒星[] !STELLAR_VARIABLE! : 移除你身上的所有 负面效果 . NL 消耗 ."
+  },
+  "astrologer:TheLovers": {
+    "NAME": "恋人",
+    "DESCRIPTION": "选择两张牌互换耗能持续到战斗结束. NL 消耗 . NL [#329eef]恒星[] !STELLAR_VARIABLE! : 所选牌下次打出会释放两次."
+  },
+  "astrologer:TheChariot": {
+    "NAME": "战车",
+    "DESCRIPTION": "获得 !M! 点 暂时性生命 . NL [#329eef]恒星[] !STELLAR_VARIABLE! : 获得1层 无实体 ."
+  },
+  "astrologer:Strength": {
+    "NAME": "力量",
+    "DESCRIPTION": "获得 !M! 点 力量 . NL 消耗 . NL [#329eef]恒星[] !STELLAR_VARIABLE! : 每有一个敌人额外获得 !M! 力量 ."
+  },
+  "astrologer:TheHermit": {
+    "NAME": "隐士",
+    "DESCRIPTION": "你在这个回合内每打出一张牌, 获得 !B! 点 格挡 . NL [#329eef]恒星[] !STELLAR_VARIABLE! : 从你的抽牌堆底部抽 1 张牌. 本回合耗能降低 1 .",
+    "EXTENDED_DESCRIPTION": [
+      "你在这个回合内每打出一张牌, 获得 !B! 点 格挡 . NL (获得 !M! 格挡 .) NL [#329eef]恒星[] !STELLAR_VARIABLE! : 从你的抽牌堆底部抽 1 张牌. 本回合耗能降低 1 ."
+    ]
+  },
+  "astrologer:WheelofFortune": {
+    "NAME": "命运之轮",
+    "DESCRIPTION": "失去 10 金币. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 打出 !M! 张随机 [#329eef]恒星[] 牌. [#329eef]恒星[] 效果被触发."
+  },
+  "astrologer:Justice": {
+    "NAME": "正义",
+    "DESCRIPTION": "所有人 获得 !B! 点 格挡 . NL [#329eef]恒星[] !STELLAR_VARIABLE! : 所有敌人失去 2 倍现在 格挡 点生命值."
+  },
+  "astrologer:TheHangedMan": {
+    "NAME": "倒吊者",
+    "DESCRIPTION": "这个回合每当你抽到一张牌, 敌人失去 !M! 生命值. [#329eef]恒星[] !STELLAR_VARIABLE! : 影响所有敌人."
+  },
+  "astrologer:Death": {
+    "NAME": "灭亡",
+    "DESCRIPTION": "虚无 . NL 造成 !D! 点伤害. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 抹杀非领主敌人."
+  },
+  "astrologer:Temperance": {
+    "NAME": "禁酒",
+    "DESCRIPTION": "回复 !M! 生命. NL 消耗 . NL [#329eef]恒星[] !STELLAR_VARIABLE! : 消耗 所有手牌. 每张被 消耗 的牌回复 !M! 生命."
+  },
+  "astrologer:TheDevil": {
+    "NAME": "恶魔",
+    "DESCRIPTION": "造成 !D! 点伤害. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 失去 6 生命值. NL 获得 !M! 点 力量 . NL 消耗 .",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 失去 6 生命值. NL 获得 !M! 点 力量 . NL 最大生命值获得 3 . NL 消耗 ."
+  },
+  "astrologer:TheTower": {
+    "NAME": "塔",
+    "DESCRIPTION": "随机对敌人造成 !D! 点伤害. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 随机对敌人造成 额外 !M! 次 !D! 点伤害."
+  },
+  "astrologer:TheStar": {
+    "NAME": "星",
+    "DESCRIPTION": " astrologer:星球 . NL 对所有敌人造成等于当前 astrologer:星相 的伤害. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 造成两倍的伤害.",
+    "EXTENDED_DESCRIPTION": [
+      " astrologer:星球 . NL 对所有敌人造成等于当前 astrologer:星相 的伤害. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 造成两倍的伤害. NL (造成 !D! 点伤害.)"
+    ]
+  },
+  "astrologer:TheMoon": {
+    "NAME": "月亮",
+    "DESCRIPTION": " astrologer:月亮 : 获得相当于敌人造成伤害一半的 格挡 . NL [#329eef]恒星[] !STELLAR_VARIABLE! : 所有敌人失去 !M! 力量. 消耗 .",
+    "EXTENDED_DESCRIPTION": [
+      " astrologer:月亮 : 获得相当于敌人造成伤害一半的 格挡 . NL (获得 !B! 点 格挡 .) NL [#329eef]恒星[] !STELLAR_VARIABLE! : 所有敌人失去 !M! 力量. 消耗 ."
+    ]
+  },
+  "astrologer:TheSun": {
+    "NAME": "太阳",
+    "DESCRIPTION": " astrologer:星球 . NL astrologer:太阳 : 对所有敌人造成 !D! 点伤害. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 所有敌人失去 !M! 生命值."
+  },
+  "astrologer:Judgement": {
+    "NAME": "判断",
+    "DESCRIPTION": "造成 !D! 点伤害两次. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 如果这张牌杀死一名不是“爪牙”的敌人, 在本局游戏中降低 !M! 耗能."
+  },
+  "astrologer:TheWorld": {
+    "NAME": "世界",
+    "DESCRIPTION": "抽 !M! 张牌. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 抽牌前, 将你的牌组重置为战斗开始, 除了这张牌. NL 抹除 ."
+  },
+  "astrologer:Starfield": {
+    "NAME": "星体形态",
+    "DESCRIPTION": "所有的牌都有 astrologer:星球 效果."
+  },
+  "astrologer:Prismatic": {
+    "NAME": "棱镜",
+    "DESCRIPTION": "每回合第一次触发 astrologer:星球 , 给予随机敌人 !M! 层 astrologer:星芒 ."
+  },
+  "astrologer:Premonition": {
+    "NAME": "预感",
+    "DESCRIPTION": "每当你抽到一张 虚无 牌, 抽 1 张牌."
+  },
+  "astrologer:DarkMatter": {
+    "NAME": "暗物质",
+    "DESCRIPTION": "每回合第一张 消耗 的非 状态 和 诅咒 的牌, 在抽牌堆放入一张此牌的复制品.",
+    "UPGRADE_DESCRIPTION": " 固有 . NL 每回合第一张 消耗 的非 状态 和 诅咒 的牌, 在抽牌堆放入一张此牌的复制品."
+  },
+  "astrologer:Nova": {
+    "NAME": "新星",
+    "DESCRIPTION": "在你的回合结束时 触发 !M! 次 astrologer:星芒 .",
+    "UPGRADE_DESCRIPTION": "在你的回合结束时 触发 !M! 次 astrologer:星芒 ."
+  },
+  "astrologer:Confirmation": {
+    "NAME": "确认",
+    "DESCRIPTION": "每在同一回合内抽到同一张牌, 对所有敌人造成 !M! 点伤害."
+  },
+  "astrologer:Glimpse": {
+    "NAME": "一瞥",
+    "DESCRIPTION": "每当你抽到一张 虚无 的牌, 获得 !M! 格挡 ."
+  },
+  "astrologer:CosmicExpanse": {
+    "NAME": "宇宙膨胀",
+    "DESCRIPTION": "增加 astrologer:星相 最大值 !M! 层."
+  }
+}

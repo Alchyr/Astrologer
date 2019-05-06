@@ -278,10 +278,10 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
             addedCards.add(card);
 
         }
-        for (AbstractCard c : addedCards)
+        /*for (AbstractCard c : addedCards)
         {
             UnlockTracker.unlockCard(c.cardID);
-        }
+        }*/
     }
 
     public static String makeID(String partialID)
