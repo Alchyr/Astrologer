@@ -19,9 +19,7 @@ public class IncreasePlayerMaxHPAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        AbstractDungeon.player.maxHealth += amount;
-        AbstractDungeon.effectsQueue.add(new TextAboveCreatureEffect(AbstractDungeon.player.hb.cX - AbstractDungeon.player.animX, AbstractDungeon.player.hb.cY, TEXT[0] + Integer.toString(amount), Settings.GREEN_TEXT_COLOR));
-        AbstractDungeon.player.healthBarUpdatedEvent();
-        this.isDone = true;
+         AbstractDungeon.player.increaseMaxHp(amount, true);
+         this.isDone = true;
     }
 }

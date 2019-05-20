@@ -6,6 +6,7 @@ import Astrologer.Powers.HangedPower;
 import Astrologer.Util.CardInfo;
 import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -25,8 +26,8 @@ public class TheHangedMan extends StellarCard {
 
     private final static int STELLAR = 12;
 
-    private final static int DEBUFF = 3;
-    private final static int UPG_DEBUFF = 2;
+    private final static int DEBUFF = 4;
+    private final static int UPG_DEBUFF = 3;
 
     public TheHangedMan()
     {
@@ -47,19 +48,13 @@ public class TheHangedMan extends StellarCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (stellarActive())
-        {
-            for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters)
-            {
-                if (!mo.isDeadOrEscaped())
-                {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new HangedPower(mo, p, this.magicNumber), this.magicNumber));
-                }
-            }
-        }
-        else if (m != null)
+        if (m != null)
         {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new HangedPower(m, p, this.magicNumber), this.magicNumber));
+        }
+        if (stellarActive())
+        {
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 3));
         }
     }
 }

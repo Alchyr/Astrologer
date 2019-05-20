@@ -13,7 +13,7 @@ import static Astrologer.AstrologerMod.makeID;
 public class CosmicExpanse extends BaseCard {
     private final static CardInfo cardInfo = new CardInfo(
             "CosmicExpanse",
-            0,
+            2,
             CardType.POWER,
             CardTarget.NONE,
             CardRarity.UNCOMMON
@@ -21,17 +21,16 @@ public class CosmicExpanse extends BaseCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    public final static int BUFF = 4;
-    public final static int UPG_BUFF = 3;
+    private static final int UPG_COST = 1;
 
     public CosmicExpanse()
     {
         super(cardInfo, false);
 
-        setMagic(BUFF, UPG_BUFF);
+        setCostUpgrade(UPG_COST);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CosmicExpansePower(p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CosmicExpansePower(p, 1), 1));
     }
 }

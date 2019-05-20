@@ -15,7 +15,7 @@ import static Astrologer.AstrologerMod.makeID;
 public class TheStar extends StellarCard {
     private final static CardInfo cardInfo = new CardInfo(
             "TheStar",
-            2,
+            1,
             CardType.ATTACK,
             CardTarget.ALL_ENEMY,
             CardRarity.RARE
@@ -25,7 +25,7 @@ public class TheStar extends StellarCard {
 
     private final static int STELLAR = 17;
 
-    private final static int UPG_COST = 1;
+    private final static int UPG_COST = 0;
 
     public TheStar()
     {

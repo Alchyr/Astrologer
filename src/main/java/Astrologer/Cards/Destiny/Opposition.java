@@ -25,7 +25,7 @@ public class Opposition extends BaseCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int DAMAGE = 9;
+    private final static int DAMAGE = 11;
     private final static int UPG_DAMAGE = 3;
 
     public Opposition()

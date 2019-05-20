@@ -3,7 +3,7 @@
   "name": "Astrologer",
   "author_list": ["Alchyr"],
   "description": "Astrologer.\nCredits: https://freesound.org/people/acclivity/sounds/32304/ \n https://freesound.org/people/Timbre/sounds/221683/ \n http://www.stephanie-davidson.com/",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "sts_version": "01-23-2019",
   "mts_version": "3.8.3",
   "dependencies": ["basemod","stslib"],

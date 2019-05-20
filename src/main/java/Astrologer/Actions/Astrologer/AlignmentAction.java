@@ -27,7 +27,7 @@ public class AlignmentAction extends AbstractXAction {
         if (amount > 0 && !AbstractDungeon.player.drawPile.isEmpty()) {
             AbstractCard copy = AbstractDungeon.player.drawPile.getBottomCard().makeStatEquivalentCopy();
 
-            copy.modifyCostForTurn(-amount);
+            copy.modifyCostForCombat(-amount);
 
             AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(copy, amount,true));
         }

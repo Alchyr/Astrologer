@@ -30,12 +30,12 @@ public class BlackHole extends BaseCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int DAMAGE = 5;
-    private final static int UPG_DAMAGE = 1;
+    private final static int DAMAGE = 4;
+    private final static int UPG_DAMAGE = 2;
 
     public BlackHole()
     {
-        super(cardInfo,true);
+        super(cardInfo,false);
 
         setDamage(DAMAGE, UPG_DAMAGE);
 
@@ -50,23 +50,17 @@ public class BlackHole extends BaseCard {
     }
 
     @Override
-    public void upgrade() {
-        super.upgrade();
-        AlwaysRetainField.alwaysRetain.set(this, true);
-    }
-
-    @Override
     public void applyPowers() {
         super.applyPowers();
         this.baseMagicNumber = Math.max(this.baseDamage, this.baseDamage * AbstractDungeon.player.exhaustPile.size());
         this.magicNumber = this.damage * AbstractDungeon.player.exhaustPile.size();
         this.isMagicNumberModified = this.isDamageModified;
 
-        if (!this.upgraded) {
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
-        } else {
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];
-        }
+        //if (!this.upgraded) {
+        this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
+        //} else {
+        //this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];
+        //}
         this.initializeDescription();
     }
 
@@ -76,11 +70,11 @@ public class BlackHole extends BaseCard {
         this.baseMagicNumber = this.baseDamage * AbstractDungeon.player.exhaustPile.size();
         this.magicNumber = this.damage * AbstractDungeon.player.exhaustPile.size();
 
-        if (!this.upgraded) {
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
-        } else {
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];
-        }
+        //if (!this.upgraded) {
+        this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[0];
+        //} else {
+        //this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[1];
+        //}
         this.initializeDescription();
     }
 

@@ -114,7 +114,7 @@
   "astrologer:CosmicExpanse": {
     "NAME": "Cosmic Expanse",
     "DESCRIPTIONS": [
-      "The maximum #yStellar #yPhase is increased by #b",
+      "Whenever you play a #yStar, increase the #yStellar #yPhase by #b",
       "."
     ]
   },

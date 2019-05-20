@@ -19,8 +19,8 @@
   },
   "astrologer:Alignment": {
     "NAME": "Alignment",
-    "DESCRIPTION": "Add X copies of the bottom card of your draw pile to your hand. They cost X less this turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add X + !M! copies of the bottom card of your draw pile to your hand. They cost X + !M! less this turn. NL Exhaust."
+    "DESCRIPTION": "Add X copies of the bottom card of your draw pile to your hand. They cost X less this combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add X + !M! copies of the bottom card of your draw pile to your hand. They cost X + !M! less this combat. NL Exhaust."
   },
   "astrologer:Perihelion": {
     "NAME": "Perihelion",
@@ -278,7 +278,7 @@
   },
   "astrologer:TheHangedMan": {
     "NAME": "The Hanged Man",
-    "DESCRIPTION": "Whenever you draw a card this turn, the enemy loses !M! HP. [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Affects ALL enemies."
+    "DESCRIPTION": "Whenever you draw a card this turn, the enemy loses !M! HP. [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Draw 3 cards."
   },
   "astrologer:Death": {
     "NAME": "Death",
@@ -291,7 +291,7 @@
   "astrologer:TheDevil": {
     "NAME": "The Devil",
     "DESCRIPTION": "Deal !D! damage. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Lose 6 HP. NL Gain !M! Strength. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Lose 6 HP. NL Gain !M! Strength. NL Raise your Max HP by 3. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Lose 6 HP. NL Gain !M! Strength. NL Raise your Max HP by !M!. NL Exhaust."
   },
   "astrologer:TheTower": {
     "NAME": "The Tower",
@@ -355,6 +355,6 @@
   },
   "astrologer:CosmicExpanse": {
     "NAME": "Cosmic Expanse",
-    "DESCRIPTION": "Increase the maximum astrologer:Stellar_Phase by !M!."
+    "DESCRIPTION": "Whenever you play a astrologer:Star, increment the astrologer:Stellar_Phase."
   }
 }

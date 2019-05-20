@@ -58,6 +58,7 @@ public class LoversAction extends AbstractGameAction {
                 {
                     a = canSwap.get(0);
                     b = canSwap.get(1);
+                    this.isDone = true;
                 }
                 else
                 {

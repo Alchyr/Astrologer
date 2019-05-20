@@ -19,8 +19,8 @@
   },
   "astrologer:Alignment": {
     "NAME": "对准",
-    "DESCRIPTION": "从抽牌堆的底部抽 X 张牌到手中. 抽到的牌在本回合耗能减少 X . NL 消耗 .",
-    "UPGRADE_DESCRIPTION": "从抽牌堆的底部抽 X + !M! 张牌到手中. 抽到的牌在本回合耗能减少 X + !M! . NL 消耗 ."
+    "DESCRIPTION": "从抽牌堆的底部抽 X 张牌到手中. 抽到的牌在本场战斗耗能减少 X . NL 消耗 .",
+    "UPGRADE_DESCRIPTION": "从抽牌堆的底部抽 X + !M! 张牌到手中. 抽到的牌在本场战斗耗能减少 X + !M! . NL 消耗 ."
   },
   "astrologer:Perihelion": {
     "NAME": "近日点",
@@ -278,7 +278,7 @@
   },
   "astrologer:TheHangedMan": {
     "NAME": "倒吊者",
-    "DESCRIPTION": "这个回合每当你抽到一张牌, 敌人失去 !M! 生命值. [#329eef]恒星[] !STELLAR_VARIABLE! : 影响所有敌人."
+    "DESCRIPTION": "这个回合每当你抽到一张牌, 敌人失去 !M! 生命值. [#329eef]恒星[] !STELLAR_VARIABLE! : 抽 3 张牌."
   },
   "astrologer:Death": {
     "NAME": "灭亡",
@@ -291,7 +291,7 @@
   "astrologer:TheDevil": {
     "NAME": "恶魔",
     "DESCRIPTION": "造成 !D! 点伤害. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 失去 6 生命值. NL 获得 !M! 点 力量 . NL 消耗 .",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 失去 6 生命值. NL 获得 !M! 点 力量 . NL 最大生命值获得 3 . NL 消耗 ."
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害. NL [#329eef]恒星[] !STELLAR_VARIABLE! : 失去 6 生命值. NL 获得 !M! 点 力量 . NL 最大生命值获得 !M! . NL 消耗 ."
   },
   "astrologer:TheTower": {
     "NAME": "塔",
@@ -355,6 +355,6 @@
   },
   "astrologer:CosmicExpanse": {
     "NAME": "宇宙膨胀",
-    "DESCRIPTION": "增加 astrologer:星相 最大值 !M! 层."
+    "DESCRIPTION": "你每打出一 astrologer:星球 牌, 增加 astrologer:星相."
   }
 }

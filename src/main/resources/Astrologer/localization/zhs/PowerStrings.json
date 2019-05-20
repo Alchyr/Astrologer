@@ -114,7 +114,7 @@
   "astrologer:CosmicExpanse": {
     "NAME": "宇宙膨胀",
     "DESCRIPTIONS": [
-      "最大 #y星相 上限增加 #b",
+      "你每打出一星球 牌, 将 #y星相 增加 #b",
       "."
     ]
   },

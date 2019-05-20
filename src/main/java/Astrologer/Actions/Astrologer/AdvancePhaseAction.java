@@ -8,10 +8,18 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class AdvancePhaseAction extends AbstractGameAction {
+    private boolean changeAlignment;
+
     public AdvancePhaseAction()
+    {
+        this(true);
+    }
+
+    public AdvancePhaseAction(boolean changeAlignment)
     {
         this.amount = 1;
         this.actionType = ActionType.SPECIAL;
+        this.changeAlignment = changeAlignment;
     }
 
     @Override
@@ -34,9 +42,12 @@ public class AdvancePhaseAction extends AbstractGameAction {
             newValue = StellarPhaseValue.maxStellarPhase.get(AbstractDungeon.player);
         }
         StellarPhaseValue.stellarPhase.set(AbstractDungeon.player, newValue);
-        StellarPhaseValue.stellarAlignment.set(AbstractDungeon.player, !StellarPhaseValue.stellarAlignment.get(AbstractDungeon.player));
+        if (changeAlignment)
+        {
+            StellarPhaseValue.stellarAlignment.set(AbstractDungeon.player, !StellarPhaseValue.stellarAlignment.get(AbstractDungeon.player));
+            AstrologerMod.stellarUI.updateStellarAlignment(StellarPhaseValue.stellarAlignment.get(AbstractDungeon.player));
+        }
         AstrologerMod.stellarUI.updateStellarPhase(newValue);
-        AstrologerMod.stellarUI.updateStellarAlignment(StellarPhaseValue.stellarAlignment.get(AbstractDungeon.player));
         AstrologerMod.stellarUI.updateTooltip();
         this.isDone = true;
     }

@@ -1,8 +1,12 @@
 package Astrologer.Powers;
 
 import Astrologer.Abstracts.BasePower;
+import Astrologer.Actions.Astrologer.AdvancePhaseAction;
 import Astrologer.AstrologerMod;
 import Astrologer.Patches.StellarPhaseValue;
+import Astrologer.Util.PhaseCheck;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -16,32 +20,12 @@ public class CosmicExpansePower extends BasePower {
     }
 
     @Override
-    public void onInitialApplication() {
-        StellarPhaseValue.maxStellarPhase.set(AbstractDungeon.player, StellarPhaseValue.maxStellarPhase.get(AbstractDungeon.player) + this.amount);
-        AstrologerMod.stellarUI.updateTooltip();
-    }
-
-    @Override
-    public void stackPower(int stackAmount) {
-        super.stackPower(stackAmount);
-        StellarPhaseValue.maxStellarPhase.set(AbstractDungeon.player, StellarPhaseValue.maxStellarPhase.get(AbstractDungeon.player) + stackAmount);
-        AstrologerMod.stellarUI.updateTooltip();
-    }
-
-    @Override
-    public void onRemove() {
-        super.onRemove();
-        StellarPhaseValue.maxStellarPhase.set(AbstractDungeon.player, StellarPhaseValue.maxStellarPhase.get(AbstractDungeon.player) - this.amount);
-        AstrologerMod.stellarUI.updateTooltip();
-    }
-
-    @Override
-    public void reducePower(int reduceAmount) {
-        int reduction = amount;
-        super.reducePower(reduceAmount);
-        reduction = reduction - amount;
-        StellarPhaseValue.maxStellarPhase.set(AbstractDungeon.player, StellarPhaseValue.maxStellarPhase.get(AbstractDungeon.player) - reduction);
-        AstrologerMod.stellarUI.updateTooltip();
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (PhaseCheck.isStar(card))
+        {
+            for (int i = 0; i < this.amount; ++i)
+                AbstractDungeon.actionManager.addToBottom(new AdvancePhaseAction(false));
+        }
     }
 
     public void updateDescription() {

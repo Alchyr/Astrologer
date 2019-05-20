@@ -57,7 +57,7 @@ public class TheDevil extends StellarCard {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
             if (upgraded)
             {
-                AbstractDungeon.actionManager.addToBottom(new IncreasePlayerMaxHPAction(3));
+                AbstractDungeon.actionManager.addToBottom(new IncreasePlayerMaxHPAction(this.magicNumber));
             }
         }
     }
