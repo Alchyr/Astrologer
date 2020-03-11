@@ -6,7 +6,6 @@ import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnCardDrawPower;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -18,7 +17,7 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class GlimpsePower extends BasePower implements OnCardDrawPower {
+public class GlimpsePower extends BasePower {
     public static final String NAME = "Glimpse";
     public static final PowerType TYPE = PowerType.BUFF;
     public static final boolean TURN_BASED = false;
@@ -78,26 +77,7 @@ public class GlimpsePower extends BasePower implements OnCardDrawPower {
                 break;
         }
         this.renderColor.a = c.a;
-        sb.setColor(this.renderColor);
-        if (this.img != null) {
-            sb.draw(this.img, x - 12.0F, y - 12.0F, 16.0F, 16.0F, 32.0F, 32.0F, Settings.scale * 1.5F, Settings.scale * 1.5F, 0.0F, 0, 0, 32, 32, false, false);
-        } else {
-            sb.draw(this.region48, x - (float)this.region48.packedWidth / 2.0F, y - (float)this.region48.packedHeight / 2.0F, (float)this.region48.packedWidth / 2.0F, (float)this.region48.packedHeight / 2.0F, (float)this.region48.packedWidth, (float)this.region48.packedHeight, Settings.scale, Settings.scale, 0.0F);
-        }
-
-        try
-        {
-            Iterator itr = ((ArrayList)ReflectionHacks.getPrivate(this, AbstractPower.class, "effect")).iterator();
-
-            while(itr.hasNext()) {
-                AbstractGameEffect e = (AbstractGameEffect)itr.next();
-                e.render(sb, x, y);
-            }
-        }
-        catch (Exception e)
-        {
-            AstrologerMod.logger.info("Error rendering GlimpsePower effects.");
-        }
+        super.renderIcons(sb, x, y, this.renderColor);
     }
 
     public void updateDescription() {

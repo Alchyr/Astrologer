@@ -47,7 +47,7 @@ public class TheHighPriestess extends StellarCard {
     @Override
     public void upgrade() {
         super.upgrade();
-        AlwaysRetainField.alwaysRetain.set(this, true);
+        this.selfRetain = true;
     }
 
     @Override

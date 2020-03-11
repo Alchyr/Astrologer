@@ -19,7 +19,7 @@ public class TheMagician extends StellarCard {
             2,
             CardType.ATTACK,
             CardTarget.ENEMY,
-            CardRarity.UNCOMMON
+            CardRarity.RARE
     );
 
     public final static String ID = makeID(cardInfo.cardName);

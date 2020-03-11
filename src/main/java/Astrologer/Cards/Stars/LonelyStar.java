@@ -40,6 +40,6 @@ public class LonelyStar extends StarCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new SFXAction(Sounds.Sparkle.getKey(), 0.3f));
+        AbstractDungeon.actionManager.addToBottom(new SFXAction(Sounds.Sparkle.key, 0.3f));
     }
 }

@@ -109,13 +109,13 @@ public class Astrologer extends CustomPlayer {
     // Character select screen effect
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA(Sparkle.getKey(), -0.5f);
+        CardCrawlGame.sound.playA(Sparkle.key, -0.5f);
     }
 
     // Character select on-button-press sound effect
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return Sparkle.getKey();
+        return Sparkle.key;
     }
 
     @Override

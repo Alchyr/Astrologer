@@ -7,6 +7,7 @@ import Astrologer.Actions.Astrologer.NeutronStarDamageAction;
 import Astrologer.Actions.Generic.PerformXAction;
 import Astrologer.Powers.Starlit;
 import Astrologer.Util.CardInfo;
+import com.megacrit.cardcrawl.cards.red.Whirlwind;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -40,10 +41,6 @@ public class Alignment extends StarCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (this.energyOnUse < EnergyPanel.totalCount) {
-            this.energyOnUse = EnergyPanel.totalCount;
-        }
-
         AlignmentAction action = new AlignmentAction(this.magicNumber);
         AbstractDungeon.actionManager.addToBottom(new PerformXAction(action, p, this.energyOnUse, this.freeToPlayOnce));
     }

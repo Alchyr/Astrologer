@@ -16,6 +16,14 @@
     "DESCRIPTION": "The #yStellar #yPhase starts at #b1, and increases whenever a #yStar is played or #yExhausted."
   },
   {
+    "PROPER_NAME": "Ominous Star",
+    "NAMES": [
+      "ominous star",
+      "ominous_star"
+    ],
+    "DESCRIPTION": "#yOminous #yStar is a 1 cost #yStar."
+  },
+  {
     "PROPER_NAME": "Alignment",
     "NAMES": [
       "solar",

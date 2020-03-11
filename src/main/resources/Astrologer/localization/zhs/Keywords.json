@@ -13,7 +13,7 @@
       "星相",
       "星相"
     ],
-    "DESCRIPTION": " #y星相 从 #b1 开始, 并且每当 #y星球 被触发或者 #y消耗 时增加."
+    "DESCRIPTION": " #y星相 从 #b1 开始, 并且每当 #y星球 牌被打出或者 #y消耗 时增加."
   },
   {
     "PROPER_NAME": "星相排序",
@@ -23,7 +23,7 @@
       "月亮",
       "月亮:"
     ],
-    "DESCRIPTION": " #y星相排序 可以是 #y太阳 的也可以是 #y月球 的. NL 每当 #y星球 被触发或者 #y消耗 时 #y星相排序 将会切换."
+    "DESCRIPTION": " #y星相排序 可以是 #y太阳 的也可以是 #y月球 的. NL 每当 #y星球 牌被打出或者 #y消耗 时 #y星相排序 将会切换."
   },
   {
     "PROPER_NAME": "星芒",
@@ -31,5 +31,13 @@
       "星芒"
     ],
     "DESCRIPTION": "身上有 #y星芒 的敌人, 每回合失去相当于 #y星相 层数的生命值. 每回合, #y星芒 降低 #b1 层."
+  },
+  {
+    "PROPER_NAME": "Ominous Star",
+    "NAMES": [
+      "ominous star",
+      "ominous_star"
+    ],
+    "DESCRIPTION": "#yOminous #yStar is a 1 cost #y星球 ."
   }
 ]

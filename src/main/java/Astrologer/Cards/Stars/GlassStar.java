@@ -16,23 +16,23 @@ public class GlassStar extends StarCard {
             "GlassStar",
             1,
             CardType.SKILL,
-            CardTarget.NONE,
+            CardTarget.SELF,
             CardRarity.UNCOMMON
     );
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int BLOCK = 5;
+    private final static int BLOCK = 6;
     private final static int UPG_BLOCK = 2;
 
     public GlassStar()
     {
         super(cardInfo, false);
 
-        setBlock(BLOCK, UPG_BLOCK);
+        setMagic(BLOCK, UPG_BLOCK);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GlassStarPower(p, this.block), this.block));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GlassStarPower(p, this.magicNumber), this.magicNumber));
     }
 }

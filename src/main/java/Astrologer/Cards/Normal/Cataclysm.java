@@ -29,14 +29,15 @@ public class Cataclysm extends BaseCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int DAMAGE = 26;
-    private final static int UPG_DAMAGE = 6;
+    private final static int DAMAGE = 28;
+    private final static int UPG_COST = 4;
 
     public Cataclysm()
     {
         super(cardInfo, false);
 
-        setDamage(DAMAGE, UPG_DAMAGE);
+        setDamage(DAMAGE);
+        setCostUpgrade(UPG_COST);
 
         setExhaust(true);
 

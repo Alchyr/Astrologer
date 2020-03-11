@@ -5,6 +5,8 @@ import Astrologer.Interfaces.ActivateStellarPower;
 import Astrologer.Patches.StellarPhaseValue;
 import Astrologer.Util.CardInfo;
 import basemod.helpers.TooltipInfo;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -36,6 +38,15 @@ public abstract class StellarCard extends BaseCard {
         this.stellarModified = false;
         this.upgradesStellar = false;
         tags.add(CustomTags.STELLAR);
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        super.triggerOnGlowCheck();
+        if (stellarActive() && (this.glowColor.equals(AbstractCard.BLUE_BORDER_GLOW_COLOR) || MathUtils.randomBoolean())) //will be purple if it is default, or 50% of the time if it is not
+        {
+            this.glowColor = new Color(0.55f, 0.1f, 1.0f, 1.0f);
+        }
     }
 
     @Override

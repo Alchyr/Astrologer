@@ -18,7 +18,7 @@ public class TheStar extends StellarCard {
             1,
             CardType.ATTACK,
             CardTarget.ALL_ENEMY,
-            CardRarity.RARE
+            CardRarity.UNCOMMON
     );
 
     public final static String ID = makeID(cardInfo.cardName);

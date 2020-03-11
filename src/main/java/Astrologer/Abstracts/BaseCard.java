@@ -2,14 +2,19 @@ package Astrologer.Abstracts;
 
 import Astrologer.AstrologerMod;
 import Astrologer.Enums.CardColorEnum;
+import Astrologer.Enums.CustomTags;
 import Astrologer.Patches.AnimatedCardsPatch;
 import Astrologer.Util.CardInfo;
+import Astrologer.Util.PhaseCheck;
 import Astrologer.Util.TextureLoader;
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomCard;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import static Astrologer.AstrologerMod.makeID;
 import static Astrologer.Util.TextureLoader.getAnimatedCardTextures;
@@ -46,7 +51,7 @@ public abstract class BaseCard extends CustomCard {
 
     public BaseCard(String cardName, int cost, CardType cardType, CardTarget target, CardRarity rarity, boolean upgradesDescription)
     {
-        super(makeID(cardName), "", null, cost, "", cardType, COLOR, rarity, target);
+        super(makeID(cardName), "", (String) null, cost, "", cardType, COLOR, rarity, target);
 
         cardStrings = CardCrawlGame.languagePack.getCardStrings(cardID);
 
@@ -73,6 +78,30 @@ public abstract class BaseCard extends CustomCard {
         this.magicUpgrade = 0;
 
         InitializeCard();
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        boolean colored = false;
+
+        for (CardTags tag : this.tags)
+        {
+            if (tag == CustomTags.LUNAR && PhaseCheck.lunarActive())
+            {
+                this.glowColor = new Color(0.9f, 0.9f, 1.0f, 1.0f);
+                colored = true;
+                break;
+            }
+            else if (tag == CustomTags.SOLAR && PhaseCheck.solarActive())
+            {
+                this.glowColor = new Color(0.93f, 0.85f, 0.0f, 1.0f);
+                colored = true;
+                break;
+            }
+        }
+
+        if (!colored)
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 
     public void loadFrames(String cardName, int frameCount, float frameRate)

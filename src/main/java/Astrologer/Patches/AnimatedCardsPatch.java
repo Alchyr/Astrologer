@@ -145,7 +145,7 @@ public class AnimatedCardsPatch {
         )
         public static SpireReturn altRender(SingleCardViewPopup __instance, SpriteBatch sb, AbstractCard card)
         {
-            if (AnimationInfo.isAnimated.get(card))
+            if (!card.isLocked && AnimationInfo.isAnimated.get(card))
             {
                 if (AnimationInfo.cardPortraitFrames.get(card.cardID) == null)
                 {
@@ -164,13 +164,8 @@ public class AnimatedCardsPatch {
             @Override
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception
             {
-                ArrayList<Matcher> prevMatches = new ArrayList<>();
-                prevMatches.add(
-                        new Matcher.MethodCallMatcher(SpriteBatch.class,
-                                "draw"));
-
-                Matcher finalMatcher = new Matcher.FieldAccessMatcher(SingleCardViewPopup.class, "portraitImg");
-                return LineFinder.findInOrder(ctMethodToPatch, prevMatches, finalMatcher);
+                Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractCard.class, "isLocked");
+                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
             }
         }
     }

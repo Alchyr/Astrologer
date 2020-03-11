@@ -12,7 +12,7 @@ import static Astrologer.AstrologerMod.makeID;
 public class TheTower extends StellarCard {
     private final static CardInfo cardInfo = new CardInfo(
             "TheTower",
-            1,
+            2,
             CardType.ATTACK,
             CardTarget.ALL_ENEMY,
             CardRarity.UNCOMMON
@@ -20,10 +20,10 @@ public class TheTower extends StellarCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int DAMAGE = 7;
+    private final static int DAMAGE = 16;
+    private final static int UPG_DAMAGE = 3;
 
-    private final static int BONUS_HITS = 3;
-    private final static int UPG_BONUS_HITS = 1;
+    private final static int BONUS_HITS = 2;
 
     private final static int STELLAR = 16;
 
@@ -31,8 +31,8 @@ public class TheTower extends StellarCard {
     {
         super(cardInfo, false, STELLAR);
 
-        setDamage(DAMAGE);
-        setMagic(BONUS_HITS, UPG_BONUS_HITS);
+        setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(BONUS_HITS);
 
         loadFrames(cardInfo.cardName, 7, 0.13f);
     }

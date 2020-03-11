@@ -6,16 +6,18 @@ import Astrologer.Util.TextureLoader;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import com.megacrit.cardcrawl.vfx.combat.DamageHeartEffect;
+import com.megacrit.cardcrawl.vfx.DamageHeartEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 import static Astrologer.AstrologerMod.assetPath;
+import static Astrologer.AstrologerMod.logger;
 
 public class FlashAtkImgEffectPatches {
     private static final String StarTexturePath = assetPath("img/Attack/BigStar.png");
@@ -34,18 +36,20 @@ public class FlashAtkImgEffectPatches {
     public static class loadImagePatch
     {
         @SpirePrefixPatch
-        public static SpireReturn<TextureAtlas.AtlasRegion> tryLoadImage(AbstractGameEffect __instance)
+        public static SpireReturn<TextureAtlas.AtlasRegion> tryLoadImage(AbstractGameEffect __instance, AbstractGameAction.AttackEffect ___effect)
         {
             try {
-                AbstractGameAction.AttackEffect effect = (AbstractGameAction.AttackEffect) ReflectionHacks.getPrivate(__instance, FlashAtkImgEffect.class, "effect");
-                if (effect == AttackEffectEnum.STAR)
+                if (___effect == AttackEffectEnum.STAR)
                 {
+                    ReflectionHacks.setPrivate(__instance, AbstractGameEffect.class, "rotation", MathUtils.random(360.0f));
+
                     return SpireReturn.Return(new TextureAtlas.AtlasRegion(starTexture, 0, 0, starTexture.getWidth(), starTexture.getHeight()));
                 }
             }
             catch (Exception e)
             {
-
+                logger.error("Failed to get star texture in " + __instance.getClass().getName());
+                e.printStackTrace();
             }
             return SpireReturn.Continue();
         }
@@ -66,7 +70,7 @@ public class FlashAtkImgEffectPatches {
         {
             if (effect == AttackEffectEnum.STAR)
             {
-                CardCrawlGame.sound.play(Sounds.Tinkle.getKey(), 0.15f);
+                CardCrawlGame.sound.play(Sounds.Tinkle.key, 0.15f);
             }
             return SpireReturn.Continue();
         }

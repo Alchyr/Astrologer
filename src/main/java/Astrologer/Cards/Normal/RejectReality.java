@@ -29,11 +29,10 @@ public class RejectReality extends BaseCard {
     public final static String ID = makeID(cardInfo.cardName);
 
     private final static int DAMAGE = 18;
-    private final static int UPG_DAMAGE = 2;
+    private final static int UPG_DAMAGE = 4;
     private final static int BLOCK = 24;
-    private final static int UPG_BLOCK = 4;
+    private final static int UPG_BLOCK = 6;
     private final static int DAZED = 3;
-    private final static int UPG_DAZED = -1;
 
     public RejectReality()
     {
@@ -41,22 +40,22 @@ public class RejectReality extends BaseCard {
 
         setDamage(DAMAGE, UPG_DAMAGE);
         setBlock(BLOCK, UPG_BLOCK);
-        setMagic(DAZED, UPG_DAZED);
+        setMagic(DAZED);
     }
 
     @Override
     public AbstractCard makeCopy() {
         return new RejectReality();
     }
-
+    /*
     @Override
     public void upgrade() {
         super.upgrade();
         if (this.magicNumber < 0) //infinite journal safety.
         {
-            this.baseMagicNumber = this.magicNumber = 0;
+            this.baseMagicNumber = this.magicNumber = 0;no longer decreases magic number on upgrade. unnecessary.
         }
-    }
+    }*/
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));

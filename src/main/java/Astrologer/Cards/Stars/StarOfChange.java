@@ -31,12 +31,12 @@ public class StarOfChange extends StarCard {
 
     @Override
     public void triggerWhenDrawn() {
-        AbstractDungeon.actionManager.addToBottom(new ExhaustAction(AbstractDungeon.player, AbstractDungeon.player, 1, false));
+        AbstractDungeon.actionManager.addToBottom(new ExhaustAction(1, false, false, false));
         AbstractCard toAdd = AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy();
         if (upgraded)
             toAdd.upgrade();
 
-        toAdd.modifyCostForTurn(-999);
+        toAdd.setCostForTurn(0);
 
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(toAdd, 1));
     }

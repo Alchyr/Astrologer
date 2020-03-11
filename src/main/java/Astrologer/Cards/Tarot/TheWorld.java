@@ -2,10 +2,12 @@ package Astrologer.Cards.Tarot;
 
 import Astrologer.Abstracts.StellarCard;
 import Astrologer.Actions.Astrologer.ResetDeckAction;
+import Astrologer.Actions.Astrologer.TheWorldAction;
 import Astrologer.Actions.Generic.EndTurnNowAction;
 import Astrologer.Actions.Generic.SetHPAction;
 import Astrologer.Util.CardInfo;
 import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.AlwaysRetainField;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
@@ -27,7 +29,7 @@ public class TheWorld extends StellarCard {
             "TheWorld",
             1,
             CardType.SKILL,
-            CardTarget.ALL,
+            CardTarget.NONE,
             CardRarity.RARE
     );
 
@@ -35,26 +37,30 @@ public class TheWorld extends StellarCard {
 
     private final static int STELLAR = 21;
 
-    private final static int DRAW = 3;
-    private final static int UPG_DRAW = 1;
-
     public TheWorld()
     {
-        super(cardInfo, false, STELLAR);
-
-        setMagic(DRAW, UPG_DRAW);
+        super(cardInfo, true, STELLAR);
     }
 
     @Override
-    public void applyPowers() {
-        super.applyPowers();
-        this.purgeOnUse = stellarActive();
+    public void upgrade() {
+        super.upgrade();
+        this.selfRetain = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (stellarActive())
         {
-            AbstractDungeon.actionManager.addToBottom(new ShakeScreenAction(0.0f, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
+            for (int i = 0; i < 25; ++i)
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new BottomFogEffect(false)));
+            AbstractDungeon.actionManager.addToBottom(new TheWorldAction());
+        }
+    }
+
+    //Old effect
+
+
+            /*AbstractDungeon.actionManager.addToBottom(new ShakeScreenAction(0.0f, ScreenShake.ShakeDur.MED, ScreenShake.ShakeIntensity.HIGH));
             if (MathUtils.randomBoolean())
             {
                 AbstractDungeon.actionManager.addToBottom(new SFXAction("CEILING_DUST_2"));
@@ -73,9 +79,5 @@ public class TheWorld extends StellarCard {
             }
 
             AbstractDungeon.actionManager.addToBottom(new VFXAction(new BottomFogEffect(false)));
-            AbstractDungeon.actionManager.addToBottom(new ResetDeckAction(this));
-        }
-
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
-    }
+            AbstractDungeon.actionManager.addToBottom(new ResetDeckAction(this));*/
 }

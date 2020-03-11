@@ -33,7 +33,7 @@ public class Starlit extends BasePower implements HealthBarRenderPower {
     }
 
     public void playApplyPowerSfx() {
-        CardCrawlGame.sound.play(Sparkle.getKey(), 0.05F);
+        CardCrawlGame.sound.play(Sparkle.key, 0.05F);
     }
 
     public void atStartOfTurn() {
@@ -41,7 +41,7 @@ public class Starlit extends BasePower implements HealthBarRenderPower {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
         } else if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             AbstractDungeon.actionManager.addToBottom(new PowerFlashAction(this, false));
-            AbstractDungeon.actionManager.addToBottom(new SFXAction(Sparkle.getKey(), 0.05F));
+            AbstractDungeon.actionManager.addToBottom(new SFXAction(Sparkle.key, 0.05F));
             AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.owner, StellarPhaseValue.stellarPhase.get(AbstractDungeon.player)));
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, ID, 1));
         }
@@ -54,7 +54,7 @@ public class Starlit extends BasePower implements HealthBarRenderPower {
         } else if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, ID, 1));
             AbstractDungeon.actionManager.addToTop(new LoseHPAction(this.owner, this.owner, StellarPhaseValue.stellarPhase.get(AbstractDungeon.player)));
-            AbstractDungeon.actionManager.addToTop(new SFXAction(Sparkle.getKey(), 0.05F));
+            AbstractDungeon.actionManager.addToTop(new SFXAction(Sparkle.key, 0.05F));
             AbstractDungeon.actionManager.addToTop(new PowerFlashAction(this, false));
         }
     }

@@ -22,15 +22,19 @@ public class Starfield extends BaseCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    public final static int UPG_COST = 2;
-
     public Starfield()
     {
-        super(cardInfo, false);
+        super(cardInfo, true);
 
-        setCostUpgrade(UPG_COST);
+        isEthereal = true;
 
         this.tags.add(BaseModCardTags.FORM);
+    }
+
+    @Override
+    public void upgrade() {
+        super.upgrade();
+        this.isEthereal = false;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

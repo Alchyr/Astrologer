@@ -21,17 +21,17 @@ public class FrozenStar extends StarCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int BLOCK = 9;
+    private final static int BLOCK = 8;
     private final static int UPG_BLOCK = 3;
 
     public FrozenStar()
     {
         super(cardInfo, false);
 
-        setBlock(BLOCK, UPG_BLOCK);
+        setMagic(BLOCK, UPG_BLOCK);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FrozenStarPower(p, this.block), this.block));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FrozenStarPower(p, this.magicNumber), this.magicNumber));
     }
 }

@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import static Astrologer.AstrologerMod.assetPath;
 
 public class StellarUI {
-    private static final String SkyTexturePath = assetPath("img/UI/Sky.png");
+    private static final String SkyTexturePath = assetPath("img/UI/LargeSky.png");
     private static final String GlowTexturePath = assetPath("img/UI/Glow.png");
     private static final String StarTexturePath = assetPath("img/Character/orb/Star.png");
     private static final String SunTexturePath = assetPath("img/UI/Sun.png");
@@ -35,12 +35,15 @@ public class StellarUI {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("astrologer:StellarUI");
     private static final String[] TEXT = uiStrings.TEXT;
 
-    private static final int SKY_WIDTH = 450;
-    private static final int SKY_HEIGHT = 450;
+    private static final float SKY_SCALE = Settings.WIDTH / 1920.0f;
+    private static final int ORIG_SKY_WIDTH = 1920;
+    private static final int ORIG_SKY_HEIGHT = 825;
+    private static final float SKY_WIDTH = ORIG_SKY_WIDTH * SKY_SCALE;
+    private static final float SKY_HEIGHT = ORIG_SKY_HEIGHT * SKY_SCALE;
 
-    private static final float SKY_OFFSET = SKY_WIDTH / 2.0f;
+    //private static final float SKY_OFFSET = SKY_WIDTH / 2.0f;
 
-    private static final float SKY_Y = Settings.HEIGHT - (SKY_HEIGHT + 20) * Settings.scale;
+    private static final float SKY_Y = Settings.HEIGHT - SKY_HEIGHT * Settings.scale;
 
     private static final float TEXT_X = Settings.WIDTH / 2.0f;
     private static final float TEXT_Y = Settings.HEIGHT - 225.0F * Settings.scale;
@@ -66,7 +69,7 @@ public class StellarUI {
     private static Texture sunTexture = TextureLoader.getTexture(SunTexturePath);
     private static Texture moonTexture = TextureLoader.getTexture(MoonTexturePath);
 
-    private ArrayList<DrawInfo> skyPositions;
+    //private ArrayList<DrawInfo> skyPositions;
     private ArrayList<StellarUIStarPosition> starPositions;
 
     private int roomLastRendered;
@@ -89,11 +92,11 @@ public class StellarUI {
 
     public StellarUI()
     {
-        skyPositions = new ArrayList<>();
+        //skyPositions = new ArrayList<>();
         starPositions = new ArrayList<>();
         tips = new ArrayList<>();
 
-        for (float x = 0; x < Settings.WIDTH; x += SKY_WIDTH * Settings.scale)
+        /*for (float x = 0; x < Settings.WIDTH; x += SKY_WIDTH * Settings.scale)
         {
             skyPositions.add(new DrawInfo(x, SKY_Y, 0.0f));
         }
@@ -101,7 +104,7 @@ public class StellarUI {
         skyPositions.add(new DrawInfo(-SKY_OFFSET * Settings.scale, SKY_Y - (100 * Settings.scale), 45.0f));
         skyPositions.add(new DrawInfo(Settings.WIDTH + SKY_OFFSET * Settings.scale, SKY_Y - (100 * Settings.scale), -45.0f));
         skyPositions.add(new DrawInfo(0, SKY_Y - (50 * Settings.scale), 22.5f));
-        skyPositions.add(new DrawInfo(Settings.WIDTH, SKY_Y - (50 * Settings.scale), -22.5f));
+        skyPositions.add(new DrawInfo(Settings.WIDTH, SKY_Y - (50 * Settings.scale), -22.5f));*/
 
         roomLastRendered = -1;
 
@@ -232,9 +235,11 @@ public class StellarUI {
 
             sb.setColor(renderColor);
 
-            for (DrawInfo info : skyPositions) {
+            /*for (DrawInfo info : skyPositions) {
                 sb.draw(skyTexture, info.x, info.y, SKY_OFFSET, SKY_OFFSET, SKY_WIDTH, SKY_HEIGHT, Settings.scale, Settings.scale, info.angle, 0, 0, SKY_WIDTH, SKY_HEIGHT, false, false);
-            }
+            }*/
+
+            sb.draw(skyTexture, 0, SKY_Y, 0, 0, SKY_WIDTH, SKY_HEIGHT, 1.0f, 1.0f, 0, 0, 0, ORIG_SKY_WIDTH, ORIG_SKY_HEIGHT, false, false);
 
             //Render a glow behind each start if player has a power that implements ActivateStellarPower
             for (StellarUIStarPosition pos : starPositions) {

@@ -38,15 +38,6 @@ public class TheHangedMan extends StellarCard {
         setMagic(DEBUFF, UPG_DEBUFF);
     }
 
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        if (stellarActive())
-            this.target = CardTarget.ALL_ENEMY;
-        else
-            this.target = CardTarget.ENEMY;
-    }
-
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m != null)
         {

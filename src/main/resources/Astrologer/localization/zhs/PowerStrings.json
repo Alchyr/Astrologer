@@ -23,7 +23,7 @@
   "astrologer:FrozenStar": {
     "NAME": "冻星",
     "DESCRIPTIONS": [
-      "下次触发 #y星球 时, 获得 #b",
+      "下次打出 #y星球 牌时, 获得 #b",
       " #y格挡 ."
     ]
   },
@@ -55,7 +55,7 @@
   "astrologer:GlassStar": {
     "NAME": "玻璃之星",
     "DESCRIPTIONS": [
-      "#y消耗 打出的下一张牌 并获得相当于 #b",
+      " #y消耗 打出的下一张牌 并获得相当于 #b",
       " 倍耗能的 #y格挡 ."
     ]
   },
@@ -78,7 +78,7 @@
   "astrologer:Confirmation": {
     "NAME": "确认",
     "DESCRIPTIONS": [
-      "你每在同一回合内抽到同一张牌, 对所有敌人造成 #b",
+      "Whenever you draw an #yOminous #yStar, 对所有敌人造成 #b",
       " 点伤害."
     ]
   },
@@ -107,14 +107,14 @@
   "astrologer:Prismatic": {
     "NAME": "棱镜",
     "DESCRIPTIONS": [
-      "每回合第一次触发 #y星球 , 给予所有敌人 #b",
+      "每回合第一次打出 #y星球 , 随机给予敌人 #b",
       " 层 #y星芒 ."
     ]
   },
   "astrologer:CosmicExpanse": {
     "NAME": "宇宙膨胀",
     "DESCRIPTIONS": [
-      "你每打出一星球 牌, 将 #y星相 增加 #b",
+      "你每打出一张 #y星球 牌, 将 #y星相 增加 #b",
       "."
     ]
   },

@@ -6,7 +6,7 @@ import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public class StellarVariable extends DynamicVariable {
-    private static final String KEY = "STELLAR_VARIABLE";
+    private static final String KEY = "STELLAR";
     @Override
     public final String key()
     {

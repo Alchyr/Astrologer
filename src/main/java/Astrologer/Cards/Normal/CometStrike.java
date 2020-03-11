@@ -44,6 +44,6 @@ public class CometStrike extends BaseCard {
                 new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_HEAVY));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p, p, 1, !this.upgraded));
+        AbstractDungeon.actionManager.addToBottom(new ExhaustAction(1, !this.upgraded, false, false));
     }
 }

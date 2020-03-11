@@ -28,7 +28,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import javafx.util.Pair;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import javassist.CannotCompileException;
 import javassist.CtClass;
 import javassist.NotFoundException;
@@ -56,13 +56,13 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
     public static final Logger logger = LogManager.getLogger("Astrologer");
 
     // Character color
-    public static final Color STARS = CardHelper.getColor(200.0f, 200.0f, 220.0f);
+    public static final Color STARS = new Color(0.78431372549f, 0.78431372549f, 0.86274509803f, 1.0f);
 
     // Mod panel stuff
     private static final String BADGE_IMAGE = "img/Badge.png";
-    private static final String MODNAME = "Astrologist";
+    private static final String MODNAME = "Astrologer";
     private static final String AUTHOR = "Alchyr";
-    private static final String DESCRIPTION = "";
+    private static final String DESCRIPTION = "Spaaaaaaaaaaace.";
 
     // Card backgrounds/basic images
     private static final String ATTACK_BACK = "img/Character/CardGeneric/bg_attack.png";
@@ -79,6 +79,9 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
     // Character images
     private static final String BUTTON = "img/Character/CharacterButton.png";
     private static final String PORTRAIT = "img/Character/CharacterPortrait.png";
+
+    //other
+    private static final String CROSSOVER_PACKAGE = "Astrologer.Cards.Crossover.";
 
 
     //Card Lists
@@ -128,7 +131,7 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
 
         try {
             autoAddCards();
-        } catch (URISyntaxException | IllegalAccessException | InstantiationException | NotFoundException | CannotCompileException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -154,6 +157,9 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
 
             BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, null);
         }
+
+
+        //CardLibrary.unlockAndSeeAllCards();
     }
 
     @Override
@@ -165,24 +171,32 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
     @Override
     public void receiveEditStrings()
     {
-        String lang = getLangString();
+        String lang = "eng";
 
-        try
+        logger.info("Loading English strings.");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, assetPath("localization/" + lang + "/RelicStrings.json"));
+        BaseMod.loadCustomStringsFile(CardStrings.class, assetPath("localization/" + lang + "/CardStrings.json"));
+        BaseMod.loadCustomStringsFile(CharacterStrings.class, assetPath("localization/" + lang + "/CharacterStrings.json"));
+        BaseMod.loadCustomStringsFile(PowerStrings.class, assetPath("localization/" + lang + "/PowerStrings.json"));
+        BaseMod.loadCustomStringsFile(UIStrings.class, assetPath("localization/" + lang + "/UIStrings.json"));
+
+        lang = getLangString();
+
+        if (!lang.equals("eng"))
         {
-            BaseMod.loadCustomStringsFile(RelicStrings.class, assetPath("localization/" + lang + "/RelicStrings.json"));
-            BaseMod.loadCustomStringsFile(CardStrings.class, assetPath("localization/" + lang + "/CardStrings.json"));
-            BaseMod.loadCustomStringsFile(CharacterStrings.class, assetPath("localization/" + lang + "/CharacterStrings.json"));
-            BaseMod.loadCustomStringsFile(PowerStrings.class, assetPath("localization/" + lang + "/PowerStrings.json"));
-            BaseMod.loadCustomStringsFile(UIStrings.class, assetPath("localization/" + lang + "/UIStrings.json"));
-        }
-        catch (Exception e)
-        {
-            lang = "eng";
-            BaseMod.loadCustomStringsFile(RelicStrings.class, assetPath("localization/" + lang + "/RelicStrings.json"));
-            BaseMod.loadCustomStringsFile(CardStrings.class, assetPath("localization/" + lang + "/CardStrings.json"));
-            BaseMod.loadCustomStringsFile(CharacterStrings.class, assetPath("localization/" + lang + "/CharacterStrings.json"));
-            BaseMod.loadCustomStringsFile(PowerStrings.class, assetPath("localization/" + lang + "/PowerStrings.json"));
-            BaseMod.loadCustomStringsFile(UIStrings.class, assetPath("localization/" + lang + "/UIStrings.json"));
+            logger.info("Loading localized strings for " + lang + ".");
+            try
+            {
+                BaseMod.loadCustomStringsFile(RelicStrings.class, assetPath("localization/" + lang + "/RelicStrings.json"));
+                BaseMod.loadCustomStringsFile(CardStrings.class, assetPath("localization/" + lang + "/CardStrings.json"));
+                BaseMod.loadCustomStringsFile(CharacterStrings.class, assetPath("localization/" + lang + "/CharacterStrings.json"));
+                BaseMod.loadCustomStringsFile(PowerStrings.class, assetPath("localization/" + lang + "/PowerStrings.json"));
+                BaseMod.loadCustomStringsFile(UIStrings.class, assetPath("localization/" + lang + "/UIStrings.json"));
+            }
+            catch (Exception e)
+            {
+                logger.error("Error occurred while loading localized strings: " + e.getMessage());
+            }
         }
     }
 
@@ -222,9 +236,9 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
         return Settings.language.name().toLowerCase();
     }
 
-    private void addAudio(Pair<String, String> audioData)
+    private void addAudio(Sounds.AudioPair audioData)
     {
-        BaseMod.addAudio(audioData.getKey(), audioData.getValue());
+        BaseMod.addAudio(audioData.key, audioData.file);
     }
 
     @SuppressWarnings("unused")
@@ -232,9 +246,8 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
         new AstrologerMod();
     }
 
-    //I totally didn't copy this from Hubris, made by kiooeht.
-    private static void autoAddCards() throws URISyntaxException, IllegalAccessException, InstantiationException, NotFoundException, CannotCompileException
-    {
+    //I totally didn't copy this from kiooeht.
+    private static void autoAddCards() throws URISyntaxException, IllegalAccessException, InstantiationException, NotFoundException, CannotCompileException, ClassNotFoundException {
         ClassFinder finder = new ClassFinder();
         URL url = AstrologerMod.class.getProtectionDomain().getCodeSource().getLocation();
         finder.add(new File(url.toURI()));
@@ -247,10 +260,22 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
                         new CardFilter()
                 );
         Collection<ClassInfo> foundClasses = new ArrayList<>();
-        ArrayList<AbstractCard> addedCards = new ArrayList<>();
         finder.findClasses(foundClasses, filter);
 
+        String modID;
+
         for (ClassInfo classInfo : foundClasses) {
+            if (classInfo.getClassName().startsWith("Astrologer.Cards.Crossover.")) {
+                modID = classInfo.getClassName().replace(CROSSOVER_PACKAGE, "");
+                modID = modID.substring(0, modID.indexOf('.'));
+
+                if (!Loader.isModLoaded(modID))
+                {
+                    continue;
+                }
+            }
+
+
             CtClass cls = Loader.getClassPool().get(classInfo.getClassName());
 
             boolean isCard = false;
@@ -269,16 +294,12 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
                 continue;
             }
 
-            AbstractCard card = (AbstractCard) Loader.getClassPool().toClass(cls).newInstance();
+            AbstractCard card = (AbstractCard) Loader.getClassPool().getClassLoader().loadClass(cls.getName()).newInstance();
 
             BaseMod.addCard(card);
-            addedCards.add(card);
 
+            //UnlockTracker.unlockCard(card.cardID);
         }
-        /*for (AbstractCard c : addedCards)
-        {
-            UnlockTracker.unlockCard(c.cardID);
-        }*/
     }
 
     public static String makeID(String partialID)

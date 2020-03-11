@@ -40,7 +40,7 @@
   },
   "astrologer:Wish": {
     "NAME": "Wish",
-    "DESCRIPTION": "Costs 1 less [E] for each astrologer:Star card Exhausted this combat. NL Gain !B! Block. NL Draw !M! card.",
+    "DESCRIPTION": "Costs 1 less [E] for each astrologer:Star card Exhausted this combat. NL Gain !B! Block. NL Draw !M! cards.",
     "UPGRADE_DESCRIPTION": "Costs 1 less [E] for each astrologer:Star card Exhausted this combat. NL Gain !B! Block. NL Draw !M! cards."
   },
   "astrologer:NewMoon": {
@@ -78,7 +78,7 @@
   },
   "astrologer:GlassStar": {
     "NAME": "Glass Star",
-    "DESCRIPTION": "astrologer:Star. NL Exhaust the next card you play and gain Block equal to !B! times its cost."
+    "DESCRIPTION": "astrologer:Star. NL Exhaust the next card you play and gain Block equal to !M! times its cost."
   },
   "astrologer:Observe": {
     "NAME": "Observe",
@@ -99,7 +99,7 @@
   },
   "astrologer:FrozenStar": {
     "NAME": "Frozen Star",
-    "DESCRIPTION": "astrologer:Star. NL The next time you play a astrologer:Star card, gain !B! Block."
+    "DESCRIPTION": "astrologer:Star. NL The next time you play a astrologer:Star card, gain !M! Block."
   },
   "astrologer:LonelyStar": {
     "NAME": "Lonely Star",
@@ -144,6 +144,10 @@
   "astrologer:StarOfMisfortune": {
     "NAME": "Star of Misfortune",
     "DESCRIPTION": "astrologer:Star. NL Apply !M! Weak. NL Apply !M! Vulnerable."
+  },
+  "astrologer:OminousStar": {
+    "NAME": "Ominous Star",
+    "DESCRIPTION": "astrologer:Star."
   },
   "astrologer:Prestidigitation": {
     "NAME": "Prestidigitation",
@@ -221,111 +225,112 @@
   },
   "astrologer:TheFool": {
     "NAME": "The Fool",
-    "DESCRIPTION": "Innate. NL Gain !B! Block. NL Deal !D! damage. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Exhaust."
+    "DESCRIPTION": "Innate. NL Gain !B! Block. NL Deal !D! damage. NL [#ccf3ff]Stellar[] !STELLAR!: Exhaust."
   },
   "astrologer:TheMagician": {
     "NAME": "The Magician",
-    "DESCRIPTION": "Ethereal. NL Deal damage equal to the number of cards played this combat. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play a random card from your draw pile.",
-    "UPGRADE_DESCRIPTION": "Deal damage equal to the number of cards played this combat. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play a random card from your draw pile.",
+    "DESCRIPTION": "Ethereal. NL Deal damage equal to the number of cards played this combat. NL [#ccf3ff]Stellar[] !STELLAR!: Play a random card from your draw pile.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to the number of cards played this combat. NL [#ccf3ff]Stellar[] !STELLAR!: Play a random card from your draw pile.",
     "EXTENDED_DESCRIPTION": [
-      "Ethereal. NL Deal damage equal to the number of cards played this combat. NL (Deals !D! damage.) NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play a random card from your draw pile.",
-      "Deal damage equal to the number of cards played this combat. NL (Deals !D! damage.) NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play a random card from your draw pile."
+      "Ethereal. NL Deal damage equal to the number of cards played this combat. NL (Deals !D! damage.) NL [#ccf3ff]Stellar[] !STELLAR!: Play a random card from your draw pile.",
+      "Deal damage equal to the number of cards played this combat. NL (Deals !D! damage.) NL [#ccf3ff]Stellar[] !STELLAR!: Play a random card from your draw pile."
     ]
   },
   "astrologer:TheHighPriestess": {
     "NAME": "The High Priestess",
-    "DESCRIPTION": "[#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Double the base damage of a card in your hand for the combat. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Double the base damage of a card in your hand for the combat. NL Exhaust."
+    "DESCRIPTION": "[#ccf3ff]Stellar[] !STELLAR!: Double the base damage of a card in your hand for the combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL [#ccf3ff]Stellar[] !STELLAR!: Double the base damage of a card in your hand for the combat. NL Exhaust."
   },
   "astrologer:TheEmpress": {
     "NAME": "The Empress",
-    "DESCRIPTION": "[#ccf3ff]Stellar[] !STELLAR_VARIABLE!: ALL enemies lose HP equal to the total amount of damage they intend to deal."
+    "DESCRIPTION": "[#ccf3ff]Stellar[] !STELLAR!: ALL enemies lose HP equal to the total amount of damage they intend to deal."
   },
   "astrologer:TheEmperor": {
     "NAME": "The Emperor",
-    "DESCRIPTION": "Enemy loses !M! Strength this turn. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Enemy loses three times as much Strength. NL Exhaust."
+    "DESCRIPTION": "Enemy loses !M! Strength this turn. NL [#ccf3ff]Stellar[] !STELLAR!: Enemy loses three times as much Strength. NL Exhaust."
   },
   "astrologer:TheHierophant": {
     "NAME": "The Hierophant",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Dexterity. At the end of the turn, lose !M! Dexterity. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Remove all debuffs. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Dexterity. At the end of the turn, lose !M! Dexterity. NL [#ccf3ff]Stellar[] !STELLAR!: Remove all debuffs. NL Exhaust."
   },
   "astrologer:TheLovers": {
     "NAME": "The Lovers",
-    "DESCRIPTION": "Exchange the costs of two cards in your hand for the rest of combat. NL Exhaust. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: The chosen cards will be played twice the next time you play them."
+    "DESCRIPTION": "Exchange the costs of two cards in your hand for the rest of combat. NL Exhaust. NL [#ccf3ff]Stellar[] !STELLAR!: The chosen cards will be played twice the next time you play them."
   },
   "astrologer:TheChariot": {
     "NAME": "The Chariot",
-    "DESCRIPTION": "Gain !M! Temporary_HP. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Gain 1 Intangible."
+    "DESCRIPTION": "Gain !M! Temporary_HP. NL [#ccf3ff]Stellar[] !STELLAR!: Gain 1 Intangible."
   },
   "astrologer:Strength": {
     "NAME": "Strength",
-    "DESCRIPTION": "Gain !M! Strength. NL Exhaust. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Gain !M! Strength for each enemy in combat."
+    "DESCRIPTION": "Gain !M! Strength. NL Exhaust. NL [#ccf3ff]Stellar[] !STELLAR!: Gain !M! Strength for each enemy in combat."
   },
   "astrologer:TheHermit": {
     "NAME": "The Hermit",
-    "DESCRIPTION": "Gain !B! Block for each card played this turn. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Draw a card from the bottom card of your draw pile. It costs 1 less this turn.",
+    "DESCRIPTION": "Gain !B! Block for each card played this turn. NL [#ccf3ff]Stellar[] !STELLAR!: Draw a card from the bottom of your draw pile. It costs 1 less this turn.",
     "EXTENDED_DESCRIPTION": [
-      "Gain !B! Block for each card played this turn. NL (Gain !M! Block.) NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Draw a card from the bottom card of your draw pile. It costs 1 less this turn."
+      "Gain !B! Block for each card played this turn. NL (Gain !M! Block.) NL [#ccf3ff]Stellar[] !STELLAR!: Draw a card from the bottom of your draw pile. It costs 1 less this turn."
     ]
   },
   "astrologer:WheelofFortune": {
     "NAME": "Wheel of Fortune",
-    "DESCRIPTION": "Lose 10 Gold. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Play !M! random [#ccf3ff]Stellar[] cards. Their [#ccf3ff]Stellar[] effects are triggered."
+    "DESCRIPTION": "Lose 10 Gold. NL [#ccf3ff]Stellar[] !STELLAR!: Play !M! random [#ccf3ff]Stellar[] cards. Their [#ccf3ff]Stellar[] effects are triggered."
   },
   "astrologer:Justice": {
     "NAME": "Justice",
-    "DESCRIPTION": "ALL creatures gain !B! Block. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: ALL enemies lose HP equal to double their current Block."
+    "DESCRIPTION": "ALL creatures gain !B! Block. NL [#ccf3ff]Stellar[] !STELLAR!: ALL enemies lose HP equal to double their current Block."
   },
   "astrologer:TheHangedMan": {
     "NAME": "The Hanged Man",
-    "DESCRIPTION": "Whenever you draw a card this turn, the enemy loses !M! HP. [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Draw 3 cards."
+    "DESCRIPTION": "Whenever you draw a card this turn, the enemy loses !M! HP. [#ccf3ff]Stellar[] !STELLAR!: Draw 3 cards."
   },
   "astrologer:Death": {
     "NAME": "Death",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Kill the target non-boss enemy."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL [#ccf3ff]Stellar[] !STELLAR!: Kill the target non-boss enemy."
   },
   "astrologer:Temperance": {
     "NAME": "Temperance",
-    "DESCRIPTION": "Heal !M! HP. NL Exhaust. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Exhaust any number of cards in your hand. Heal !M! HP for each card Exhausted."
+    "DESCRIPTION": "[#ccf3ff]Stellar[] !STELLAR!: Heal HP equal to the number of [#ccf3ff]Stellar[] cards in your deck. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "[#ccf3ff]Stellar[] !STELLAR!: Heal HP equal to the number of [#ccf3ff]Stellar[] cards in your deck. NL Exhaust. NL (Heal !M! HP.)"
+    ]
   },
   "astrologer:TheDevil": {
     "NAME": "The Devil",
-    "DESCRIPTION": "Deal !D! damage. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Lose 6 HP. NL Gain !M! Strength. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Lose 6 HP. NL Gain !M! Strength. NL Raise your Max HP by !M!. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL If this does not kill the enemy, lose 6 HP. NL [#ccf3ff]Stellar[] !STELLAR!: Deals additional damage equal to your missing health."
   },
   "astrologer:TheTower": {
     "NAME": "The Tower",
-    "DESCRIPTION": "Deal !D! damage to a random enemy. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Deal !D! damage to a random enemy !M! additional times."
+    "DESCRIPTION": "Deal !D! damage to a random enemy. NL [#ccf3ff]Stellar[] !STELLAR!: Deal !D! damage to a random enemy !M! additional times."
   },
   "astrologer:TheStar": {
     "NAME": "The Star",
-    "DESCRIPTION": "astrologer:Star. NL Deal damage equal to the current astrologer:Stellar_Phase to ALL enemies. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Deals twice as much damage.",
+    "DESCRIPTION": "astrologer:Star. NL Deal damage equal to the current astrologer:Stellar_Phase to ALL enemies. NL [#ccf3ff]Stellar[] !STELLAR!: Deals twice as much damage.",
     "EXTENDED_DESCRIPTION": [
-      "astrologer:Star. NL Deal damage equal to the current astrologer:Stellar_Phase to ALL enemies. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Deals twice as much damage. NL (Deals !D! damage.)"
+      "astrologer:Star. NL Deal damage equal to the current astrologer:Stellar_Phase to ALL enemies. NL [#ccf3ff]Stellar[] !STELLAR!: Deals twice as much damage. NL (Deals !D! damage.)"
     ]
   },
   "astrologer:TheMoon": {
     "NAME": "The Moon",
-    "DESCRIPTION": "astrologer:Lunar: Gain Block equal to half of the total damage enemies intend to do. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: ALL enemies lose !M! Strength. Exhaust.",
-    "EXTENDED_DESCRIPTION": [
-      "astrologer:Lunar: Gain Block equal to half of the total damage enemies intend to do. NL (Gain !B! Block.) NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: ALL enemies lose !M! Strength. Exhaust."
-    ]
+    "DESCRIPTION": "astrologer:Lunar: Draw cards until your hand is full. NL [#ccf3ff]Stellar[] !STELLAR!: Gain !B! Block for each card drawn."
   },
   "astrologer:TheSun": {
     "NAME": "The Sun",
-    "DESCRIPTION": "astrologer:Star. NL astrologer:Solar: Deal !D! damage to ALL enemies. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: ALL enemies lose !M! HP."
+    "DESCRIPTION": "astrologer:Star. NL astrologer:Solar: Deal !D! damage to ALL enemies. NL [#ccf3ff]Stellar[] !STELLAR!: ALL enemies lose !M! HP."
   },
   "astrologer:Judgement": {
     "NAME": "Judgement",
-    "DESCRIPTION": "Deal !D! damage twice. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: If this kills a non-minion enemy, reduce its cost by !M! permanently."
+    "DESCRIPTION": "Deal !D! damage twice. NL [#ccf3ff]Stellar[] !STELLAR!: If this kills a non-minion enemy, reduce its cost by !M! permanently."
   },
   "astrologer:TheWorld": {
     "NAME": "The World",
-    "DESCRIPTION": "Draw !M! cards. NL [#ccf3ff]Stellar[] !STELLAR_VARIABLE!: Before drawing, reset your deck to the beginning of combat, except for this card. NL Purge."
+    "DESCRIPTION": "[#ccf3ff]Stellar[] !STELLAR!: Play all of the cards in your exhaust pile.",
+    "UPGRADE_DESCRIPTION": "Retain. NL [#ccf3ff]Stellar[] !STELLAR!: Play all of the cards in your exhaust pile."
   },
   "astrologer:Starfield": {
     "NAME": "Astral Form",
-    "DESCRIPTION": "ALL your cards are astrologer:Stars."
+    "DESCRIPTION": "Ethereal. NL ALL your cards are astrologer:Stars.",
+    "UPGRADE_DESCRIPTION": "ALL your cards are astrologer:Stars."
   },
   "astrologer:Prismatic": {
     "NAME": "Prismatic",
@@ -347,7 +352,7 @@
   },
   "astrologer:Confirmation": {
     "NAME": "Confirmation",
-    "DESCRIPTION": "Whenever you draw the same card multiple times in a single turn, deal !M! damage to ALL enemies."
+    "DESCRIPTION": "Shuffle an astrologer:Ominous_Star into your draw pile. NL Whenever you draw an astrologer:Ominous_Star, deal !M! damage to ALL enemies."
   },
   "astrologer:Glimpse": {
     "NAME": "Glimpse",
@@ -356,5 +361,13 @@
   "astrologer:CosmicExpanse": {
     "NAME": "Cosmic Expanse",
     "DESCRIPTION": "Whenever you play a astrologer:Star, increment the astrologer:Stellar_Phase."
+  },
+  "astrologer:Pulse": {
+    "NAME": "Pulse",
+    "DESCRIPTION": "Ethereal. NL When this card is drawn, deal !D! damage and apply !M! Vulnerable to ALL enemies."
+  },
+  "astrologer:Nescience": {
+    "NAME": "Nescience",
+    "DESCRIPTION": "Reduce the cost of ALL your cards to 1 this combat. NL Exhaust."
   }
 }

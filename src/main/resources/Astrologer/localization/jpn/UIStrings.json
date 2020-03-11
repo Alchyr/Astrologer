@@ -1,0 +1,53 @@
+{
+  "astrologer:Stellar": {
+    "TEXT": [
+      "ステラ",
+      "#y星の相 が指定の値以上の時、この効果は発動する。"
+    ]
+  },
+  "astrologer:StellarUI": {
+    "TEXT": [
+      "ステラ",
+      "#y星の相: #b",
+      " NL 星辰: #y月",
+      " NL 星辰: #y太陽",
+      " NL 上限値は #b"
+    ]
+  },
+  "astrologer:Lovers": {
+    "TEXT": [
+      "コストを交換するカードを選択"
+    ]
+  },
+  "astrologer:HighPriestess": {
+    "TEXT": [
+      "ダメージを2倍にするカードを選択"
+    ]
+  },
+  "astrologer:HangedMan": {
+    "TEXT": [
+      "複製する"
+    ]
+  },
+  "astrologer:PlayAction": {
+    "TEXT": [
+      "プレイする"
+    ]
+  },
+  "astrologer:ToDeck": {
+    "TEXT": [
+      "山札の一番下に置くカードを選択",
+      "山札の一番上に置くカードを選択"
+    ]
+  },
+  "astrologer:Prestidigitation": {
+    "TEXT": [
+      "山札の一番下に置くカードを選択"
+    ]
+  },
+  "astrologer:MaxHP": {
+    "TEXT": [
+      "最大HP +"
+    ]
+  }
+}

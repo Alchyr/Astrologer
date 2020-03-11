@@ -78,7 +78,7 @@
   "astrologer:Confirmation": {
     "NAME": "Confirmation",
     "DESCRIPTIONS": [
-      "Whenever you draw the same card multiple times in a single turn, deal #b",
+      "Whenever you draw an #yOminous #yStar, deal #b",
       " damage to ALL enemies."
     ]
   },

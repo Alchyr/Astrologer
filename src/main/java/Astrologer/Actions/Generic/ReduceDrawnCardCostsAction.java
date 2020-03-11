@@ -17,9 +17,9 @@ public class ReduceDrawnCardCostsAction extends AbstractGameAction {
     {
         for (AbstractCard c : cardSource.getDrawnCards())
         {
-            for (AbstractCard copies : GetAllInBattleInstances.get(c.uuid))
+            for (AbstractCard copy : GetAllInBattleInstances.get(c.uuid))
             {
-                copies.modifyCostForCombat(-this.amount);
+                copy.setCostForTurn(copy.costForTurn - this.amount);
             }
         }
 

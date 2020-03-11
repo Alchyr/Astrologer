@@ -21,7 +21,7 @@ import static Astrologer.AstrologerMod.makeID;
 public class Eclipse extends BaseCard {
     private final static CardInfo cardInfo = new CardInfo(
             "Eclipse",
-            1,
+            2,
             CardType.ATTACK,
             CardTarget.ENEMY,
             CardRarity.COMMON
@@ -29,12 +29,12 @@ public class Eclipse extends BaseCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int DAMAGE = 5;
+    private final static int DAMAGE = 7;
     private final static int UPG_DAMAGE = 1;
 
     private final static int HITS = 2;
 
-    private final static int WEAK = 1;
+    private final static int WEAK = 2;
     private final static int UPG_WEAK = 1;
 
     public Eclipse()

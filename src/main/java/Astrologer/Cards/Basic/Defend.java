@@ -37,6 +37,7 @@ public class Defend extends BaseCard {
         setMagic(BASE_BONUS, LUNAR_BONUS);
 
         tags.add(BASIC_DEFEND);
+        tags.add(CardTags.STARTER_DEFEND);
     }
 
     @Override

@@ -26,9 +26,9 @@ public class Wish extends BaseCard implements OnExhaustCardCard {
 
     public final static String ID = makeID(cardInfo.cardName);
 
-    private final static int BLOCK = 10;
-    private final static int UPG_BLOCK = 5;
-    private final static int DRAW = 1;
+    private final static int BLOCK = 12;
+    private final static int UPG_BLOCK = 6;
+    private final static int DRAW = 2;
 
     public Wish()
     {

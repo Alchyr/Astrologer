@@ -1,6 +1,7 @@
 package Astrologer.Cards.Tarot;
 
 import Astrologer.Abstracts.StellarCard;
+import Astrologer.Actions.Astrologer.TheMoonAction;
 import Astrologer.AstrologerMod;
 import Astrologer.Enums.CustomTags;
 import Astrologer.Util.CardInfo;
@@ -31,21 +32,18 @@ public class TheMoon extends StellarCard {
 
     private final static int STELLAR = 18;
 
-    private final static int UPG_COST = 1;
-
-    private final static int DEBUFF = 4;
+    private final static int BLOCK = 3;
+    private final static int UPG_BLOCK = 1;
 
     public TheMoon()
     {
         super(cardInfo, false, STELLAR);
         tags.add(CustomTags.LUNAR);
 
-        setBlock(0);
-
-        setMagic(DEBUFF);
-        setCostUpgrade(UPG_COST);
+        setBlock(BLOCK, UPG_BLOCK);
     }
 
+    /*
     public void applyPowers()
     {
         int totalDamage = 0;
@@ -91,19 +89,12 @@ public class TheMoon extends StellarCard {
             this.target = CardTarget.NONE;
         }
         this.exhaust = stellarActive();
-    }
+    }*/
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (PhaseCheck.lunarActive())
         {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-        }
-        if (stellarActive())
-        {
-            for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters)
-            {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new StrengthPower(mo, -this.magicNumber), -this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-            }
+            AbstractDungeon.actionManager.addToBottom(new TheMoonAction(p, stellarActive() ? this.block : 0));
         }
     }
 }

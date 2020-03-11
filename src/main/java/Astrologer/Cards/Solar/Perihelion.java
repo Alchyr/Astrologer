@@ -16,7 +16,7 @@ import static Astrologer.AstrologerMod.makeID;
 public class Perihelion extends BaseCard {
     private final static CardInfo cardInfo = new CardInfo(
             "Perihelion",
-            0,
+            1,
             CardType.ATTACK,
             CardTarget.ENEMY,
             CardRarity.UNCOMMON
@@ -26,7 +26,7 @@ public class Perihelion extends BaseCard {
 
     private final static int DAMAGE = 4;
 
-    private final static int MULTIPLY = 2;
+    private final static int MULTIPLY = 4;
     private final static int UPG_MULTIPLY = 1;
 
 
