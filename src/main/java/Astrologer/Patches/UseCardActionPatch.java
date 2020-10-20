@@ -4,6 +4,7 @@ import Astrologer.Relics.SkyMirror;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -21,18 +22,19 @@ public class UseCardActionPatch {
     )
     public static SpireReturn ReturnToBottom(UseCardAction __instance, AbstractCard targetCard, @ByRef float[] duration)
     {
-        if (AbstractDungeon.player.hasRelic(SkyMirror.ID) && AbstractDungeon.player.getRelic(SkyMirror.ID).counter == SkyMirror.ACTIVE_VALUE)
+        if (!targetCard.dontTriggerOnUseCard && AbstractDungeon.player.hasRelic(SkyMirror.ID) && AbstractDungeon.player.getRelic(SkyMirror.ID).counter == SkyMirror.ACTIVE_VALUE)
         {
             AbstractDungeon.player.getRelic(SkyMirror.ID).onTrigger();
 
             AbstractDungeon.player.hand.moveToBottomOfDeck(targetCard);
 
-            AbstractDungeon.player.hand.applyPowers();
-            AbstractDungeon.player.hand.glowCheck();
-
             duration[0] -= Gdx.graphics.getDeltaTime();
             if (duration[0] < 0.0f)
                 __instance.isDone = true;
+
+            targetCard.exhaustOnUseOnce = false;
+            targetCard.dontTriggerOnUseCard = false;
+            AbstractDungeon.actionManager.addToBottom(new HandCheckAction());
 
             return SpireReturn.Return(null);
         }

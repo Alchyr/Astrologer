@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.Necronomicon;
 
 import java.util.ArrayList;
 
@@ -43,7 +44,7 @@ public class StellarUI {
 
     //private static final float SKY_OFFSET = SKY_WIDTH / 2.0f;
 
-    private static final float SKY_Y = Settings.HEIGHT - SKY_HEIGHT * Settings.scale;
+    private static final float SKY_Y = Settings.HEIGHT / 2.0f;
 
     private static final float TEXT_X = Settings.WIDTH / 2.0f;
     private static final float TEXT_Y = Settings.HEIGHT - 225.0F * Settings.scale;
@@ -175,6 +176,7 @@ public class StellarUI {
                     TEXT[4] + StellarPhaseValue.maxStellarPhase.get(AbstractDungeon.player);
         }
     }
+
 
     public void render(SpriteBatch sb, boolean fading) {
         if (renderColor.a > 0.0f || !fading) {

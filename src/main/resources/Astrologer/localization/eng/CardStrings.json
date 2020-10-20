@@ -26,6 +26,10 @@
     "NAME": "Perihelion",
     "DESCRIPTION": "Deal !D! damage. NL astrologer:Solar: Deal !M! times as much damage instead."
   },
+  "astrologer:Sunrise": {
+    "NAME": "Sunrise",
+    "DESCRIPTION": "Draw !M! cards. NL Increase the maximum astrologer:Stellar_Phase by !M!. NL astrologer:Solar: Double this card's effect."
+  },
   "astrologer:Premeditation": {
     "NAME": "Premeditation",
     "DESCRIPTION": "Draw the bottom card of your draw pile, then play and Exhaust it."
@@ -352,7 +356,7 @@
   },
   "astrologer:Confirmation": {
     "NAME": "Confirmation",
-    "DESCRIPTION": "Shuffle an astrologer:Ominous_Star into your draw pile. NL Whenever you draw an astrologer:Ominous_Star, deal !M! damage to ALL enemies."
+    "DESCRIPTION": "Shuffle an *Ominous *Star into your draw pile. NL Whenever you draw an *Ominous *Star, deal !M! damage to ALL enemies."
   },
   "astrologer:Glimpse": {
     "NAME": "Glimpse",

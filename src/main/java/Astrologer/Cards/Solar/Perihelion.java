@@ -1,4 +1,4 @@
-package Astrologer.Cards.Solar;
+/*package Astrologer.Cards.Solar;
 
 import Astrologer.Abstracts.BaseCard;
 import Astrologer.Enums.CustomTags;
@@ -45,4 +45,4 @@ public class Perihelion extends BaseCard {
                 new DamageInfo(p, this.damage * (PhaseCheck.solarActive() ? this.magicNumber : 1), this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.FIRE));
     }
-}
+}*/

@@ -26,6 +26,10 @@
     "NAME": "近日点",
     "DESCRIPTION": "造成 !D! 点伤害。NL astrologer:太阳 : 造成 !M! 倍伤害。"
   },
+  "astrologer:Sunrise": {
+    "NAME": "Sunrise",
+    "DESCRIPTION": "抽 !M! 张牌。NL Increase the maximum astrologer:星相 by !M!。NL astrologer:太阳 : Double this card's effect."
+  },
   "astrologer:Premeditation": {
     "NAME": "预策",
     "DESCRIPTION": "打出抽牌堆底部的牌, 将其 消耗 。"

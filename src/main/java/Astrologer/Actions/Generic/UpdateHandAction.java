@@ -2,6 +2,7 @@ package Astrologer.Actions.Generic;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class UpdateHandAction extends AbstractGameAction {
     @Override

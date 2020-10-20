@@ -26,6 +26,10 @@
     "NAME": "近日点",
     "DESCRIPTION": "!D! ダメージを与える。 NL astrologer:太陽: !M! 倍のダメージを与える。"
   },
+  "astrologer:Sunrise": {
+    "NAME": "Sunrise",
+    "DESCRIPTION": "!M! 枚カードを引く。 NL Increase the maximum astrologer:星の相 by !M!. NL astrologer:太陽: Double this card's effect."
+  },
   "astrologer:Premeditation": {
     "NAME": "画策",
     "DESCRIPTION": "山札の一番下にあるカードをプレイして、そのカードを 廃棄 する。"

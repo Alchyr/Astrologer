@@ -157,7 +157,7 @@ public class Astrologer extends CustomPlayer {
 
     @Override
     public Color getCardTrailColor() {
-        return cardTrailColor;
+        return cardTrailColor.cpy();
     }
     @Override
     public Color getCardRenderColor() {

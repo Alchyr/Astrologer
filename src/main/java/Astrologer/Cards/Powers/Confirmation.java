@@ -31,6 +31,7 @@ public class Confirmation extends BaseCard {
     {
         super(cardInfo, false);
 
+        cardsToPreview = new OminousStar();
         setMagic(DAMAGE, UPG_DAMAGE);
     }
 
