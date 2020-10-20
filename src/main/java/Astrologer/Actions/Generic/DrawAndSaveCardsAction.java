@@ -24,7 +24,7 @@ public class DrawAndSaveCardsAction extends AbstractGameAction {
     {
         if (recursiveSource != null)
         {
-            drawnCards.addAll(recursiveSource.drawnCards);
+            drawnCards.addAll(recursiveSource.getDrawnCards());
         }
         return drawnCards;
     }
