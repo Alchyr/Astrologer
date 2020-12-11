@@ -21,14 +21,14 @@
     ]
   },
   "astrologer:FrozenStar": {
-    "NAME": "凍てつく星",
+    "NAME": "氷結の星",
     "DESCRIPTIONS": [
       "次に #y星 カードをプレイしたとき、 #b",
       " #yブロック を得る。"
     ]
   },
   "astrologer:CrystalBall": {
-    "NAME": "水晶玉",
+    "NAME": "占い",
     "DESCRIPTIONS": [
       "敵のターン開始時、もし敵が ",
       " HPを #b",
@@ -63,8 +63,8 @@
     "NAME": "静寂",
     "DESCRIPTIONS": [
       "#b",
-      " ターンの間、#y星の相 と #y星辰 が変化しない。",
-      " ターンの間、#y星の相 と #y星辰 が変化しない。"
+      " ターンの間、#y星の相 が変化しない。",
+      " ターンの間、#y星の相 が変化しない。"
     ]
   },
   "astrologer:Premonition": {
@@ -78,8 +78,8 @@
   "astrologer:Confirmation": {
     "NAME": "証明",
     "DESCRIPTIONS": [
-      "#y凶星 を引くたびに、 #b",
-      " ダメージを敵全体に与える。"
+      "#y凶星 を引くたびに、敵全体に #b",
+      " ダメージを与える。"
     ]
   },
   "astrologer:Glimpse": {
@@ -107,14 +107,14 @@
   "astrologer:Prismatic": {
     "NAME": "プリズム",
     "DESCRIPTIONS": [
-      "最初にプレイする #y星 カードが、ランダムな敵に #y星明かり #b",
-      " を与えるようになる。"
+      "最初の #y星 カードをプレイしたとき、ランダムな敵に #y星明かり #b",
+      " を与える。"
     ]
   },
   "astrologer:CosmicExpanse": {
     "NAME": "宇宙空間",
     "DESCRIPTIONS": [
-      "#y星 カードをプレイするとき、もう一度 #y星の相 が #b",
+      "#y星 カードをプレイしたとき、もう一度 #y星の相 が #b",
       " 増加する。"
     ]
   },

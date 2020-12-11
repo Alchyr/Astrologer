@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ViceCrushEffect;
 
 import static Astrologer.AstrologerMod.makeID;
+import static Astrologer.Util.TextureLoader.getCardTextureString;
 
 public class BlackHole extends BaseCard {
     private final static CardInfo cardInfo = new CardInfo(
@@ -41,8 +42,7 @@ public class BlackHole extends BaseCard {
 
         if (MathUtils.randomBoolean(0.01f))
         {
-            img = TextureLoader.getAndLoadCardTextureString("BlackHoleChan", cardInfo.cardType);
-            this.textureImg = img;
+            this.textureImg = getCardTextureString("BlackHoleChan", cardInfo.cardType);
             loadCardImage(textureImg);
         }
 

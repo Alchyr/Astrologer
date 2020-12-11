@@ -2,6 +2,7 @@ package Astrologer.Util;
 
 import Astrologer.AstrologerMod;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -80,27 +81,25 @@ public class TextureLoader {
                 break;
         }
 
-        if (textures.get(textureString) == null) {
-            try {
-                loadTexture(textureString);
-            } catch (GdxRuntimeException e) {
-                switch (cardType) {
-                    case ATTACK:
-                        textureString = assetPath("img/Cards/Attacks/default.png");
-                        break;
-                    case SKILL:
-                        textureString = assetPath("img/Cards/Skills/default.png");
-                        break;
-                    case POWER:
-                        textureString = assetPath("img/Cards/Powers/default.png");
-                        break;
-                    default:
-                        textureString = assetPath("img/MissingImage.png");
-                        break;
-                }
+        FileHandle h = Gdx.files.internal(textureString);
+        if (!h.exists())
+        {
+            switch (cardType) {
+                case ATTACK:
+                    textureString = assetPath("img/Cards/Attacks/default.png");
+                    break;
+                case SKILL:
+                    textureString = assetPath("img/Cards/Skills/default.png");
+                    break;
+                case POWER:
+                    textureString = assetPath("img/Cards/Powers/default.png");
+                    break;
+                default:
+                    textureString = assetPath("img/MissingImage.png");
+                    break;
             }
         }
-        //no exception, file exists
+
         return textureString;
     }
 

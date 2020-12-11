@@ -18,12 +18,12 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import static Astrologer.AstrologerMod.makeID;
 import static Astrologer.Util.TextureLoader.getAnimatedCardTextures;
+import static Astrologer.Util.TextureLoader.getCardTextureString;
 
 public abstract class BaseCard extends CustomCard {
     public static final CardColor COLOR = CardColorEnum.ASTROLOGER;
 
     protected CardStrings cardStrings;
-    protected String img;
 
     protected boolean upgradesDescription;
 
@@ -51,13 +51,9 @@ public abstract class BaseCard extends CustomCard {
 
     public BaseCard(String cardName, int cost, CardType cardType, CardTarget target, CardRarity rarity, boolean upgradesDescription)
     {
-        super(makeID(cardName), "", (String) null, cost, "", cardType, COLOR, rarity, target);
+        super(makeID(cardName), "", getCardTextureString(cardName, cardType), cost, "", cardType, COLOR, rarity, target);
 
         cardStrings = CardCrawlGame.languagePack.getCardStrings(cardID);
-
-        img = TextureLoader.getAndLoadCardTextureString(cardName, cardType);
-        this.textureImg = img;
-        loadCardImage(textureImg);
 
         this.rawDescription = cardStrings.DESCRIPTION;
         this.originalName = cardStrings.NAME;

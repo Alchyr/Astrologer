@@ -107,7 +107,7 @@ public class AnimatedCardsPatch {
                 locator = Locator.class,
                 localvars = { "drawX", "drawY" }
         )
-        public static SpireReturn altRender(AbstractCard __instance, SpriteBatch sb, float drawX, float drawY)
+        public static SpireReturn<?> altRender(AbstractCard __instance, SpriteBatch sb, float drawX, float drawY)
         {
             if (AnimationInfo.isAnimated.get(__instance))
             {
@@ -179,7 +179,7 @@ public class AnimatedCardsPatch {
         @SpireInsertPatch(
                 locator = Locator.class
         )
-        public static SpireReturn altRender(AbstractCard __instance, SpriteBatch sb)
+        public static SpireReturn<?> altRender(AbstractCard __instance, SpriteBatch sb)
         {
             if (AnimationInfo.isAnimated.get(__instance))
             {
