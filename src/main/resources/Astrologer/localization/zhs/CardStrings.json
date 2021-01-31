@@ -2,12 +2,12 @@
   "astrologer:Strike": {
     "NAME": "打击",
     "DESCRIPTION": "造成 !D! 点伤害。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL astrologer:太阳 : 造成 !D! 点额外伤害。"
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL astrologer:太阳 : 造成 !M! 点额外伤害。"
   },
   "astrologer:Defend": {
     "NAME": "防御",
     "DESCRIPTION": "获得 !B! 点 格挡 。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL astrologer:月亮 : 获得 !B! 点额外 格挡 。"
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL astrologer:月亮 : 获得 !M! 点额外 格挡 。"
   },
   "astrologer:Stardust": {
     "NAME": "星尘",

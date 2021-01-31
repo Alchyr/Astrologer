@@ -1,23 +1,16 @@
 package Astrologer.Cards.Normal;
 
-import Astrologer.Abstracts.StarCard;
+import Astrologer.Abstracts.BaseCard;
 import Astrologer.Actions.Astrologer.AlignmentAction;
-import Astrologer.Actions.Astrologer.NeutronStarAction;
-import Astrologer.Actions.Astrologer.NeutronStarDamageAction;
 import Astrologer.Actions.Generic.PerformXAction;
-import Astrologer.Powers.Starlit;
 import Astrologer.Util.CardInfo;
-import com.megacrit.cardcrawl.cards.red.Whirlwind;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ArtifactPower;
-import com.megacrit.cardcrawl.relics.ChemicalX;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import static Astrologer.AstrologerMod.makeID;
 
-public class Alignment extends StarCard {
+public class Alignment extends BaseCard {
     private final static CardInfo cardInfo = new CardInfo(
             "Alignment",
             -1,

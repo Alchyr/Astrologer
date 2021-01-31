@@ -12,6 +12,7 @@ import Astrologer.Relics.Telescope;
 import Astrologer.UI.StellarUI;
 import Astrologer.Util.*;
 import Astrologer.Variables.StellarVariable;
+import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -19,6 +20,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.Loader;
+import com.evacipated.cardcrawl.modthespire.ModInfo;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -249,8 +251,17 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
     //I totally didn't copy this from kiooeht.
     private static void autoAddCards() throws URISyntaxException, IllegalAccessException, InstantiationException, NotFoundException, CannotCompileException, ClassNotFoundException {
         ClassFinder finder = new ClassFinder();
-        URL url = AstrologerMod.class.getProtectionDomain().getCodeSource().getLocation();
-        finder.add(new File(url.toURI()));
+
+        try {
+            for (ModInfo info : Loader.MODINFOS) {
+                if (info != null && MODNAME.equals(info.ID) && info.jarURL != null) {
+                    finder.add(new File(info.jarURL.toURI()));
+                    break;
+                }
+            }
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
 
         ClassFilter filter =
                 new AndClassFilter(

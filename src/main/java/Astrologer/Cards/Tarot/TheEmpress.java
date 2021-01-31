@@ -62,12 +62,9 @@ public class TheEmpress extends StellarCard {
                 {
                     try
                     {
-                        if (mo.intent == AbstractMonster.Intent.ATTACK ||
-                                mo.intent == AbstractMonster.Intent.ATTACK_DEFEND ||
-                                mo.intent == AbstractMonster.Intent.ATTACK_DEBUFF ||
-                                mo.intent == AbstractMonster.Intent.ATTACK_BUFF)
+                        if (mo.getIntentBaseDmg() >= 0)
                         {
-                            int damage = (int)ReflectionHacks.getPrivate(mo, AbstractMonster.class, "intentDmg");
+                            int damage = mo.getIntentDmg();
                             if ((boolean)ReflectionHacks.getPrivate(mo, AbstractMonster.class, "isMultiDmg"))
                             {
                                 damage *= (int)ReflectionHacks.getPrivate(mo, AbstractMonster.class, "intentMultiAmt");

@@ -20,7 +20,7 @@ public class UseCardActionPatch {
             locator = Locator.class,
             localvars = { "targetCard", "duration" }
     )
-    public static SpireReturn ReturnToBottom(UseCardAction __instance, AbstractCard targetCard, @ByRef float[] duration)
+    public static SpireReturn<?> ReturnToBottom(UseCardAction __instance, AbstractCard targetCard, @ByRef float[] duration)
     {
         if (!targetCard.dontTriggerOnUseCard && AbstractDungeon.player.hasRelic(SkyMirror.ID) && AbstractDungeon.player.getRelic(SkyMirror.ID).counter == SkyMirror.ACTIVE_VALUE)
         {

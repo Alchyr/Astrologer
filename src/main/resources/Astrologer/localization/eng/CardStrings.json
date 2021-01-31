@@ -124,6 +124,10 @@
       "(Deals !M! damage.) NL astrologer:Star. NL Apply X astrologer:Starlit. NL Deal !D! damage for each stack of astrologer:Starlit the enemy has."
     ]
   },
+  "astrologer:SubspaceTunnel": {
+    "NAME": "Subspace Tunnel",
+    "DESCRIPTION": "a"
+  },
   "astrologer:ShootingStar": {
     "NAME": "Shooting Star",
     "DESCRIPTION": "astrologer:Star. NL Draw a card. NL When this card is Exhausted, add a copy of it to your draw pile.",

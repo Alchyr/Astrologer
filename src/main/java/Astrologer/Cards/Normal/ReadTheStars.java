@@ -1,7 +1,6 @@
 package Astrologer.Cards.Normal;
 
 import Astrologer.Abstracts.BaseCard;
-import Astrologer.Abstracts.StarCard;
 import Astrologer.Actions.Generic.BlockPerCardAction;
 import Astrologer.Util.CardInfo;
 import Astrologer.Util.PhaseCheck;

@@ -7,7 +7,7 @@
     <name>Astrologer</name>
     <groupId>Astrologer</groupId>
     <artifactId>Astrologer</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.2</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

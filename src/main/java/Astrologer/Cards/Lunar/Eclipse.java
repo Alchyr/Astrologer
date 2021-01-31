@@ -30,7 +30,7 @@ public class Eclipse extends BaseCard {
     public final static String ID = makeID(cardInfo.cardName);
 
     private final static int DAMAGE = 7;
-    private final static int UPG_DAMAGE = 1;
+    private final static int UPG_DAMAGE = 2;
 
     private final static int HITS = 2;
 
