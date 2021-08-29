@@ -21,14 +21,14 @@
     ]
   },
   "astrologer:FrozenStar": {
-    "NAME": "氷結の星",
+    "NAME": "凍った星",
     "DESCRIPTIONS": [
       "次に #y星 カードをプレイしたとき、 #b",
       " #yブロック を得る。"
     ]
   },
   "astrologer:CrystalBall": {
-    "NAME": "占い",
+    "NAME": "星占い",
     "DESCRIPTIONS": [
       "敵のターン開始時、もし敵が ",
       " HPを #b",
@@ -53,7 +53,7 @@
     ]
   },
   "astrologer:GlassStar": {
-    "NAME": "硝子の星",
+    "NAME": "ガラスの星",
     "DESCRIPTIONS": [
       "次にプレイするカードを #y廃棄 して、そのコストの #b",
       " 倍に等しい #yブロック を得る。"
@@ -68,7 +68,7 @@
     ]
   },
   "astrologer:Premonition": {
-    "NAME": "胸騒ぎ",
+    "NAME": "予見",
     "DESCRIPTIONS": [
       "#yエセリアル カードを #b1 枚引くたびに、カードを #b",
       " 枚引く。",
@@ -112,7 +112,7 @@
     ]
   },
   "astrologer:CosmicExpanse": {
-    "NAME": "宇宙空間",
+    "NAME": "広がる宇宙",
     "DESCRIPTIONS": [
       "#y星 カードをプレイしたとき、もう一度 #y星の相 が #b",
       " 増加する。"
@@ -145,13 +145,13 @@
   "astrologer:Fate": {
     "NAME": "宿命",
     "DESCRIPTIONS": [
-      "このターン次にプレイする #bステラ カードはアクティブになる。",
-      "このターン次にプレイする #b",
-      " 枚の #bステラ カードはアクティブになる。"
+      "このターン次にプレイするカードの #bステラ が適用される。",
+      "このターン次にプレイするカードの #b",
+      " 枚の #bステラ が適用される。"
     ]
   },
   "astrologer:Trine": {
-    "NAME": "トライン",
+    "NAME": "三分",
     "DESCRIPTIONS": [
       "このターン次にプレイするカードを2回プレイする。",
       "このターン次にプレイする #b",

@@ -2,12 +2,12 @@
   "astrologer:Strike": {
     "NAME": "ストライク",
     "DESCRIPTION": " !D! ダメージを与える。",
-    "UPGRADE_DESCRIPTION": "!D! ダメージを与える。 NL astrologer:太陽: !M! ダメージを追加で与える。"
+    "UPGRADE_DESCRIPTION": "!D! ダメージを与える。 NL astrologer:太陽: !M! ダメージ NL を追加で与える。"
   },
   "astrologer:Defend": {
     "NAME": "防御",
-    "DESCRIPTION": "!B! ブロック を得る。",
-    "UPGRADE_DESCRIPTION": "!B! ブロック を得る。 NL astrologer:月: !M! ブロックを追加で得る。"
+    "DESCRIPTION": " !B! ブロック を得る。",
+    "UPGRADE_DESCRIPTION": "!B! ブロック を得る。 NL astrologer:月: !M! ブロック NL を追加で得る。"
   },
   "astrologer:Stardust": {
     "NAME": "星くず",
@@ -18,38 +18,38 @@
     ]
   },
   "astrologer:Alignment": {
-    "NAME": "星の奇跡",
-    "DESCRIPTION": "山札の一番下にあるカードの複製を X 枚手札に加える。この戦闘中、それらのコストが X 減少する。 NL 廃棄",
-    "UPGRADE_DESCRIPTION": "山札の一番下にあるカードの複製を X + !M! 枚手札に加える。この戦闘中、それらのコストが X + !M! 減少する。 NL 廃棄"
+    "NAME": "星辰の揃う時",
+    "DESCRIPTION": "山札の一番下にある NL カードの複製を NL X枚手札に加える。 NL この戦闘中それらの NL [E] はX減少する。 NL 廃棄",
+    "UPGRADE_DESCRIPTION": "山札の一番下にある NL カードの複製を NL X+ !M! 枚手札に加える。 NL この戦闘中それらの NL [E] はX+ !M! 減少する。 NL 廃棄"
   },
   "astrologer:Perihelion": {
     "NAME": "近日点",
     "DESCRIPTION": "!D! ダメージを与える。 NL astrologer:太陽: !M! 倍のダメージを与える。"
   },
   "astrologer:Sunrise": {
-    "NAME": "夜明け",
-    "DESCRIPTION": "!M! 枚カードを引く。 NL astrologer:星の相 の最大値を !M! 増加する。 NL astrologer:太陽: このカードの効果を 2 倍にする。"
+    "NAME": "日の出",
+    "DESCRIPTION": " !M! 枚カードを引く。 NL astrologer:星の相 の最大値を NL !M! 増加する。 NL astrologer:太陽: この効果を NL 2 倍にする。"
   },
   "astrologer:Premeditation": {
     "NAME": "画策",
     "DESCRIPTION": "山札の一番下にあるカードを引き、プレイする。そのカードを 廃棄 する。"
   },
   "astrologer:Shine": {
-    "NAME": "シャイン",
-    "DESCRIPTION": "手札のカード 1 枚を 2 回プレイして 廃棄 する。 NL 廃棄"
+    "NAME": "輝き",
+    "DESCRIPTION": "次のカードを2回 NL プレイして 廃棄 する。 NL 廃棄"
   },
   "astrologer:CrystalBall": {
-    "NAME": "占い",
-    "DESCRIPTION": "敵を一体選ぶ。 敵のターン開始時、選んだ時と同じ行動ならば対象はHPを !M! 失う。 NL 廃棄"
+    "NAME": "水晶",
+    "DESCRIPTION": "対象はターン開始時 NL これをプレイした時と NL 同じ行動ならば NL HPを !M! 失う。 NL 廃棄"
   },
   "astrologer:Wish": {
     "NAME": "ねがいごと",
-    "DESCRIPTION": "この戦闘中に 廃棄 した astrologer:星 カード 1 枚につき、 [E] 消費が 1 減る。 NL !B! ブロック を得る。 NL !M! 枚カードを引く。",
-    "UPGRADE_DESCRIPTION": "この戦闘中に　廃棄　した　astrologer:星　カード 1 枚につき、 [E] 消費が 1 減る。 NL !B! ブロック を得る。 NL !M! 枚カードを引く。"
+    "DESCRIPTION": "astrologer:星 カードを 廃棄 する度 NL この [E] -1。 NL !B! ブロック を得る。 NL !M! 枚カードを引く。",
+    "UPGRADE_DESCRIPTION": "astrologer:星 カードを 廃棄 する度 NL この [E] -1。 NL !B! ブロック を得る。 NL !M! 枚カードを引く。"
   },
   "astrologer:NewMoon": {
     "NAME": "新月",
-    "DESCRIPTION": "!M! 枚カードを引く。 NL astrologer:月: 戦闘終了まで、この方法で引いたカードのダメージと ブロック の値を　!M!　増加する。"
+    "DESCRIPTION": "!M! 枚カードを引く。 NL astrologer:月: この戦闘中 NL 引いたカードの NL ダメージと ブロック の NL 値を !M! 増加する。"
   },
   "astrologer:Moonlight": {
     "NAME": "月光",
@@ -57,8 +57,8 @@
     "UPGRADE_DESCRIPTION": "!B! ブロック を得る。 NL astrologer:月: カードを !M! 枚引く。"
   },
   "astrologer:Eclipse": {
-    "NAME": "エクリプス",
-    "DESCRIPTION": "!D! ダメージを 2 回与える。 NL astrologer:月: 脱力 !M! を与える。"
+    "NAME": "日食",
+    "DESCRIPTION": "!D! ダメージを2回与える。 NL astrologer:月: 脱力 !M! を与える。"
   },
   "astrologer:Radiance": {
     "NAME": "太陽光",
@@ -66,62 +66,62 @@
   },
   "astrologer:Still": {
     "NAME": "静寂",
-    "DESCRIPTION": "!B! ブロック を得る。 NL 2 ターンの間 astrologer:星の相 が変化しない。"
+    "DESCRIPTION": "!B! ブロック を得る。 NL 2 ターンの間 astrologer:星の相 NL が変わらなくなる。"
   },
   "astrologer:SolarFlare": {
     "NAME": "太陽フレア",
-    "DESCRIPTION": "astrologer:星明かり !M! を与え、 NL 1 回発動する。"
+    "DESCRIPTION": "astrologer:星明かり !M! を与える。 NL astrologer:星明かり を発動する。"
   },
   "astrologer:NorthStar": {
     "NAME": "導きの星",
-    "DESCRIPTION": "astrologer:星 NL  astrologer:星明かり !M! を与える。"
+    "DESCRIPTION": "astrologer:星 NL astrologer:星明かり !M! を与える。"
   },
   "astrologer:ReadTheStars": {
-    "NAME": "星読み",
-    "DESCRIPTION": "手札の astrologer:星 カードの枚数だけ !B! ブロック を得る。"
+    "NAME": "星詠み",
+    "DESCRIPTION": "手札の astrologer:星 カードの枚数 NL ｘ!B! ブロック を得る。"
   },
   "astrologer:GlassStar": {
-    "NAME": "硝子の星",
-    "DESCRIPTION": "astrologer:星 NL 次にプレイしたカードを 廃棄 する。この方法で 廃棄 したカードのコストｘ !M! の ブロック を得る。"
+    "NAME": "ガラスの星",
+    "DESCRIPTION": "astrologer:星 NL 次にカードをプレイ NL する時それを 廃棄 する NL そのカードのコスト NL ｘ !M! ブロック を得る。"
   },
   "astrologer:Observe": {
     "NAME": "天体観測",
-    "DESCRIPTION": "山札の枚数に等しいブロックを得る。",
-    "UPGRADE_DESCRIPTION": "山札の枚数 + !M! に等しいブロックを得る。",
+    "DESCRIPTION": "山札の枚数に等しい NL ブロック を得る。",
+    "UPGRADE_DESCRIPTION": "山札の枚数 + !M! NL ブロック を得る。",
     "EXTENDED_DESCRIPTION": [
       " NL (!B! ブロック を得る。)"
     ]
   },
   "astrologer:StarOfRegret": {
-    "NAME": "悔恨の星",
-    "DESCRIPTION": "astrologer:星 NL !D! ダメージを与える。 NL このカードを 廃棄 したとき、敵全体に 2 回ダメージを与える。"
+    "NAME": "後悔の星",
+    "DESCRIPTION": "astrologer:星 NL !D! ダメージを与える。 NL これを 廃棄 した時 NL 代わりに敵全体にこの NL 2倍ダメージを与える。"
   },
   "astrologer:StarOfChange": {
     "NAME": "変化の星",
-    "DESCRIPTION": "astrologer:星 NL エセリアル NL このカードを引いたとき、手札を 1 枚 廃棄 してランダムなカードを手札に加える。 NL このターン、そのコストは0。",
-    "UPGRADE_DESCRIPTION": "astrologer:星 NL エセリアル NL このカードを引いたとき、手札を 1 枚 廃棄 してランダムな アップグレード したカードを手札に加える。 このターン、そのコストは0。"
+    "DESCRIPTION": "astrologer:星 、 エセリアル NL これを引いた時、手札 NL 1枚 廃棄 しランダムな NL カードを手札に加える NL このターンその [E] は0",
+    "UPGRADE_DESCRIPTION": "astrologer:星 、 エセリアル NL これを引いた時、手札 NL 1枚 廃棄 しランダムな NL アップグレード カード NL を手札に加える NL このターンその [E] は0"
   },
   "astrologer:FrozenStar": {
-    "NAME": "氷結の星",
-    "DESCRIPTION": "astrologer:星 NL 次に astrologer:星 カードをプレイしたとき、 !M! ブロック を得る。"
+    "NAME": "凍った星",
+    "DESCRIPTION": "astrologer:星 NL 次に astrologer:星 カードを NL プレイした時 NL !M! ブロック を得る。"
   },
   "astrologer:LonelyStar": {
-    "NAME": "孤独の星",
-    "DESCRIPTION": "astrologer:星 NL エセリアル NL このカードを引いたとき、カードを !M! 枚引く。"
+    "NAME": "孤独な星",
+    "DESCRIPTION": "astrologer:星 NL エセリアル NL このカードを引いた時 NL カードを !M! 枚引く。"
   },
   "astrologer:ShiningStar": {
-    "NAME": "輝きの星",
-    "DESCRIPTION": "astrologer:星 NL エセリアル NL このカードを引いたとき、 astrologer:星明かり !M! をランダムな敵に与える。"
+    "NAME": "煌めく星",
+    "DESCRIPTION": "astrologer:星 NL エセリアル NL このカードを引いた時 NL ランダムな敵に NL astrologer:星明かり !M! を与える。"
   },
   "astrologer:FadingStar": {
-    "NAME": "衰退の星",
+    "NAME": "消えゆく星",
     "DESCRIPTION": "astrologer:星 NL !B! ブロック を得る。 NL 廃棄"
   },
   "astrologer:NeutronStar": {
     "NAME": "中性子星",
-    "DESCRIPTION": "astrologer:星 NL 敵に astrologer:星明かり X を与え、 NL 受けている astrologer:星明かり の数だけ !D! ダメージを与える。",
+    "DESCRIPTION": "astrologer:星 NL astrologer:星明かり X を与える。 NL astrologer:星明かり ｘ!D! ダメージを与える。",
     "EXTENDED_DESCRIPTION": [
-      "(!M! ダメージを与える。) NL astrologer:星 NL 敵に astrologer:星明かり X を与えて、 NL 受けている astrologer:星明かり の数だけ !D! ダメージを与える。"
+      "(!M! ダメージを与える。) NL astrologer:星 NL astrologer:星明かり X を与える。 NL astrologer:星明かり ｘ!D! ダメージを与える。"
     ]
   },
   "astrologer:ShootingStar": {
@@ -130,24 +130,24 @@
     "UPGRADE_DESCRIPTION": "astrologer:星 NL エセリアル NL カードを 1 枚引く。 NL このカードを 廃棄 したとき、複製を山札に加える。"
   },
   "astrologer:SpaceDust": {
-    "NAME": "ネビュラ",
-    "DESCRIPTION": "エセリアル NL !B! ブロック を得る。 NL このカードを 廃棄 したとき、複製を山札に加える。"
+    "NAME": "星雲",
+    "DESCRIPTION": "エセリアル NL !B! ブロック を得る。 NL これを 廃棄 した時 NL このカードの複製を NL 山札に加える。"
   },
   "astrologer:Cataclysm": {
     "NAME": "カタストロフィー",
-    "DESCRIPTION": "このカードを引くたび、そのコストが 1 減る。 NL 敵全体に !D! ダメージを与える。 NL 廃棄"
+    "DESCRIPTION": "このカードは NL 引く度に [E] -1 NL 敵全体に !D! ダメージを与える。 NL 廃棄"
   },
   "astrologer:Fireball": {
-    "NAME": "ファイアボール",
+    "NAME": "火球",
     "DESCRIPTION": "astrologer:星 NL !D! ダメージを与える。 NL astrologer:星明かり !M! を与える。"
   },
   "astrologer:StarOfCourage": {
     "NAME": "勇気の星",
-    "DESCRIPTION": "astrologer:星 NL アタック以外の手札を 廃棄 する。 NL この方法で 廃棄 した枚数に等しい 筋力 !M! を得る。"
+    "DESCRIPTION": "astrologer:星 NL アタック以外の手札 NL を 廃棄 する。 NL その枚数だけ NL 筋力 !M! を得る。"
   },
   "astrologer:StarOfMisfortune": {
     "NAME": "不幸の星",
-    "DESCRIPTION": "astrologer:星 NL 脱力 !M! と 弱体 !M! を与える。"
+    "DESCRIPTION": "astrologer:星 NL 脱力 !M! と 弱体 !M! NL を与える。"
   },
   "astrologer:OminousStar": {
     "NAME": "凶星",
@@ -155,16 +155,16 @@
   },
   "astrologer:Prestidigitation": {
     "NAME": "奇術",
-    "DESCRIPTION": "ターン開始時、カードを !M! 枚引き !M! 枚を山札の底に置く。"
+    "DESCRIPTION": "ターン開始時に NL カードを !M! 枚引く。 NL !M! 枚を山札の底に置く。"
   },
   "astrologer:Retelling": {
-    "NAME": "言い直し",
-    "DESCRIPTION": "手札をすべて山札に戻す。 NL 同じ枚数だけ捨て札からカードを選び、手札に加える。 NL 廃棄",
-    "UPGRADE_DESCRIPTION": "手札をすべて山札に戻す。 その数 + !M! だけ捨て札からカードを選び、手札に加える。 NL 廃棄"
+    "NAME": "再話",
+    "DESCRIPTION": "手札を全て山札に戻す NL その枚数だけ NL 捨て札からカードを NL 選び、手札に加える。 NL 廃棄",
+    "UPGRADE_DESCRIPTION": "手札を全て山札に戻す NL その枚数+ !M! だけ NL 捨て札からカードを NL 選び、手札に加える。 NL 廃棄"
   },
   "astrologer:Divination": {
     "NAME": "予言",
-    "DESCRIPTION": "手札のカード 1 枚を山札の底に置く。 NL !M! 枚カードを引く。",
+    "DESCRIPTION": "手札1枚を NL 山札の底に置く。 NL !M! 枚カードを引く。",
     "UPGRADE_DESCRIPTION": "手札のカードを好きな枚数山札の底に置く。 NL !M! 枚カードを引く。"
   },
   "astrologer:RejectReality": {
@@ -172,60 +172,60 @@
     "DESCRIPTION": "!B! ブロック を得る。 NL !D! ダメージを与える。 NL めまい を !M! 枚山札に加える。"
   },
   "astrologer:Conjunction": {
-    "NAME": "コンジャンクション",
-    "DESCRIPTION": "エセリアル NL このカードを引いたとき、 !B! ブロック を得る。"
+    "NAME": "合",
+    "DESCRIPTION": "エセリアル NL これを引いた時 NL !B! ブロック を得る。"
   },
   "astrologer:Opposition": {
-    "NAME": "オポジション",
-    "DESCRIPTION": "エセリアル NL このカードを引いたとき、ランダムな敵に !D! ダメージを与える。"
+    "NAME": "衝",
+    "DESCRIPTION": "エセリアル NL これを引いた時 NL ランダムな敵に NL !D! ダメージを与える。"
   },
   "astrologer:Trine": {
-    "NAME": "トライン",
-    "DESCRIPTION": "エセリアル NL このカードを引いたターン、次にプレイするカードを 2 回プレイする。"
+    "NAME": "三分",
+    "DESCRIPTION": "エセリアル NL これを引いた時 NL 次プレイするカードを NL 2 回プレイする。"
   },
   "astrologer:Sextile": {
-    "NAME": "セクスタイル",
-    "DESCRIPTION": "エセリアル NL このカードを引いたとき、 手札の複製を山札の一番上に置く。"
+    "NAME": "六分",
+    "DESCRIPTION": "エセリアル NL これを引いた時 NL 手札の複製を NL 山札の一番上に置く。"
   },
   "astrologer:Quincunx": {
-    "NAME": "クインカンクス",
-    "DESCRIPTION": "エセリアル NL このカードを引いたとき、ランダムな敵が 筋力 !M! をターン終了時まで失う。"
+    "NAME": "転",
+    "DESCRIPTION": "エセリアル NL これを引いた時 NL ランダムな敵はこの NL ターン筋力 !M! を失う。"
   },
   "astrologer:Novile": {
-    "NAME": "ノヴァイル",
-    "DESCRIPTION": "エセリアル NL このカードを引いたとき、 [E] を得る。",
+    "NAME": "九分",
+    "DESCRIPTION": "エセリアル NL これを引いた時 NL [E] を得る。",
     "EXTENDED_DESCRIPTION": [
-      "エセリアル NL このカードを引いたとき、",
+      "エセリアル NL このカードを引いた時",
       " [E] ",
       "を得る。"
     ]
   },
   "astrologer:BlackHole": {
     "NAME": "ブラックホール",
-    "DESCRIPTION": "廃棄 したカードをすべて 除去 する。 NL この方法で 除去 した枚数ｘ!D! ダメージを与える。 NL 廃棄",
-    "UPGRADE_DESCRIPTION": "保留 NL 廃棄 したカードをすべて 除去 する。 NL この方法で 除去 した枚数ｘ!D! ダメージを与える。 NL 廃棄",
+    "DESCRIPTION": "廃棄 カードを全て除外 NL 除外した枚数ｘ !D! NL ダメージを与える。 NL 廃棄",
+    "UPGRADE_DESCRIPTION": "保留 NL 廃棄 カードを全て除外 NL 除外した枚数ｘ !D! NL ダメージを与える。 NL 廃棄",
     "EXTENDED_DESCRIPTION": [
-      "(!M! ダメージを与える。) NL 廃棄 したカードをすべて 除去 する。 NL この方法で 除去 した枚数ｘ!D! ダメージを与える。 NL 廃棄",
-      "(!M! ダメージを与える。) NL 保留 NL 廃棄 したカードをすべて 除去 する。 NL この方法で 除去 した枚数ｘ!D! ダメージを与える。 NL 廃棄"
+      "(!M! ダメージを与える。) NL 廃棄 カードを全て除外 NL して、その枚数ｘ !D! NL ダメージを与える。 NL 廃棄",
+      "(!M! ダメージを与える。) NL 保留 NL 廃棄 カードを全て除外 NL して、その枚数ｘ !D! NL ダメージを与える。 NL 廃棄"
     ]
   },
   "astrologer:MeteorShower": {
     "NAME": "メテオシャワー",
-    "DESCRIPTION": "敵全体に !D! ダメージを与える。 NL 廃棄"
+    "DESCRIPTION": "敵全体に NL !D! ダメージを与える。 NL 廃棄"
   },
   "astrologer:CometStrike": {
     "NAME": "コメットストライク",
-    "DESCRIPTION": "!D! ダメージを与える。 NL !M! 枚カードを引いて、 NL 手札をランダムに 1 枚 廃棄 する。",
-    "UPGRADE_DESCRIPTION": "!D! ダメージを与える。 NL !M! 枚カードを引いて、 NL 手札を 1 枚 廃棄 する。"
+    "DESCRIPTION": "!D! ダメージを与える。 NL カードを !M! 枚引く。 NL 手札をランダムに1枚 廃棄 する。",
+    "UPGRADE_DESCRIPTION": "!D! ダメージを与える。 NL カードを !M! 枚引く。 NL 手札を1枚 廃棄 する。"
   },
   "astrologer:HeatDeath": {
     "NAME": "宇宙の終焉",
-    "DESCRIPTION": "astrologer:星 カードをすべて 廃棄 する。 NL この方法で 廃棄 したカード 1 枚につき、ランダムな敵に !D! ダメージを与える。 NL 廃棄"
+    "DESCRIPTION": "astrologer:星 カードを全て 廃棄 NL 廃棄 した枚数だけ NL ランダムな敵に NL !D! ダメージを与える。 NL 廃棄"
   },
   "astrologer:Fate": {
     "NAME": "宿命",
-    "DESCRIPTION": "このターン次にプレイする [#ccf3ff]ステラ[] カードはアクティブになる。 NL 廃棄",
-    "UPGRADE_DESCRIPTION": "このターン次にプレイする [#ccf3ff]ステラ[] カードはアクティブになる。"
+    "DESCRIPTION": "このターン、次に NL プレイするカードの NL [#ccf3ff]ステラ[] を発動する。 NL 廃棄",
+    "UPGRADE_DESCRIPTION": "このターン、次に NL プレイするカードの NL [#ccf3ff]ステラ[] を発動する。"
   },
   "astrologer:TheFool": {
     "NAME": "愚者",
@@ -233,37 +233,37 @@
   },
   "astrologer:TheMagician": {
     "NAME": "魔術師",
-    "DESCRIPTION": "エセリアル NL この戦闘でプレイしたカードの枚数に等しいダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : ランダムに山札のカードを 1 枚プレイする。",
-    "UPGRADE_DESCRIPTION": "この戦闘でプレイしたカードの枚数に等しいダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : ランダムに山札のカードを 1 枚プレイする。",
+    "DESCRIPTION": "エセリアル NL この戦闘中プレイした NL カードの枚数だけ NL ダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : ランダムに NL 山札から 1 枚プレイする",
+    "UPGRADE_DESCRIPTION": "この戦闘中プレイした NL カードの枚数だけ NL ダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : ランダムに NL 山札から 1 枚プレイする",
     "EXTENDED_DESCRIPTION": [
-      "(!D! ダメージを与える。) NL エセリアル NL この戦闘でプレイしたカードの枚数に等しいダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : ランダムに山札のカードを 1 枚プレイする。",
-      "(!D! ダメージを与える。) NL この戦闘でプレイしたカードの枚数に等しいダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : ランダムに山札のカードを 1 枚プレイする。"
+      "(!D! ダメージを与える。) NL エセリアル NL この戦闘中プレイした NL カードの枚数だけ NL ダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : ランダムに NL 山札から 1 枚プレイする",
+      "(!D! ダメージを与える。) NL この戦闘中プレイした NL カードの枚数だけ NL ダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : ランダムに NL 山札から 1 枚プレイする"
     ]
   },
   "astrologer:TheHighPriestess": {
     "NAME": "女教皇",
-    "DESCRIPTION": "[#ccf3ff]ステラ[] !STELLAR! : この戦闘中、手札のカード 1 枚の基礎ダメージを2倍にする。 NL 廃棄",
-    "UPGRADE_DESCRIPTION": "保留 NL [#ccf3ff]ステラ[] !STELLAR! : この戦闘中、手札のカード 1 枚の基礎ダメージを2倍にする。 NL 廃棄"
+    "DESCRIPTION": "[#ccf3ff]ステラ[] !STELLAR! : この戦闘中 NL 手札1枚の基礎ダメ NL ージを2倍にする。 NL 廃棄",
+    "UPGRADE_DESCRIPTION": "保留 NL [#ccf3ff]ステラ[] !STELLAR! : この戦闘中 NL 手札1枚の基礎ダメ NL ージを2倍にする。 NL 廃棄"
   },
   "astrologer:TheEmpress": {
     "NAME": "女帝",
-    "DESCRIPTION": "[#ccf3ff]ステラ[] !STELLAR! : 敵全員の与える予定ダメージの合計に等しいHPを、敵全体が失う。"
+    "DESCRIPTION": "[#ccf3ff]ステラ[] !STELLAR! : 敵全体は NL それぞれ予定ダメージ NL と等しいHPを失う。"
   },
   "astrologer:TheEmperor": {
     "NAME": "皇帝",
-    "DESCRIPTION": "ターン終了時まで、敵が 筋力 !M! を失う。 NL [#ccf3ff]ステラ[] !STELLAR! : 失う 筋力 が 3 倍になる。 NL 廃棄"
+    "DESCRIPTION": "このターン対象は NL 筋力 !M! を失う。 NL [#ccf3ff]ステラ[] !STELLAR! : NL 失う 筋力 が3倍になる。 NL 廃棄"
   },
   "astrologer:TheHierophant": {
     "NAME": "教皇",
-    "DESCRIPTION": "!B! ブロック を得る。ターン終了時まで 敏捷性 !M! を得る。 NL [#ccf3ff]ステラ[] !STELLAR! : 全てのデバフを取り除く。 NL 廃棄"
+    "DESCRIPTION": "!B! ブロック を得る。 NL このターン NL 敏捷性 !M! を得る。 NL [#ccf3ff]ステラ[] !STELLAR! : 全ての NL デバフを取り除く。 NL 廃棄"
   },
   "astrologer:TheLovers": {
     "NAME": "恋人",
-    "DESCRIPTION": "戦闘終了まで手札のカード 2 枚のコストを入れ替える。 NL 廃棄 NL [#ccf3ff]ステラ[] !STELLAR! : 次に入れ替えたカードをプレイしたとき、 2 回プレイする。"
+    "DESCRIPTION": "この戦闘中手札の2枚の NL コストを入れ替える。 NL 廃棄 NL [#ccf3ff]ステラ[] !STELLAR! : 次の NL 入れ替えたカードを NL 2回プレイする。"
   },
   "astrologer:TheChariot": {
     "NAME": "戦車",
-    "DESCRIPTION": "HPブースト !M! を得る。 NL [#ccf3ff]ステラ[] !STELLAR! : 無形 1 を得る。"
+    "DESCRIPTION": "この戦闘中 NL 追加体力を !M! を得る。 NL [#ccf3ff]ステラ[] !STELLAR! : NL 無形 1 を得る。"
   },
   "astrologer:Strength": {
     "NAME": "力",
@@ -271,100 +271,100 @@
   },
   "astrologer:TheHermit": {
     "NAME": "隠者",
-    "DESCRIPTION": "このターンプレイしたカードの枚数ｘ !B! ブロック を得る。 NL [#ccf3ff]ステラ[] !STELLAR! : 山札の底からカードを 1 枚引く。このターンそのコストは 1 減少する。",
+    "DESCRIPTION": "このターンプレイした NL カードの枚数 NL ｘ !B! ブロック を得る。 NL [#ccf3ff]ステラ[] !STELLAR! : 山札の底から NL カードを1枚引く。 NL このターンその [E] -1。",
     "EXTENDED_DESCRIPTION": [
-      "このターンプレイしたカードの枚数ｘ !B! ブロック を得る。 NL (!M! ブロック　を得る。) NL [#ccf3ff]ステラ[] !STELLAR! : 山札の底からカードを 1 枚引く。このターンそのコストは 1 減少する。"
+      "(!M! ブロック を得る。) NL このターンプレイした NL カードの枚数 NL ｘ !B! ブロック を得る。 NL [#ccf3ff]ステラ[] !STELLAR! : 山札の底から NL カードを1枚引く。 NL このターンその [E] -1。"
     ]
   },
   "astrologer:WheelofFortune": {
     "NAME": "運命の輪",
-    "DESCRIPTION": "10 ゴールド失う。 NL [#ccf3ff]ステラ[] !STELLAR! : ランダムな [#ccf3ff]ステラ[] カードを !M! 枚プレイする。 それらの追加効果はすべて発動する。"
+    "DESCRIPTION": "10ゴールド失う。 NL [#ccf3ff]ステラ[] !STELLAR! : ランダムな NL [#ccf3ff]ステラ[] カードを !M! 枚 NL プレイする。それらの NL [#ccf3ff]ステラ[] を発動する。"
   },
   "astrologer:Justice": {
     "NAME": "正義",
-    "DESCRIPTION": "全員が !B! ブロック を得る。 NL [#ccf3ff]ステラ[] !STELLAR! : 敵全員が自身の ブロック の 2 倍のHPを失う。"
+    "DESCRIPTION": "全員が !B! ブロック を得る。 NL [#ccf3ff]ステラ[] !STELLAR! : 敵全員が NL 自身のブロックの2倍 NL HPを失う。"
   },
   "astrologer:TheHangedMan": {
     "NAME": "吊るされた男",
-    "DESCRIPTION": "このターンカードを 1 枚引くたび、対象の敵はHP !M! を失う。 [#ccf3ff]ステラ[] !STELLAR! : カードを 3 枚引く。"
+    "DESCRIPTION": "このターンカードを NL 引く度に対象は NL HP !M! を失う。 NL [#ccf3ff]ステラ[] !STELLAR! : カードを NL 3枚引く。"
   },
   "astrologer:Death": {
     "NAME": "死",
-    "DESCRIPTION": "エセリアル NL !D! ダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : ボス以外は即死する。"
+    "DESCRIPTION": "エセリアル NL !D! ダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : 対象が NL ボス以外ならば NL 即死させる。"
   },
   "astrologer:Temperance": {
     "NAME": "節制",
-    "DESCRIPTION": "[#ccf3ff]ステラ[] !STELLAR! : HPをデッキの [#ccf3ff]ステラ[] カードの枚数分回復する。 NL 廃棄",
+    "DESCRIPTION": "[#ccf3ff]ステラ[] !STELLAR! : デッキの NL [#ccf3ff]ステラ[] カードの枚数分 NL HPを回復する。 NL 廃棄",
     "EXTENDED_DESCRIPTION": [
-      "[#ccf3ff]ステラ[] !STELLAR! : HPをデッキの [#ccf3ff]ステラ[] カードの枚数回復する。 NL 廃棄 NL (HPを !M! 回復する。)"
+      "[#ccf3ff]ステラ[] !STELLAR! : デッキの NL [#ccf3ff]ステラ[] カードの枚数分 NL HPを回復する。 NL 廃棄 NL (HPを !M! 回復する。)"
     ]
   },
   "astrologer:TheDevil": {
     "NAME": "悪魔",
-    "DESCRIPTION": "!D! ダメージを与える。 NL この攻撃で倒せなかった場合、HPを 6 失う。 NL [#ccf3ff]ステラ[] !STELLAR! : 失っているHPに等しいダメージを追加で与える。"
+    "DESCRIPTION": "!D! ダメージを与え、 NL 倒せないとHP6失う NL [#ccf3ff]ステラ[] !STELLAR! : 追加で NL 失っているHPだけ NL ダメージを与える。"
   },
   "astrologer:TheTower": {
     "NAME": "塔",
-    "DESCRIPTION": "ランダムな敵に !D! ダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : !M! 回追加で攻撃する。"
+    "DESCRIPTION": "ランダムな敵に NL !D! ダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : さらに !M! 回 NL ランダムに攻撃する。"
   },
   "astrologer:TheStar": {
     "NAME": "星",
-    "DESCRIPTION": "astrologer:星 NL 敵全体に astrologer:星の相 に等しいダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : 与えるダメージが2倍になる。",
+    "DESCRIPTION": "astrologer:星 NL 敵全体に astrologer:星の相 に等しいダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : 与える NL ダメージが2倍になる",
     "EXTENDED_DESCRIPTION": [
-      "astrologer:星 NL 敵全体に astrologer:星の相 に等しいダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : (!D! ダメージを与える。) NL 与えるダメージが2倍になる。"
+      "(!D! ダメージを与える。) astrologer:星 NL 敵全体に astrologer:星の相 に等しいダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : 与える NL ダメージが2倍になる"
     ]
   },
   "astrologer:TheMoon": {
     "NAME": "月",
-    "DESCRIPTION": "astrologer:月: 手札が一杯になるまでカードを引く。 NL [#ccf3ff]ステラ[] !STELLAR! : この方法で引いたカードの数だけ !B! ブロック を得る。"
+    "DESCRIPTION": "astrologer:月: 手札が一杯になるまでカードを引く。 NL [#ccf3ff]ステラ[] !STELLAR! : 引いた NL カードの枚数 NL ｘ !B! ブロック を得る。"
   },
   "astrologer:TheSun": {
     "NAME": "太陽",
-    "DESCRIPTION": "astrologer:星 NL astrologer:太陽: 敵全体に !D! ダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : 敵全体がHPを !M! 失う。"
+    "DESCRIPTION": "astrologer:星 NL astrologer:太陽: 敵全体に !D! ダメージを与える。 NL [#ccf3ff]ステラ[] !STELLAR! : 敵全体が NL HPを !M! 失う。"
   },
   "astrologer:Judgement": {
     "NAME": "審判",
-    "DESCRIPTION": "!D! ダメージを2回与える。 NL [#ccf3ff]ステラ[] !STELLAR! : 致命 時、コストが !M! 永続的に減る。"
+    "DESCRIPTION": "!D! ダメージを2回与える。 NL [#ccf3ff]ステラ[] !STELLAR! : 致命 時 NL 永続的に [E] が !M! 減る。"
   },
   "astrologer:TheWorld": {
     "NAME": "世界",
-    "DESCRIPTION": "[#ccf3ff]ステラ[] !STELLAR! : 廃棄 したカードを全てプレイする。",
-    "UPGRADE_DESCRIPTION": "保留 NL [#ccf3ff]ステラ[] !STELLAR! : 廃棄 したカードを全てプレイする。"
+    "DESCRIPTION": "[#ccf3ff]ステラ[] !STELLAR! : 廃棄 カード NL を全てプレイする。",
+    "UPGRADE_DESCRIPTION": "保留 NL [#ccf3ff]ステラ[] !STELLAR! : 廃棄 カード NL を全てプレイする。"
   },
   "astrologer:Starfield": {
     "NAME": "星幽化",
-    "DESCRIPTION": "エセリアル NL 全てのカードは astrologer:星 になる。",
-    "UPGRADE_DESCRIPTION": "全てのカードは astrologer:星 になる。"
+    "DESCRIPTION": "エセリアル NL 全てのカードは NL astrologer:星 を持つ。",
+    "UPGRADE_DESCRIPTION": "全てのカードは NL astrologer:星 を持つ。"
   },
   "astrologer:Prismatic": {
     "NAME": "プリズム",
-    "DESCRIPTION": "最初の astrologer:星 カードをプレイしたとき、ランダムな敵に astrologer:星明かり !M! を与える。"
+    "DESCRIPTION": "ターン最初に astrologer:星 カードをプレイした時 NL ランダムな敵に NL astrologer:星明かり !M! を与える。"
   },
   "astrologer:Premonition": {
-    "NAME": "胸騒ぎ",
-    "DESCRIPTION": "エセリアル カードを 1 枚引くたびに、更にカードを 1 枚引く。"
+    "NAME": "予見",
+    "DESCRIPTION": "エセリアル カードを NL 引いた時 NL カードを1枚引く。"
   },
   "astrologer:DarkMatter": {
     "NAME": "ダークマター",
-    "DESCRIPTION": "ターンの最初に 廃棄 される、 状態異常 か 呪い 以外のカードの複製を山札に加える。",
-    "UPGRADE_DESCRIPTION": "天賦 NL ターンの最初に 廃棄 される、 状態異常 か 呪い 以外のカードの複製を山札に加える。"
+    "DESCRIPTION": "ターン最初に 廃棄 する NL 状態異常 か 呪い 以外 NL のカードを複製し NL 山札に加える。",
+    "UPGRADE_DESCRIPTION": "天賦 NL ターン最初に 廃棄 する NL 状態異常 か 呪い 以外 NL のカードを複製し NL 山札に加える。"
   },
   "astrologer:Nova": {
     "NAME": "ノヴァ",
-    "DESCRIPTION": "ターン終了時、 !M! 回 astrologer:星明かり を発動する。",
-    "UPGRADE_DESCRIPTION": "ターン終了時、 !M! 回 astrologer:星明かり を発動する。"
+    "DESCRIPTION": "ターン終了時 NL astrologer:星明かり を NL !M! 回発動する。",
+    "UPGRADE_DESCRIPTION": "ターン終了時 NL astrologer:星明かり を NL !M! 回発動する。"
   },
   "astrologer:Confirmation": {
     "NAME": "証明",
-    "DESCRIPTION": "山札に astrologer:凶星 を加える。 NL astrologer:凶星 を引くたびに、 !M! ダメージを敵全体に与える。"
+    "DESCRIPTION": "山札に astrologer:凶星 を加える。 NL astrologer:凶星 を引いた時 NL !M! ダメージを敵全体に与える。"
   },
   "astrologer:Glimpse": {
     "NAME": "垣間見えるもの",
-    "DESCRIPTION": "エセリアル カードを引くたび、 !M! ブロック を得る。"
+    "DESCRIPTION": "エセリアル カードを NL 引く度に NL !M! ブロック を得る。"
   },
   "astrologer:CosmicExpanse": {
-    "NAME": "宇宙空間",
-    "DESCRIPTION": "astrologer:星 カードをプレイしたとき、もう一度 astrologer:星の相 が増加する。"
+    "NAME": "広がる宇宙",
+    "DESCRIPTION": "astrologer:星 カードから得られる NL astrologer:星の相 が1増加する。"
   },
   "astrologer:Pulse": {
     "NAME": "パルス",
