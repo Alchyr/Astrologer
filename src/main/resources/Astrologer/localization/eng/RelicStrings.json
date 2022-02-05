@@ -15,9 +15,10 @@
   },
   "astrologer:SkyMirrorUpg": {
     "NAME": "Universal Mirror",
-    "FLAVOR": "It reflects everything; ",
+    "FLAVOR": "It reflects everything.",
     "DESCRIPTIONS": [
-      "Put non-exhausting cards played onto the bottom of the draw pile."
+      "Put cards played onto the bottom of the draw pile.",
+      "It reflects nothing."
     ]
   },
   "astrologer:Telescope": {

@@ -1,6 +1,7 @@
 package Astrologer.Patches;
 
 import Astrologer.Relics.SkyMirror;
+import Astrologer.Relics.SkyMirrorUpg;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;
 import com.evacipated.cardcrawl.modthespire.lib.*;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import javassist.CtBehavior;
 
 @SpirePatch(
@@ -22,9 +24,17 @@ public class UseCardActionPatch {
     )
     public static SpireReturn<?> ReturnToBottom(UseCardAction __instance, AbstractCard targetCard, @ByRef float[] duration)
     {
-        if (!targetCard.dontTriggerOnUseCard && AbstractDungeon.player.hasRelic(SkyMirror.ID) && AbstractDungeon.player.getRelic(SkyMirror.ID).counter == SkyMirror.ACTIVE_VALUE)
+        if (!targetCard.dontTriggerOnUseCard && shouldReturn())
         {
-            AbstractDungeon.player.getRelic(SkyMirror.ID).onTrigger();
+            AbstractRelic src = AbstractDungeon.player.getRelic(SkyMirror.ID);
+            if (src != null) {
+                src.onTrigger();
+            }
+            else {
+                src = AbstractDungeon.player.getRelic(SkyMirrorUpg.ID);
+                if (src != null)
+                    src.onTrigger();
+            }
 
             AbstractDungeon.player.hand.moveToBottomOfDeck(targetCard);
 
@@ -39,6 +49,11 @@ public class UseCardActionPatch {
             return SpireReturn.Return(null);
         }
         return SpireReturn.Continue();
+    }
+
+    private static boolean shouldReturn() {
+        return (AbstractDungeon.player.hasRelic(SkyMirror.ID) && AbstractDungeon.player.getRelic(SkyMirror.ID).counter == SkyMirror.ACTIVE_VALUE) ||
+                (AbstractDungeon.player.hasRelic(SkyMirrorUpg.ID));
     }
 
     private static class Locator extends SpireInsertLocator

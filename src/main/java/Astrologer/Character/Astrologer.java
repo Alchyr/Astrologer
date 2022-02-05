@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.events.beyond.SpireHeart;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
@@ -28,6 +29,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import static Astrologer.AstrologerMod.assetPath;
 import static Astrologer.Util.Sounds.Sparkle;
@@ -128,6 +131,10 @@ public class Astrologer extends CustomPlayer {
         return CardColorEnum.ASTROLOGER;
     }
 
+    @Override
+    public List<CutscenePanel> getCutscenePanels() {
+        return Collections.emptyList();
+    }
 
     // Should return a BitmapFont object that you can use to customize how your
     // energy is displayed from within the energy orb.

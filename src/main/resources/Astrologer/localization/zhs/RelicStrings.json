@@ -15,7 +15,7 @@
   },
   "astrologer:SkyMirrorUpg": {
     "NAME": "万能镜",
-    "FLAVOR": "它反映一切; ",
+    "FLAVOR": "它反映一切.",
     "DESCRIPTIONS": [
       "将打出的非消耗牌放到抽牌堆的底部."
     ]

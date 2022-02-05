@@ -8,29 +8,29 @@ import Astrologer.Enums.CustomTags;
 import Astrologer.Interfaces.OnExhaustCardCard;
 import Astrologer.Patches.StellarPhaseValue;
 import Astrologer.Relics.SkyMirror;
+import Astrologer.Relics.SkyMirrorUpg;
 import Astrologer.Relics.Telescope;
 import Astrologer.UI.StellarUI;
 import Astrologer.Util.*;
 import Astrologer.Variables.StellarVariable;
-import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.ModInfo;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import javassist.CannotCompileException;
 import javassist.CtClass;
 import javassist.NotFoundException;
@@ -41,7 +41,6 @@ import org.clapper.util.classutil.*;
 import java.io.File;
 import java.lang.reflect.Modifier;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -100,14 +99,7 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
 
     @Override
     public void receivePreRoomRender(SpriteBatch sb) {
-        if (AbstractDungeon.getCurrRoom() != null && drawStellarUI && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
-        {
-            stellarUI.render(sb, false);
-        }
-        else
-        {
-            stellarUI.render(sb, true);
-        }
+        stellarUI.render(sb, AbstractDungeon.getCurrRoom() == null || !drawStellarUI || AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT);
     }
 
     public AstrologerMod()
@@ -160,13 +152,17 @@ public class AstrologerMod implements EditCardsSubscriber, EditRelicsSubscriber,
             BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, null);
         }
 
-
         //CardLibrary.unlockAndSeeAllCards();
+        RelicStrings upgrade = CardCrawlGame.languagePack.getRelicStrings(SkyMirrorUpg.ID);
+        if (MathUtils.randomBoolean() && upgrade != null && upgrade.DESCRIPTIONS.length == 2) {
+            upgrade.FLAVOR = upgrade.DESCRIPTIONS[1];
+        }
     }
 
     @Override
     public void receiveEditRelics() {
         BaseMod.addRelicToCustomPool(new SkyMirror(), CardColorEnum.ASTROLOGER);
+        BaseMod.addRelicToCustomPool(new SkyMirrorUpg(), CardColorEnum.ASTROLOGER);
         BaseMod.addRelicToCustomPool(new Telescope(), CardColorEnum.ASTROLOGER);
     }
 
